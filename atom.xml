@@ -64,9 +64,8 @@
     <link href="/2015/03/28/02%E5%BC%95%E8%A8%80-AngularJS%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"/>
     <id>/2015/03/28/02引言-AngularJS基础教程/</id>
     <published>2015-03-28T04:50:45.000Z</published>
-    <updated>2015-11-21T10:13:13.465Z</updated>
-    <content type="html"><![CDATA[<h1 id="0-_目录">0. 目录</h1><p>[toc]</p>
-<h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上的不足。</p>
+    <updated>2015-11-21T10:14:58.758Z</updated>
+    <content type="html"><![CDATA[<h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上的不足。</p>
 <p>AngularJS的初衷是为了<strong>简化web APP开发</strong>，精髓是<strong>简单</strong>。但是国内外有很多AngularJS的教程，都着重讲AngularJS的强大之处，从而增加了AngularJS学习的难度，本教程试图用通俗的语言讲解<strong>最为基础</strong>、<strong>最为实用</strong>的内容，<strong><em>简化学习进程、降低学习难度</em></strong>是本教程的初衷。</p>
 <p>本系列教程以<strong>翻译<em>Chris Smith</em></strong>的<a href="http://www.angularjsbook.com/" target="_blank" rel="external"><strong>Angualr Basics</strong></a>为梗概，融合博主自己的理解，为大家提供一个<strong><em>简单明了</em></strong>的学习教程。本文为系列教程第2篇引言，翻译自<a href="http://www.angularjsbook.com/angular-basics/chapters/introduction/" target="_blank" rel="external"><strong>Introduction</strong></a>。</p>
 <ol>
@@ -125,8 +124,7 @@
 <h1 id="3-声明">3.声明</h1><p>前端开发whqet，关注前端开发，分享相关资源。csdn专家博客，王海庆希望能对您有所帮助，限于作者水平有限，出错难免，欢迎拍砖！<br>欢迎任何形式的转载，烦请注明装载，保留本段文字。<br>本文原文链接，<a href="http://blog.csdn.net/whqet/article/details/44596577" target="_blank" rel="external">http://blog.csdn.net/whqet/article/details/44596577</a><br>欢迎大家访问独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="0-_目录">0. 目录</h1><p>[toc]</p>
-<h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏]]>
+    <![CDATA[<h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上]]>
     </summary>
     
       <category term="AngularJS" scheme="/tags/AngularJS/"/>
@@ -142,9 +140,8 @@
     <link href="/2015/03/26/01%E5%BA%8F-AngularJS%20%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"/>
     <id>/2015/03/26/01序-AngularJS 基础教程/</id>
     <published>2015-03-26T04:50:45.000Z</published>
-    <updated>2015-11-21T10:11:38.953Z</updated>
-    <content type="html"><![CDATA[<h1 id="0-_目录">0. 目录</h1><p>[toc]</p>
-<h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上的不足。</p>
+    <updated>2015-11-21T10:14:57.433Z</updated>
+    <content type="html"><![CDATA[<h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上的不足。</p>
 <p>AngularJS的初衷是为了<strong>简化web APP开发</strong>，精髓是<strong>简单</strong>。但是国内外有很多AngularJS的教程，都着重讲AngularJS的强大之处，从而增加了AngularJS学习的难度，本教程试图用通俗的语言讲解<strong>最为基础</strong>、<strong>最为实用</strong>的内容，<strong><em>简化学习进程、降低学习难度</em></strong>是本教程的初衷。</p>
 <p>欢迎大家<strong>批评指正</strong>。</p>
 <h1 id="2-_AngularJS？">2. AngularJS？</h1><p>AngularJS主要用于构建单页面Web应用，同其他历史悠久的Web技术（HTML、CSS和JavaScript）配合使用，使构建交互式的现代Web应用变得更加简单。</p>
@@ -177,8 +174,7 @@
 </ol>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="0-_目录">0. 目录</h1><p>[toc]</p>
-<h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏]]>
+    <![CDATA[<h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上]]>
     </summary>
     
       <category term="AngularJS" scheme="/tags/AngularJS/"/>
