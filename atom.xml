@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[前端开发whqet]]></title>
-  <subtitle><![CDATA[关注前端开发，分享相关资源]]></subtitle>
+  <title><![CDATA[FedFun官方网站-爱前端，乐分享！]]></title>
+  <subtitle><![CDATA[爱前端，乐分享！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="/"/>
   <updated>2015-11-21T08:50:59.704Z</updated>
