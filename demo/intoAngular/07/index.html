@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	table{
+		border-collapse: collapse;
+	}
+	td,th{
+		border:1px solid #999;
+		border-width: 1px 0px;
+		padding: 4px;
+	}
+	</style>
+</head>
+<body ng-app="demoApp">
+	<script src="../script/angular.js"></script>
+	<div ng-controller="demoCtrl">
+		<table>
+			<tr>
+				<th>姓名</th><th>性别</th><th>年龄</th><th>祝福</th>
+			</tr>
+			<tr ng-repeat="helloStr in helloStrs">
+				<td>{{helloStr.name}}</td>
+				<td>{{helloStr.sex}}</td>
+				<td>{{helloStr.age}}岁</td>
+				<td>祝福大家!</td>
+			</tr>
+		</table>
+	</div>
+	
+	<script>
+		angular.module('demoApp', []).
+			controller('demoCtrl', ['$scope','$http', function($scope,$http){
+				// $scope.helloStrs=[
+				// 	{name:'王海庆',sex:true,age:35,str:'新春快乐'},
+				// 	{name:'徐春玲',sex:false,age:33,str:'三阳开泰'},
+				// 	{name:'王一诺',sex:false,age:5,str:'万事如意'}
+				// ];
+				$http.get('../data/helloStr.json').success(function(data){
+					$scope.helloStrs=data;
+				});
+			}])
+	</script>
+</body>
+</html>
+  

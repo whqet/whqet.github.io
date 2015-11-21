@@ -1,0 +1,23 @@
+
+  
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="demoApp">
+	<script src="..\script\angular.js"></script>
+	<div ng-controller="demoCtrl">
+		<h1></h1>
+	</div>
+	
+	<script>
+		angular.module('demoApp', []).
+			controller('demoCtrl', ['$scope', function($scope){
+				$scope.helloStr='三阳开泰';
+			}])
+	</script>
+</body>
+</html>
+  

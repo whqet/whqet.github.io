@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="demoApp">
+	<script src="../script/angular.js"></script>
+	<div ng-controller="demoCtrl">
+		<input type="text" ng-model="helloStr">
+		<h1></h1>
+	</div>
+	
+	<script>
+		angular.module('demoApp', []).
+			controller('demoCtrl', ['$scope', function($scope){
+				
+			}])
+	</script>
+</body>
+</html>
+  

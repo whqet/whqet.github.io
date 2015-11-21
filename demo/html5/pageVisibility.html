@@ -1,0 +1,21 @@
+
+  
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html5 visibilitychange事件</title>
+</head>
+<body>
+	一些不太重要的重要的内容哟
+	请切换页面试试
+	<script>
+		var title = document.title,
+		newTitle = "记得回来哟 " + title;
+		document.addEventListener("visibilitychange", function() {
+			document.title = ((document.hidden) ? newTitle : title);
+		});
+	</script>
+</body>
+</html>
+  

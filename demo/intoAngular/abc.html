@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.clip-svg {
+		  clip-path: url(#myClip);
+		}
+	</style>
+</head>
+<body>
+	<img class="clip-svg" src="harry.jpg" alt="Harry Potter">
+
+	<svg width="0" height="0">
+	  <defs>
+	    <clipPath id="myClip">
+	      <circle cx="100" cy="100" r="40" />
+	      <circle cx="60" cy="60" r="40" />
+	    </clipPath>
+	  </defs>
+	</svg>
+</body>
+</html>
