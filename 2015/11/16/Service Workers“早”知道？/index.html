@@ -1,0 +1,451 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Service Workers“早”知道？ | 前端开发whqet官方主页-关注前端开发，分享相关资源</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="whqet">
+    
+    <meta name="description" content="最近关于Service Workers的研究与讨论日益增多，今天就给我大家来梳理一些资源，让大家一睹为快！！
+1.啥是Service workers？我们知道原生App拥有的富离线体验，如定时静默更新，消息通知推送等功能，曾经是是web应用“羡慕嫉妒恨”的功能。有了Service Worker，We">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="前端开发whqet" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="前端开发whqet" title="前端开发whqet"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="前端开发whqet">前端开发whqet</a></h1>
+				<h2 class="blog-motto">关注前端开发，分享相关资源</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/16/Service Workers“早”知道？/" title="Service Workers“早”知道？" itemprop="url">Service Workers“早”知道？</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="" title="whqet">whqet</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-11-16T07:50:45.000Z" itemprop="datePublished">2015年11月16日</time>
+    更新日期:<time datetime="2015-11-21T08:50:59.704Z" itemprop="dateModified">2015年11月21日</time>
+    
+  </p>
+</header>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/JS/">JS</a><a href="/tags/html5/">html5</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/javascript/">javascript</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  
+<div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_tsina">微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a class="jiathis_button_twitter">Twitter</a>
+    <a class="jiathis_button_evernote">EverNote</a>
+    <a href="http://www.jiathis.com/share?uid=1501277" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
+    
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+" charset="utf-8"></script>      
+
+
+</div>
+</footer>
+		<div class="article-content">
+			
+			
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">文章目录</strong>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-啥是Service_workers？"><span class="toc-number">1.</span> <span class="toc-text">1.啥是Service workers？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Service_Workers准备好了吗？"><span class="toc-number">2.</span> <span class="toc-text">2.Service Workers准备好了吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_如何使用Service_Workers？"><span class="toc-number">3.</span> <span class="toc-text">3. 如何使用Service Workers？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-声明"><span class="toc-number">4.</span> <span class="toc-text">4.声明</span></a></li></ol>
+			</div>
+			
+			<p>最近关于Service Workers的研究与讨论日益增多，今天就给我大家来梳理一些资源，让大家一睹为快！！</p>
+<h2 id="1-啥是Service_workers？">1.啥是Service workers？</h2><p>我们知道原生App拥有的富离线体验，如定时静默更新，消息通知推送等功能，曾经是是web应用“羡慕嫉妒恨”的功能。有了Service Worker，Web APP也可以拥有这些功能。</p>
+<p>简单来说，Service Workers赋予Web APP以非常好的离线体验，赋予开发者离线数据的管理能力。</p>
+<p>欲知详情请大家移步下列资源获取更多信息：</p>
+<ol>
+<li><a href="http://www.html5rocks.com/" target="_blank" rel="external">html5rocks</a>的<a href="http://www.html5rocks.com/en/tutorials/service-worker/introduction/" target="_blank" rel="external">service workers introduction</a></li>
+<li><a href="http://www.w3ctech.com/" target="_blank" rel="external">w3ctech</a>对html5rocks introduction的翻译 <a href="http://www.w3ctech.com/topic/866" target="_blank" rel="external">Service Worker 入门</a></li>
+<li>W3C吴小倩的报告<a href="http://www.w3.org/2014/Talks/0825-xiaoqian-offline/#/" target="_blank" rel="external">游戏规则改变者 Service Worker</a></li>
+<li><a href="http://www.infoq.com/cn/news/2014/12/service-workers-make-web-native" target="_blank" rel="external">Service Workers让Web应用感觉更像是原生应用</a></li>
+</ol>
+<h2 id="2-Service_Workers准备好了吗？">2.Service Workers准备好了吗？</h2><p>###2.1 兼容性<br>对于任何一个新的功能，兼容性都是不容忽视的，对吧，各位前端er。<br>来看下<a href="http://caniuse.com/#feat=serviceworkers" target="_blank" rel="external">Caniuse</a>的数据（截止2015/11/16）。<br><img src="http://img.blog.csdn.net/20151116085657569" alt="图片描述"></p>
+<p>###2.2 特性支持与polyfill<br>下面是来自于<a href="https://jakearchibald.github.io/isserviceworkerready/index.html" target="_blank" rel="external">isServiceWorkerReady?</a>的数据。<br><img src="http://img.blog.csdn.net/20151116091310033" alt="图片描述"></p>
+<h2 id="3-_如何使用Service_Workers？">3. 如何使用Service Workers？</h2><p>来具体了解Service Wokers的使用方式，API文档、使用案例、样例APP。</p>
+<ol>
+<li><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/" target="_blank" rel="external">官方文档</a></li>
+<li>MDN的<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank" rel="external">Service Worker API</a></li>
+<li>MDN的<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers" target="_blank" rel="external">Using Service Workers</a></li>
+<li><a href="https://ponyfoo.com/articles/serviceworker-revolution" target="_blank" rel="external">ServiceWorker: Revolution of the Web Platform</a></li>
+<li><a href="https://adactio.com/journal/9775" target="_blank" rel="external">My first Service Worker</a></li>
+<li>CSS-tricks的<a href="https://css-tricks.com/serviceworker-for-offline/" target="_blank" rel="external">Making a Simple Site Work Offline with ServiceWorker</a></li>
+<li>ponyfoo.com的<a href="https://ponyfoo.com/articles/progressive-app-serviceworker" target="_blank" rel="external">Making a Progressive App with ServiceWorker</a></li>
+<li>一些案例<a href="https://github.com/w3c-webmob/ServiceWorkersDemos" target="_blank" rel="external">ServiceWorkersDemos</a></li>
+<li><a href="https://brandonrozek.com/2015/11/service-workers/" target="_blank" rel="external">An Offline Experience with Service Workers</a></li>
+</ol>
+<h2 id="4-声明">4.声明</h2><p>爱前端，乐分享。FedFun希望与您共同进步。<br>欢迎任何形式的转载，烦请注明装载，保留本段文字。<br>独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a><br>新浪微博<a href="http://weibo.com/FedFun" target="_blank" rel="external">http://weibo.com/FedFun</a><br>极客头条<a href="http://geek.csdn.net/user/publishlist/whqet" target="_blank" rel="external">http://geek.csdn.net/user/publishlist/whqet</a></p>
+  
+		</div>       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/11/21/hello-world/" title="Hello World">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  Hello World</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/03/21/Page Visibility实现焦点丢失提醒/"  title="Page Visibility实现焦点丢失提醒">
+ <strong>NEXT:</strong><br/> 
+ <span>Page Visibility实现焦点丢失提醒
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section class="comment">
+	<!-- 多说评论框 start 
+	<div class="ds-thread" data-thread-key="2015/11/16/Service Workers“早”知道？/" data-title="Service Workers“早”知道？" data-url="http://whqet.github.io/2015/11/16/Service Workers“早”知道？/"></div>-->
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015/11/16/Service Workers“早”知道？/" data-title="Service Workers“早”知道？" data-url="http://whqet.github.io/2015/11/16/Service Workers“早”知道？/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"whqet"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-啥是Service_workers？"><span class="toc-number">1.</span> <span class="toc-text">1.啥是Service workers？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Service_Workers准备好了吗？"><span class="toc-number">2.</span> <span class="toc-text">2.Service Workers准备好了吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_如何使用Service_Workers？"><span class="toc-number">3.</span> <span class="toc-text">3. 如何使用Service Workers？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-声明"><span class="toc-number">4.</span> <span class="toc-text">4.声明</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/css3/" title="css3">css3<sup>7</sup></a></li>
+		
+			<li><a href="/categories/javascript/" title="javascript">javascript<sup>4</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/JS/" title="JS">JS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Sass/" title="Sass">Sass<sup>3</sup></a></li>
+		
+			<li><a href="/tags/Sass-map/" title="Sass map">Sass map<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-counter/" title="css counter">css counter<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-counter-style/" title="css counter style">css counter style<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-currentColor/" title="css currentColor">css currentColor<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-variables/" title="css variables">css variables<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css3/" title="css3">css3<sup>6</sup></a></li>
+		
+			<li><a href="/tags/css3渐变/" title="css3渐变">css3渐变<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css4-selector/" title="css4 selector">css4 selector<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css变量/" title="css变量">css变量<sup>2</sup></a></li>
+		
+			<li><a href="/tags/html5/" title="html5">html5<sup>1</sup></a></li>
+		
+			<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
+		
+			<li><a href="/tags/node/" title="node">node<sup>1</sup></a></li>
+		
+			<li><a href="/tags/page-visibility/" title="page visibility">page visibility<sup>1</sup></a></li>
+		
+			<li><a href="/tags/tips/" title="tips">tips<sup>1</sup></a></li>
+		
+			<li><a href="/tags/tricks/" title="tricks">tricks<sup>1</sup></a></li>
+		
+			<li><a href="/tags/伪类选择器/" title="伪类选择器">伪类选择器<sup>1</sup></a></li>
+		
+			<li><a href="/tags/动画/" title="动画">动画<sup>1</sup></a></li>
+		
+			<li><a href="/tags/动画畅想/" title="动画畅想">动画畅想<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="//blog.csdn.net/whqet" target="_blank" title="YangJian">我的博客</a></li>
+      <li><a href="http://itmyhome.com/" target="_blank" title="Hexo">麦田技术博客</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, 我是王海庆，青椒一枚。 <br/>
+			关注前端开发，分享相关资源，希望能对您有所帮助！</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		
+		
+		<a href="https://github.com/whqet" target="_blank" title="github"></a>
+		
+		
+		
+        
+        <a href="https://blog.csdn.net/whqet" target="_blank" title="csdn"></a>
+        
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
+		
+		<a href="" target="_blank" title="whqet">whqet</a>
+		
+		<script type="text/javascript" src="http://js.tongji.linezing.com/3571948/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/3571948/tongji.gif" style="width:12px;height:12px"/></a></noscript>
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+  </body>
+</html>

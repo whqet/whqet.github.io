@@ -1,0 +1,502 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Sass map详解 | 前端开发whqet官方主页-关注前端开发，分享相关资源</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="whqet">
+    
+    <meta name="description" content="作为一个CSS预处理器，Sass正受到越来越多的青睐，诸如Github、Codepen、CSS-Tricks、SitePoint、w3cplus等网站采用Sass组织、管理CSS文件，Sass正在逐渐成为事实上的CSS预处理器行业标准。接下来几篇文章，我们来研读下Sass中的关键功能，今天来看map">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="前端开发whqet" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="前端开发whqet" title="前端开发whqet"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="前端开发whqet">前端开发whqet</a></h1>
+				<h2 class="blog-motto">关注前端开发，分享相关资源</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/15/Sass map详解/" title="Sass map详解" itemprop="url">Sass map详解</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="" title="whqet">whqet</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-02-15T05:24:30.000Z" itemprop="datePublished">2015年02月15日</time>
+    更新日期:<time datetime="2015-02-15T05:29:36.997Z" itemprop="dateModified">2015年02月15日</time>
+    
+  </p>
+</header>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Sass/">Sass</a><a href="/tags/Sass-map/">Sass map</a><a href="/tags/css3/">css3</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/css3/">css3</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  
+<div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_tsina">微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a class="jiathis_button_twitter">Twitter</a>
+    <a class="jiathis_button_evernote">EverNote</a>
+    <a href="http://www.jiathis.com/share?uid=1501277" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
+    
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+" charset="utf-8"></script>      
+
+
+</div>
+</footer>
+		<div class="article-content">
+			
+			
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">文章目录</strong>
+			
+			</div>
+			
+			<p>作为一个CSS预处理器，<a href="http://sass-lang.com/" target="_blank" rel="external">Sass</a>正受到越来越多的青睐，诸如Github、Codepen、CSS-Tricks、SitePoint、w3cplus等网站采用Sass组织、管理CSS文件，Sass正在逐渐成为事实上的CSS预处理器<strong>行业标准</strong>。接下来几篇文章，我们来研读下Sass中的关键功能，今天来看map，大家不妨一坐，精彩内容马上呈现。<br><img src="http://img.blog.csdn.net/20150215130015635" alt="这里写图片描述"></p>
+<p>##map简介<br>在Sass中，<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps" target="_blank" rel="external">maps</a>代表一种<strong>数据类型</strong>，可以包含若干键值对的对象类型，使用()包围一个map，里面的键值对用逗号隔开，键和值可以是任何的Sass数据类型，尽管一个值可以用在多个键上，但是通过一个键我们必须只能找到一个值。map不能直接在css中使用，如果你把一个map赋值给一个元素将会报错。下面的代码示例一个经典的map。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$map</span><span class="value">: (</span><br><span class="line">  key1: value1,</span><br><span class="line">  key2: value2,</span><br><span class="line">  key3: value3</span><br><span class="line">);</span></span><br></pre></td></tr></table></figure></p>
+<p>##map使用<br>我们可以使用一系列的函数<strong>操作</strong>map，可以使用循环指令<strong>遍历</strong>map。<br>map相关的函数有map-keys()、map-values()、map-get()、map-has-key()、map-merge()、map-remove()、keywords()等，函数功能如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>map-keys(map)</td>
+<td>返回map里面所有的key(list)</td>
+<td>map-keys((“foo”: 1, “bar”: 2)) =&gt; “foo”, “bar”</td>
+</tr>
+<tr>
+<td>map-values(map)</td>
+<td>返回map里面所有的value(list)</td>
+<td>map-values((“foo”: 1, “bar”: 2)) =&gt; 1, 2</td>
+</tr>
+<tr>
+<td>map-get(map,key)</td>
+<td>返回map里面指定可以的value</td>
+<td>map-get((“foo”: 1, “bar”: 2), “foo”) =&gt; 1</td>
+</tr>
+<tr>
+<td>map-has-key(map,key)</td>
+<td>返回map里面是否含有指定的key</td>
+<td>map-has-key((“foo”: 1, “bar”: 2), “foo”) =&gt; true</td>
+</tr>
+<tr>
+<td>map-merge(map1,map2)</td>
+<td>合并map(map)</td>
+<td>map-merge((“foo”: 1), (“bar”: 2)) =&gt; (“foo”: 1, “bar”: 2)</td>
+</tr>
+<tr>
+<td>map-remove(map,keys)</td>
+<td>删除指定map中的指定key(map)</td>
+<td>map-remove((“foo”: 1, “bar”: 2), “bar”) =&gt; (“foo”: 1)</td>
+</tr>
+<tr>
+<td>keywords(args)</td>
+<td>返回一个函数参数组成的map(map)</td>
+<td>@mixin foo(args…){@debug keywords($args); //=&gt; (arg1: val, arg2: val)}</td>
+</tr>
+</tbody>
+</table>
+<p>我们可以使用<a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#each-directive" target="_blank" rel="external">@each</a>指令遍历map，如下所示。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$map</span><span class="value">: (</span><br><span class="line">  key1: value1,</span><br><span class="line">  key2: value2,</span><br><span class="line">  key3: value3</span><br><span class="line">);</span></span><br><span class="line"><span class="comment">/* 遍历map */</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">each</span> <span class="variable">$key</span>, <span class="variable">$value</span><span class="preprocessor"> in</span> <span class="variable">$map</span> &#123;</span></span><br><span class="line">  <span class="class">.element--</span>#&#123;<span class="variable">$key</span>&#125; &#123;</span><br><span class="line">    <span class="attribute">background</span><span class="value">: <span class="variable">$value</span>;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##map案例<br>map在Sass中应用广泛，有很多场合可以用到map，下面列举一二。</p>
+<p>###指定多值<br>css里有很多属性可以指定多个值，例如transition、box-shadow等，这个时候我们可以使用map来定义不同的值，然后可以统一使用。例如<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 使用map定义不同的值 */</span></span><br><span class="line"><span class="variable">$card_transition_map</span><span class="value">: (</span><br><span class="line">  trans1: <span class="number">200ms</span> transform ease-in-out,</span><br><span class="line">  trans2: <span class="number">400ms</span> background ease-in,</span><br><span class="line">  trans3: <span class="number">600ms</span> color linear</span><br><span class="line">);</span></span><br><span class="line"><span class="comment">/* map-values统一使用 */</span></span><br><span class="line"><span class="class">.card</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span><span class="value">: <span class="function">map-values</span>(<span class="variable">$card_transition_map</span>);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译之后输出<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.card</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">transition</span>:<span class="value"> <span class="number">200ms</span> transform ease-in-out, </span><br><span class="line">                <span class="number">400ms</span> background ease-in, </span><br><span class="line">                <span class="number">600ms</span> color linear</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>###压缩多值<br>我们可以使用zip函数来压缩多值，例如操作animate时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$animation_config: (&#10;  name: none,&#10;  duration: 0s,&#10;  timing: ease,&#10;  delay: 0s,&#10;  iteration: 1, // infinite&#10;  direction: normal, // reverse, alternate, alternate-reverse&#10;  fill-mode: none, // forwards, backwards, both&#10;  play-state: running&#10;);&#10;&#10;@function sh-setup($config) &#123;&#10;  @return zip(map-values($config)...);&#10;&#125;&#10; &#10;.object &#123;&#10;  animation: sh-setup($animation_config);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译之后输出结果为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.object &#123;&#10;  animation: none 0s ease 0s 1 normal none running;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###指定皮肤<br>我们可以使用一个循环来遍历不同的map，达到指定不同皮肤的功效。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$background_color</span><span class="value">: (</span><br><span class="line">	jeremy: <span class="hexcolor">#0989cb</span>,</span><br><span class="line">	beth: <span class="hexcolor">#8666ae</span>,</span><br><span class="line">	matt: <span class="hexcolor">#02bba7</span>,</span><br><span class="line">	ryan: <span class="hexcolor">#ff8178</span></span><br><span class="line">);</span></span><br><span class="line"><span class="variable">$font</span><span class="value">: (</span><br><span class="line">	jeremy: Helvetica,</span><br><span class="line">	beth: Verdana,</span><br><span class="line">	matt: Times,</span><br><span class="line">	ryan: Arial</span><br><span class="line">);</span></span><br><span class="line"><span class="at_rule">@<span class="keyword">each</span> <span class="variable">$key</span>, <span class="variable">$value</span><span class="preprocessor"> in</span> <span class="variable">$background_color</span> &#123;</span></span><br><span class="line">	.#&#123;<span class="variable">$key</span>&#125; &#123;</span><br><span class="line">		<span class="attribute">background</span><span class="value">: <span class="variable">$value</span>;</span></span><br><span class="line">		<span class="attribute">font-family</span><span class="value">: <span class="function">map-get</span>(<span class="variable">$font</span>, <span class="variable">$key</span>);</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译之后输出<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.jeremy</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#0989cb</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Helvetica</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.beth</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#8666ae</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Verdana</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.matt</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#02bba7</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Times</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.ryan</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="hexcolor">#ff8178</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">font-family</span>:<span class="value"> Arial</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>###配置文件<br>使用Sass的一个最大的优点在于，我们可以对css文件进行统一的组织与管理，使用配置文件是达到目的的主要手段，例如我们把网页中所有层的z-index放配置文件里，在需要的地方进行调用。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*定义配置文件*/</span></span><br><span class="line"><span class="variable">$z-index</span><span class="value">: (</span><br><span class="line">  modal              : <span class="number">200</span>,</span><br><span class="line">  navigation         : <span class="number">100</span>,</span><br><span class="line">  footer             : <span class="number">90</span>,</span><br><span class="line">  triangle           : <span class="number">60</span>,</span><br><span class="line">  navigation-rainbow : <span class="number">50</span>,</span><br><span class="line">  share-type         : <span class="number">41</span>,</span><br><span class="line">  share              : <span class="number">40</span>,</span><br><span class="line">);</span></span><br><span class="line"><span class="comment">/*在合适的时机调用*/</span></span><br><span class="line"><span class="class">.navigation</span> &#123;</span><br><span class="line">  <span class="attribute">z-index</span><span class="value">: <span class="function">map-get</span>(<span class="variable">$z-index</span>, navigation);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译之后输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.navigation &#123;&#10;  z-index: 100;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面案例调用的时候还用到map-get函数，还是比较麻烦，我们继续简化。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$z-index</span><span class="value">: (</span><br><span class="line">  modal              : <span class="number">200</span>,</span><br><span class="line">  navigation         : <span class="number">100</span>,</span><br><span class="line">  footer             : <span class="number">90</span>,</span><br><span class="line">  triangle           : <span class="number">60</span>,</span><br><span class="line">  navigation-rainbow : <span class="number">50</span>,</span><br><span class="line">  share-type         : <span class="number">41</span>,</span><br><span class="line">  share              : <span class="number">40</span>,</span><br><span class="line">);</span></span><br><span class="line"><span class="at_rule">@function<span class="preprocessor"> z-index</span>(<span class="variable">$key</span>) &#123;</span></span><br><span class="line">  <span class="at_rule">@return<span class="preprocessor"> map-get</span>(<span class="variable">$z-index</span>, <span class="variable">$key</span>);</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="at_rule">@<span class="keyword">mixin</span><span class="preprocessor"> z-index</span>(<span class="variable">$key</span>) &#123;</span></span><br><span class="line">  <span class="attribute">z-index</span><span class="value">: <span class="function">z-index</span>(<span class="variable">$key</span>);</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*调用时*/</span></span><br><span class="line"><span class="class">.navigation</span> &#123;</span><br><span class="line">  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> z-index</span>(navigation);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###断点管理<br>下面代码演示如何在项目管理中如何进行断点管理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// _config.scss&#10;$breakpoints: (&#10;  small: 767px,&#10;  medium: 992px,&#10;  large: 1200px&#10;);&#10; &#10;// _mixins.scss&#10;@mixin respond-to($breakpoint) &#123; &#10;  @if map-has-key($breakpoints, $breakpoint) &#123;&#10;    @media (min-width: #&#123;map-get($breakpoints, $breakpoint)&#125;) &#123;&#10;      @content;&#10;    &#125;&#10;  &#125;&#10; &#10;  @else &#123;&#10;    @warn &#34;Unfortunately, no value could be retrieved from `#&#123;$breakpoint&#125;`. &#34;&#10;        + &#34;Please make sure it is defined in `$breakpoints` map.&#34;;&#10;  &#125;&#10;&#125;&#10; &#10;// _component.scss&#10;.element &#123;&#10;  color: hotpink;&#10; &#10;  @include respond-to(small) &#123;&#10;    color: tomato;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译之后输出结果为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.element &#123;&#10;  color: hotpink;&#10;&#125;&#10;&#10;@media (min-width: 767px) &#123;&#10;  .element &#123;&#10;    color: tomato;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###处理前缀<br>下面我们来看map在处理前缀mixin中的应用，两个参数类型分别为map和list，使用需要注意。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/*&#23450;&#20041;*/&#10;/// Mixin to prefix several properties at once&#10;/// @author Hugo Giraudel&#10;/// @param &#123;Map&#125; $declarations - Declarations to prefix&#10;/// @param &#123;List&#125; $prefixes (()) - List of prefixes to print&#10;@mixin prefix($declarations, $prefixes: ()) &#123;&#10;  @each $property, $value in $declarations &#123;&#10;    @each $prefix in $prefixes &#123;&#10;      #&#123;&#39;-&#39; + $prefix + &#39;-&#39; + $property&#125;: $value;&#10;    &#125;&#10;&#10;    // Output standard non-prefixed declaration&#10;    #&#123;$property&#125;: $value;&#10;  &#125;&#10;&#125;&#10;/*&#20351;&#29992;*/&#10;.selector &#123;&#10;  @include prefix((&#10;    column-count: 3,&#10;    column-gap: 1.5em,&#10;    column-rule: 2px solid hotpink&#10;  ), webkit moz);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译之后输出为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.selector &#123;&#10;  -webkit-column-count: 3;&#10;  -moz-column-count: 3;&#10;  column-count: 3;&#10;  -webkit-column-gap: 1.5em;&#10;  -moz-column-gap: 1.5em;&#10;  column-gap: 1.5em;&#10;  -webkit-column-rule: 2px solid hotpink;&#10;  -moz-column-rule: 2px solid hotpink;&#10;  column-rule: 2px solid hotpink;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>###反向函数<br>Hugo Giraudel大牛定义的反向函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/*&#23450;&#20041;*/&#10;/// Returns the opposite direction of each direction in a list&#10;/// @author Hugo Giraudel&#10;/// @param &#123;List&#125; $directions - List of initial directions&#10;/// @return &#123;List&#125; - List of opposite directions&#10;@function opposite-direction($directions) &#123;&#10;  $opposite-directions: ();&#10;  $direction-map: (&#10;    &#39;top&#39;:    &#39;bottom&#39;,&#10;    &#39;right&#39;:  &#39;left&#39;,&#10;    &#39;bottom&#39;: &#39;top&#39;,&#10;    &#39;left&#39;:   &#39;right&#39;,&#10;    &#39;center&#39;: &#39;center&#39;,&#10;    &#39;ltr&#39;:    &#39;rtl&#39;,&#10;    &#39;rtl&#39;:    &#39;ltr&#39;&#10;  );&#10; &#10;  @each $direction in $directions &#123;&#10;    $direction: to-lower-case($direction);&#10;    &#10;    @if map-has-key($direction-map, $direction) &#123; &#10;      $opposite-directions: append($opposite-directions, unquote(map-get($direction-map, $direction)));&#10;    &#125; @else &#123;&#10;      @warn &#34;No opposite direction can be found for `#&#123;$direction&#125;`. Direction omitted.&#34;;&#10;    &#125;&#10;  &#125;&#10; &#10;  @return $opposite-directions;&#10;&#125;&#10;/*&#20351;&#29992;*/&#10;.selector &#123;&#10;  background-position: opposite-direction(top right);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>编译之后输出结果为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.selector &#123;&#10;  background-position: bottom left;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##深入阅读<br>本文的写作过程大量参考了以下文章，大家可以仔细阅读下面文章获得更深的体会。</p>
+<ul>
+<li><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#maps" target="_blank" rel="external">官方文档</a></li>
+<li><a href="http://sass-lang.com/documentation/Sass/Script/Functions.html#map-functions" target="_blank" rel="external">mapfunction</a></li>
+<li><a href="http://blog.grayghostvisuals.com/sass/real-sass-real-maps/" target="_blank" rel="external">Real Sass, Real Maps</a></li>
+<li><a href="http://www.sitepoint.com/making-use-sass-zip-function/" target="_blank" rel="external">Making Use of Sass’ Zip() Function</a></li>
+<li><a href="http://viget.com/extend/sass-maps-are-awesome" target="_blank" rel="external">Sass Maps Are Awesome!</a></li>
+<li><a href="http://www.sitepoint.com/using-sass-maps/" target="_blank" rel="external">Using Sass Maps</a></li>
+<li><a href="http://www.sitepoint.com/sass-mixins-kickstart-project/" target="_blank" rel="external">Sass Mixins to Kickstart Your Project</a></li>
+</ul>
+<p>##声明<br><em>前端开发whqet，关注前端开发，分享相关资源。csdn专家博客，王海庆希望能对您有所帮助。</em><br><em>本文原文链接，<a href="http://whqet.github.io/2015/02/15/Sass%20map%E8%AF%A6%E8%A7%A3/" target="_blank" rel="external">http://whqet.github.io/2015/02/15/Sass%20map%E8%AF%A6%E8%A7%A3/</a></em><br><em>欢迎大家访问CSDN博客，<a href="http://blog.csdn.net/whqet/" target="_blank" rel="external">http://blog.csdn.net/whqet/</a> </em></p>
+  
+		</div>       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/02/21/Javascript Tips & Tricks/" title="Javascrit Tips &amp; Tricks">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  Javascrit Tips &amp; Tricks</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/02/12/CSS currentColor研究/"  title="CSS currentColor研究">
+ <strong>NEXT:</strong><br/> 
+ <span>CSS currentColor研究
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section class="comment">
+	<!-- 多说评论框 start 
+	<div class="ds-thread" data-thread-key="2015/02/15/Sass map详解/" data-title="Sass map详解" data-url="http://whqet.github.io/2015/02/15/Sass map详解/"></div>-->
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015/02/15/Sass map详解/" data-title="Sass map详解" data-url="http://whqet.github.io/2015/02/15/Sass map详解/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"whqet"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/css3/" title="css3">css3<sup>7</sup></a></li>
+		
+			<li><a href="/categories/javascript/" title="javascript">javascript<sup>4</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/JS/" title="JS">JS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Sass/" title="Sass">Sass<sup>3</sup></a></li>
+		
+			<li><a href="/tags/Sass-map/" title="Sass map">Sass map<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-counter/" title="css counter">css counter<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-counter-style/" title="css counter style">css counter style<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-currentColor/" title="css currentColor">css currentColor<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-variables/" title="css variables">css variables<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css3/" title="css3">css3<sup>6</sup></a></li>
+		
+			<li><a href="/tags/css3渐变/" title="css3渐变">css3渐变<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css4-selector/" title="css4 selector">css4 selector<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css变量/" title="css变量">css变量<sup>2</sup></a></li>
+		
+			<li><a href="/tags/html5/" title="html5">html5<sup>1</sup></a></li>
+		
+			<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
+		
+			<li><a href="/tags/node/" title="node">node<sup>1</sup></a></li>
+		
+			<li><a href="/tags/page-visibility/" title="page visibility">page visibility<sup>1</sup></a></li>
+		
+			<li><a href="/tags/tips/" title="tips">tips<sup>1</sup></a></li>
+		
+			<li><a href="/tags/tricks/" title="tricks">tricks<sup>1</sup></a></li>
+		
+			<li><a href="/tags/伪类选择器/" title="伪类选择器">伪类选择器<sup>1</sup></a></li>
+		
+			<li><a href="/tags/动画/" title="动画">动画<sup>1</sup></a></li>
+		
+			<li><a href="/tags/动画畅想/" title="动画畅想">动画畅想<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="//blog.csdn.net/whqet" target="_blank" title="YangJian">我的博客</a></li>
+      <li><a href="http://itmyhome.com/" target="_blank" title="Hexo">麦田技术博客</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, 我是王海庆，青椒一枚。 <br/>
+			关注前端开发，分享相关资源，希望能对您有所帮助！</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		
+		
+		<a href="https://github.com/whqet" target="_blank" title="github"></a>
+		
+		
+		
+        
+        <a href="https://blog.csdn.net/whqet" target="_blank" title="csdn"></a>
+        
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
+		
+		<a href="" target="_blank" title="whqet">whqet</a>
+		
+		<script type="text/javascript" src="http://js.tongji.linezing.com/3571948/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/3571948/tongji.gif" style="width:12px;height:12px"/></a></noscript>
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+  </body>
+</html>

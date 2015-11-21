@@ -1,0 +1,445 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>CSS变量试玩儿 | 前端开发whqet官方主页-关注前端开发，分享相关资源</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="whqet">
+    
+    <meta name="description" content="CSS很美妙，能够为您的页面穿上衣裳，各种各样五彩斑斓的衣裳，但是对于开发者来说，他又不够灵动，于是乎有了各种各样的预处理器Sass、LESS、Stylus（笔者建议Sass的SCSS语法），这些预处理器可以很大程度的提高CSS的灵活性，增强CSS的代码组织与维护。但是毕竟不是亲生的，然后负责CSS">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="前端开发whqet" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="前端开发whqet" title="前端开发whqet"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="前端开发whqet">前端开发whqet</a></h1>
+				<h2 class="blog-motto">关注前端开发，分享相关资源</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/12/CSS变量试玩儿/" title="CSS变量试玩儿" itemprop="url">CSS变量试玩儿</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="" title="whqet">whqet</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-02-12T02:30:58.000Z" itemprop="datePublished">2015年02月12日</time>
+    更新日期:<time datetime="2015-02-12T09:20:32.932Z" itemprop="dateModified">2015年02月12日</time>
+    
+  </p>
+</header>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/css-variables/">css variables</a><a href="/tags/css3/">css3</a><a href="/tags/css变量/">css变量</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/css3/">css3</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  
+<div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_tsina">微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a class="jiathis_button_twitter">Twitter</a>
+    <a class="jiathis_button_evernote">EverNote</a>
+    <a href="http://www.jiathis.com/share?uid=1501277" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
+    
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+" charset="utf-8"></script>      
+
+
+</div>
+</footer>
+		<div class="article-content">
+			
+			
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">文章目录</strong>
+			
+			</div>
+			
+			<p>CSS很美妙，能够为您的页面穿上衣裳，各种各样五彩斑斓的衣裳，但是对于开发者来说，他又不够灵动，于是乎有了各种各样的预处理器Sass、LESS、Stylus（笔者建议Sass的SCSS语法），这些预处理器可以很大程度的提高CSS的灵活性，增强CSS的代码组织与维护。但是毕竟不是亲生的，然后负责CSS开发的那些大牛们坐不住了，开始给CSS赋予一些新的特性，本文就来探讨下CSS变量的进展与应用。<br>W3C的关于CSS变量的最新探索体现在CSS Custom Properties for Cascading Variables Module Level 1中，最新更新在2014年5月6日，目前为工作草案，所以本文章只为研究探索只用，所涉知识点存在修改的风险，W3C修改之后本文会同步更新。</p>
+<p>##所为何来<br>我们知道，一个网站或应用往往包含大量的CSS，这些CSS里的一些属性值往往重复使用，比如网站使用的颜色体系，背景色、文字颜色、链接颜色等，这些重复使用的属性值散落在大量的CSS文档中，如果需要修改其中的一些值，例如改版颜色，那简直是个噩梦，我们需要每个文件进行查找、替换，眼花缭乱、机械重复的大量操作难免出错、难免头大，所以CSS代码的组织与维护已经成了困扰CSS使用的重要瓶颈。<br>当然，CSS预处理可以有效的解决这些问题，预处理器的使用已经成了事实上的行业标准，Sass正成为越来越多前端er的选择。但是，我们需要部署编译环境、需要让开发工具支持Sass等，需要一些额外的工作。遇事不免畅想，如果有一天，我们可以像使用普通CSS那些使用预处理器？<br>于是便有了W3C的CSS Various。</p>
+<p>##剥茧抽丝<br>关于变量，不外乎定义和使用，接下来我们分别解析。</p>
+<p>###定义变量<br>我们把需要重复使用的值存放到一个自定义的属性中，这个自定义的属性用双虚线开头标识，如下面代码所示。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 变量定义 */</span></span><br><span class="line"><span class="pseudo">:root</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">--main-color</span>:<span class="value"> <span class="hexcolor">#06c</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="comment">/* 变量使用 */</span></span><br><span class="line"><span class="id">#foo</span> <span class="tag">h1</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="function">var</span>(--main-color)</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>####变量名<br>自定义属性名和变量名遵循<a href="http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier" target="_blank" rel="external">CSS标识符的定义规则</a>，可以包含字母数字(a-z,A-Z,0-9)、ISO 10646字符列表的U+00A0及以上字符、下划线(_)、连字符(-)等，不能以数字、连字符+数字、双连字符开始。<br>CSS变量语法中，大小写敏感，可以包含字母、数字、下划线、连字符，且最好不以数字、连字符开头。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 正确的变量名 */</span></span><br><span class="line"><span class="pseudo">:root</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">--link-color</span>:<span class="value"> <span class="hexcolor">#06c</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">--_hover-color</span>:<span class="value"> <span class="hexcolor">#f6c</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">--toolTip_color</span>:<span class="value"> <span class="hexcolor">#ff0</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">--main_background_color</span>:<span class="value"> <span class="hexcolor">#333</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="comment">/* 下面两个变量都有效，表示两个变量 */</span></span><br><span class="line"><span class="pseudo">:element</span><span class="rules">&#123;</span><br><span class="line">	<span class="rule"><span class="attribute">--link-color</span>:<span class="value"><span class="hexcolor">#06c</span></span></span>;</span><br><span class="line">	<span class="rule"><span class="attribute">--Link-color</span>:<span class="value"><span class="hexcolor">#66c</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>变量值可以接受任何符合语法的值，它的默认值为” “，但是不能为””，否则会报错。</p>
+<p>####变量的继承和覆盖<br>变量的声明和使用遵循CSS的层叠特性，类似于普通编程语言里面的变量作用域。请看下面的代码。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="pseudo">:root</span> <span class="rules">&#123; <span class="rule"><span class="attribute">--color</span>:<span class="value"> blue</span></span>; &#125;</span></span><br><span class="line"><span class="tag">div</span> <span class="rules">&#123; <span class="rule"><span class="attribute">--color</span>:<span class="value"> green</span></span>; &#125;</span></span><br><span class="line"><span class="id">#alert</span> <span class="rules">&#123; <span class="rule"><span class="attribute">--color</span>:<span class="value"> red</span></span>; &#125;</span></span><br><span class="line">* <span class="rules">&#123; <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="function">var</span>(--color)</span></span>; &#125;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>I inherited blue from the root element!<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span>I got green set directly on me!<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">'alert'</span>&gt;</span></span><br><span class="line">  While I got red set directly on me!</span><br><span class="line">  <span class="tag">&lt;<span class="title">p</span>&gt;</span>I’m red too, because of inheritance!<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>###使用变量<br>我们可以通过var()的方式使用变量，但是不能在属性名、选择器中使用变量，只能在属性值中使用变量，使用变量的语法如下所示。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/* </span><br><span class="line"> * var()接受两个参数，自定义属性名(变量名)、缺省值</span><br><span class="line"> * 第一个参数custom-property-name调用变量</span><br><span class="line"> * 第二参数可选，指定自定义变量无效时的缺省值。</span><br><span class="line"> */</span><br><span class="line">var() = var( &lt;custom-property-name&gt; [, &lt;any-value&gt; ]? )</span><br><span class="line"></span><br><span class="line">/* for example */</span><br><span class="line">/* In the component’s style: */</span><br><span class="line">.component .header &#123;</span><br><span class="line">  color: var(--header-color, blue);</span><br><span class="line">&#125;</span><br><span class="line">.component .text &#123;</span><br><span class="line">  color: var(--text-color, black);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* In the larger application’s style: */</span><br><span class="line">.component &#123;</span><br><span class="line">  --text-color: #080;</span><br><span class="line">  /* header-color isn’t set,</span><br><span class="line">     and so remains blue,</span><br><span class="line">     the fallback value */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们可以嵌套调用CSS变量。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*one example */</span><br><span class="line">:root &#123;</span><br><span class="line">  --main-color: #c06;</span><br><span class="line">  --accent-background: linear-gradient(to top, var(--main-color), white);</span><br><span class="line">&#125;</span><br><span class="line">/*another example */</span><br><span class="line">&lt;one&gt;&lt;two&gt;&lt;three /&gt;&lt;/two&gt;&lt;/one&gt;</span><br><span class="line">one   &#123; --foo: 10px; &#125;</span><br><span class="line">two   &#123; --bar: calc(var(--foo) + 10px); &#125;</span><br><span class="line">three &#123; --foo: calc(var(--bar) + 10px); &#125;</span><br></pre></td></tr></table></figure></p>
+<p>##兼容并包<br>对于前端开发者来说，兼容并包永远是一个难以企及的痛，作为一个具有“极客思维”的前端er，我们还是要努力。<br>首先来看看，CSS变量目前的惨不忍睹的兼容性，如下图所示，数据来自<a href="http://caniuse.com/#search=css%20variables" target="_blank" rel="external">caniuse</a>。<br><img src="http://img.blog.csdn.net/20150212100006773" alt="这里写图片描述"><br>全线飘红有木有，只有firefox认识，还怎么玩。<br>有兄弟说，我就要任性，就要玩怎么办？老外写了个<a href="https://github.com/polyfills/variables" target="_blank" rel="external">补丁</a>(polyfill)，大家不妨一试。</p>
+<p>##只求甚解<br>综上所述，CSS变量处于草案阶段，浏览器兼容一般，今天写这篇文章仅为开阔视野，储备知识之用。商用还请大家使用Sass或LESS等预处理器。<br>如欲了解更多详情，使用下面的列表乃求甚解。</p>
+<ul>
+<li><a href="http://www.w3.org/TR/css-variables/" target="_blank" rel="external">W3C reference</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="external">MDN info</a></li>
+<li><a href="http://caniuse.com/#search=css%20variables" target="_blank" rel="external">caniuse</a></li>
+</ul>
+<hr>
+<p>##致谢<br><em>前端开发whqet，关注前端开发，分享相关资源。csdn专家博客，王海庆希望能对您有所帮助。</em><br><em>本文原文链接，<a href="http://whqet.github.io/2015/02/12/CSS%E5%8F%98%E9%87%8F%E8%AF%95%E7%8E%A9%E5%84%BF/" target="_blank" rel="external">http://whqet.github.io/2015/02/12/CSS%E5%8F%98%E9%87%8F%E8%AF%95%E7%8E%A9%E5%84%BF/</a></em><br><em>欢迎大家访问独立博客<a href="http://blog.csdn.net/whqet/" target="_blank" rel="external">http://blog.csdn.net/whqet/</a></em></p>
+  
+		</div>       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/02/12/CSS currentColor研究/" title="CSS currentColor研究">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  CSS currentColor研究</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/02/08/CSS Counter Style试玩儿/"  title="CSS Counter Style试玩儿">
+ <strong>NEXT:</strong><br/> 
+ <span>CSS Counter Style试玩儿
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section class="comment">
+	<!-- 多说评论框 start 
+	<div class="ds-thread" data-thread-key="2015/02/12/CSS变量试玩儿/" data-title="CSS变量试玩儿" data-url="http://whqet.github.io/2015/02/12/CSS变量试玩儿/"></div>-->
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015/02/12/CSS变量试玩儿/" data-title="CSS变量试玩儿" data-url="http://whqet.github.io/2015/02/12/CSS变量试玩儿/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"whqet"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/css3/" title="css3">css3<sup>7</sup></a></li>
+		
+			<li><a href="/categories/javascript/" title="javascript">javascript<sup>4</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/JS/" title="JS">JS<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Sass/" title="Sass">Sass<sup>3</sup></a></li>
+		
+			<li><a href="/tags/Sass-map/" title="Sass map">Sass map<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-counter/" title="css counter">css counter<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-counter-style/" title="css counter style">css counter style<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-currentColor/" title="css currentColor">css currentColor<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-variables/" title="css variables">css variables<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css3/" title="css3">css3<sup>6</sup></a></li>
+		
+			<li><a href="/tags/css3渐变/" title="css3渐变">css3渐变<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css4-selector/" title="css4 selector">css4 selector<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css变量/" title="css变量">css变量<sup>2</sup></a></li>
+		
+			<li><a href="/tags/html5/" title="html5">html5<sup>1</sup></a></li>
+		
+			<li><a href="/tags/javascript/" title="javascript">javascript<sup>3</sup></a></li>
+		
+			<li><a href="/tags/node/" title="node">node<sup>1</sup></a></li>
+		
+			<li><a href="/tags/page-visibility/" title="page visibility">page visibility<sup>1</sup></a></li>
+		
+			<li><a href="/tags/tips/" title="tips">tips<sup>1</sup></a></li>
+		
+			<li><a href="/tags/tricks/" title="tricks">tricks<sup>1</sup></a></li>
+		
+			<li><a href="/tags/伪类选择器/" title="伪类选择器">伪类选择器<sup>1</sup></a></li>
+		
+			<li><a href="/tags/动画/" title="动画">动画<sup>1</sup></a></li>
+		
+			<li><a href="/tags/动画畅想/" title="动画畅想">动画畅想<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="//blog.csdn.net/whqet" target="_blank" title="YangJian">我的博客</a></li>
+      <li><a href="http://itmyhome.com/" target="_blank" title="Hexo">麦田技术博客</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, 我是王海庆，青椒一枚。 <br/>
+			关注前端开发，分享相关资源，希望能对您有所帮助！</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		
+		
+		<a href="https://github.com/whqet" target="_blank" title="github"></a>
+		
+		
+		
+        
+        <a href="https://blog.csdn.net/whqet" target="_blank" title="csdn"></a>
+        
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
+		
+		<a href="" target="_blank" title="whqet">whqet</a>
+		
+		<script type="text/javascript" src="http://js.tongji.linezing.com/3571948/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/3571948/tongji.gif" style="width:12px;height:12px"/></a></noscript>
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+  </body>
+</html>
