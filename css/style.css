@@ -425,7 +425,6 @@ body >header a {
   margin-left: 0.5em;
 }
 #textlogo h1.site-name {
-  width: 86%;
   display: inline-block;
   font-family: "";
   font-size: 200%;
@@ -461,7 +460,7 @@ body >header a {
 @media only screen and (min-width: 1024px) {
   #textlogo h2.blog-motto {
     font-size: 110%;
-    margin: 1em 0 0 10em;
+    margin: 1em 0 0 2em;
   }
 }
 .navbar {
