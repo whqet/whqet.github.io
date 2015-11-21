@@ -388,7 +388,7 @@ body >header >div {
   }
 }
 body >header a {
-  display: block;
+  display: inline-block;
   color: #fff;
 }
 #imglogo {
@@ -426,7 +426,7 @@ body >header a {
 }
 #textlogo h1.site-name {
   width: 86%;
-  display: none;
+  display: inline-block;
   font-family: "";
   font-size: 200%;
   line-height: 1.5;
