@@ -443,6 +443,9 @@ body >header a {
     font-size: 280%;
   }
 }
+#textlogo h1.site-name a:hover {
+  color: #000;
+}
 #textlogo h2.blog-motto {
   font-size: 0.7em;
   display: inline-block;
@@ -460,9 +463,6 @@ body >header a {
     font-size: 110%;
     margin: 1em 0 0 10em;
   }
-}
-#textlogo a:hover {
-  color: #000;
 }
 .navbar {
   position: absolute;
