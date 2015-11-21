@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[FedFun官方网站-爱前端，乐分享！]]></title>
+  <title><![CDATA[FedFun官方网站]]></title>
   <subtitle><![CDATA[爱前端，乐分享！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="/"/>
