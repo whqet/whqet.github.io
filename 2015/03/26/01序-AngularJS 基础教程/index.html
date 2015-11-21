@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | 前端开发whqet官方主页-关注前端开发，分享相关资源</title>
+    <title>01序-AngularJS 基础教程 | 前端开发whqet官方主页-关注前端开发，分享相关资源</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="whqet">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+    <meta name="description" content="0. 目录[toc]
+1. 前言AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上的不足。
+AngularJS的初衷是为了简化">
     
     
     
@@ -69,20 +71,30 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/21/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2015/03/26/01序-AngularJS 基础教程/" title="01序-AngularJS 基础教程" itemprop="url">01序-AngularJS 基础教程</a>
   </h1>
   <p class="article-author">By
     
       <a href="" title="whqet">whqet</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-11-21T08:35:40.144Z" itemprop="datePublished">2015年11月21日</time>
-    更新日期:<time datetime="2015-11-21T08:35:40.144Z" itemprop="dateModified">2015年11月21日</time>
+    <time datetime="2015-03-26T04:50:45.000Z" itemprop="datePublished">2015年03月26日</time>
+    更新日期:<time datetime="2015-11-21T10:11:38.953Z" itemprop="dateModified">2015年11月21日</time>
     
   </p>
 </header>
 		<footer class="article-footer clearfix">
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/AngularJS/">AngularJS</a><a href="/tags/javascript/">javascript</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/javascript/">javascript</a>
+</div>
 
 
 
@@ -116,29 +128,60 @@
 			
 			<div id="toc" class="toc-article">
 				<strong class="toc-title">文章目录</strong>
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-_目录"><span class="toc-number">1.</span> <span class="toc-text">0. 目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-_前言"><span class="toc-number">2.</span> <span class="toc-text">1. 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-_AngularJS？"><span class="toc-number">3.</span> <span class="toc-text">2. AngularJS？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-_系列教程目录"><span class="toc-number">4.</span> <span class="toc-text">3. 系列教程目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-_学习资源"><span class="toc-number">5.</span> <span class="toc-text">4. 学习资源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-声明"><span class="toc-number">6.</span> <span class="toc-text">5.声明</span></a></li></ol>
 			</div>
 			
-			<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+			<h1 id="0-_目录">0. 目录</h1><p>[toc]</p>
+<h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上的不足。</p>
+<p>AngularJS的初衷是为了<strong>简化web APP开发</strong>，精髓是<strong>简单</strong>。但是国内外有很多AngularJS的教程，都着重讲AngularJS的强大之处，从而增加了AngularJS学习的难度，本教程试图用通俗的语言讲解<strong>最为基础</strong>、<strong>最为实用</strong>的内容，<strong><em>简化学习进程、降低学习难度</em></strong>是本教程的初衷。</p>
+<p>欢迎大家<strong>批评指正</strong>。</p>
+<h1 id="2-_AngularJS？">2. AngularJS？</h1><p>AngularJS主要用于构建单页面Web应用，同其他历史悠久的Web技术（HTML、CSS和JavaScript）配合使用，使构建交互式的现代Web应用变得更加简单。</p>
+<p>AngularJS提供了开发者在现代Web应用中经常要用到的一系列高级功能，例如解耦应用逻辑、数据模型和视图，Ajax服务，双向绑定、依赖注入、测试等功能，通过原生的Model-View-Controller（MVC，模型视图控制器）功能增强了HTML，从而降低构建复杂应用的难度。</p>
+<h1 id="3-_系列教程目录">3. 系列教程目录</h1><ol>
+<li>序</li>
+<li>引言-Introduction</li>
+<li>基础-Basics</li>
+<li>控制器-Controllers</li>
+<li>作用域-Scopes</li>
+<li>集合-Collections</li>
+<li>模块-Modules</li>
+<li>依赖注入-Dependency Injection</li>
+<li>服务-Services</li>
+<li>过滤器-Filters</li>
+<li>指令-Directives</li>
+<li>指令作用域-Directive Scopes</li>
+<li>路由-Routing</li>
+<li>通信-HTTP</li>
+<li>结论</li>
+</ol>
+<h1 id="4-_学习资源">4. 学习资源</h1><ol>
+<li><a href="http://www.angularjsbook.com/" target="_blank" rel="external">ANGULAR BASICS</a></li>
+<li><a href="http://angularjs.org/" target="_blank" rel="external">官方网站</a>–墙外，大家懂的，可以访问官方<a href="https://github.com/angular/angular.js" target="_blank" rel="external">github</a>。</li>
+<li><a href="http://www.angularjs.cn/" target="_blank" rel="external">angularjs中文社区</a></li>
+<li><a href="http://www.ngnice.com/" target="_blank" rel="external">AngularJS Nice Things</a>–爱好者聚集地</li>
+<li><a href="http://www.apjs.net/" target="_blank" rel="external">AngularJS中文网</a></li>
+<li><a href="http://docs.ngnice.com/api" target="_blank" rel="external">AngularJS手册</a>，<a href="http://code.csdn.net/translations/56" title="在译，欢迎参与" target="_blank" rel="external">中文手册</a></li>
+<li><a href="http://developer.51cto.com/art/201311/416334.htm" target="_blank" rel="external">七步从Angular.JS菜鸟到专家</a><h1 id="5-声明">5.声明</h1>前端开发whqet，关注前端开发，分享相关资源。csdn专家博客，王海庆希望能对您有所帮助，限于作者水平有限，出错难免，欢迎拍砖！<br>欢迎任何形式的转载，烦请注明装载，保留本段文字。<br>本文原文链接，<a href="http://blog.csdn.net/whqet/article/details/44586849" target="_blank" rel="external">http://blog.csdn.net/whqet/article/details/44586849</a><br>欢迎大家访问独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a></li>
+</ol>
   
 		</div>       
 	</article>
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2015/03/28/02引言-AngularJS基础教程/" title="02引言-AngularJS基础教程">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  02引言-AngularJS基础教程</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2015/11/16/Service Workers“早”知道？/"  title="Service Workers“早”知道？">
+<a href="/2015/03/21/Page Visibility实现焦点丢失提醒/"  title="Page Visibility实现焦点丢失提醒">
  <strong>NEXT:</strong><br/> 
- <span>Service Workers“早”知道？
+ <span>Page Visibility实现焦点丢失提醒
 </span>
 </a>
 </div>
@@ -149,10 +192,10 @@
 
 <section class="comment">
 	<!-- 多说评论框 start 
-	<div class="ds-thread" data-thread-key="2015/11/21/hello-world/" data-title="Hello World" data-url="http://whqet.github.io/2015/11/21/hello-world/"></div>-->
+	<div class="ds-thread" data-thread-key="2015/03/26/01序-AngularJS 基础教程/" data-title="01序-AngularJS 基础教程" data-url="http://whqet.github.io/2015/03/26/01序-AngularJS 基础教程/"></div>-->
 
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/11/21/hello-world/" data-title="Hello World" data-url="http://whqet.github.io/2015/11/21/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="2015/03/26/01序-AngularJS 基础教程/" data-title="01序-AngularJS 基础教程" data-url="http://whqet.github.io/2015/03/26/01序-AngularJS 基础教程/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -175,7 +218,7 @@ var duoshuoQuery = {short_name:"whqet"};
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0-_目录"><span class="toc-number">1.</span> <span class="toc-text">0. 目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-_前言"><span class="toc-number">2.</span> <span class="toc-text">1. 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-_AngularJS？"><span class="toc-number">3.</span> <span class="toc-text">2. AngularJS？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-_系列教程目录"><span class="toc-number">4.</span> <span class="toc-text">3. 系列教程目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-_学习资源"><span class="toc-number">5.</span> <span class="toc-text">4. 学习资源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-声明"><span class="toc-number">6.</span> <span class="toc-text">5.声明</span></a></li></ol>
   </div>
 
 <div id="asidepart">
