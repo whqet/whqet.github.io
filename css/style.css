@@ -1990,6 +1990,9 @@ footer {
 .article-content .highlight .line {
   border-bottom: 1px dashed rgba(255,0,0,0.3);
 }
+.article-content .highlight .line:hover {
+  border-bottom: 1px solid rgba(255,0,0,0.3);
+}
 .article-content .highlight .gutter pre {
   text-align: right;
   padding-right: 1.5em;
