@@ -1988,10 +1988,11 @@ footer {
   float: right;
 }
 .article-content .highlight .line {
-  border-bottom: 1px dashed rgba(255,0,0,0.3);
+  border-bottom: 1px dashed rgba(0,0,0,0.5);
 }
 .article-content .highlight .line:hover {
   border-bottom: 1px solid rgba(255,0,0,0.3);
+  cursor: pointer;
 }
 .article-content .highlight .gutter pre {
   text-align: right;
