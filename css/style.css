@@ -1943,8 +1943,7 @@ footer {
 .article-content .highlight {
   position: relative;
   left: 0px;
-  border: 1px solid rgba(0,0,0,0.1);
-  padding: 1px;
+  border: 1px dashed rgba(0,0,0,0.1);
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
@@ -1952,9 +1951,8 @@ footer {
   transition: all 0.2s;
 }
 .article-content .highlight:hover {
-  border: 2px solid rgba(0,0,0,0.2);
-  padding: 0px;
-  left: 20px;
+  border: 1px solid rgba(0,0,0,0.2);
+  left: 10px;
 }
 .article-content .highlight pre {
   border: none;
