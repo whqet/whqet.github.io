@@ -1944,8 +1944,8 @@ footer {
   position: relative;
   left: 0px;
   border: 1px solid rgba(255,255,255,0.8);
-  -webkit-box-shadow: 4px 0px 10px rgba(0,0,0,0);
-  box-shadow: 4px 0px 10px rgba(0,0,0,0);
+  -webkit-box-shadow: -4px 0px 4px rgba(0,0,0,0);
+  box-shadow: -4px 0px 4px rgba(0,0,0,0);
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
@@ -1954,9 +1954,9 @@ footer {
 }
 .article-content .highlight:hover {
   border: 1px solid #4d4d4c;
-  -webkit-box-shadow: 4px 0px 20px rgba(0,0,0,0.8);
-  box-shadow: 4px 0px 20px rgba(0,0,0,0.8);
-  left: -10px;
+  -webkit-box-shadow: -4px 0px 4px rgba(0,0,0,0.2);
+  box-shadow: -4px 0px 4px rgba(0,0,0,0.2);
+  left: 10px;
 }
 .article-content .highlight pre {
   border: none;
