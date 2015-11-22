@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2015/11/09/resize/</loc>
+    <lastmod>2015-11-22T02:30:48.452Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/02/03/nodejs-source/</loc>
+    <lastmod>2015-11-22T02:30:48.231Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/11/13/segment/</loc>
+    <lastmod>2015-11-22T02:30:37.339Z</lastmod>
+  </url>
+  
+  <url>
     <loc>/2015/02/15/detail-of-sass-map/</loc>
     <lastmod>2015-11-22T02:28:01.478Z</lastmod>
   </url>
@@ -14,16 +29,6 @@
   <url>
     <loc>/2015/10/28/how-positioning-css-properties-interact/</loc>
     <lastmod>2015-11-22T02:11:47.074Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/11/09/resize/</loc>
-    <lastmod>2015-11-22T02:01:40.122Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/11/13/segment/</loc>
-    <lastmod>2015-11-22T01:56:39.986Z</lastmod>
   </url>
   
   <url>
@@ -79,11 +84,6 @@
   <url>
     <loc>/2015/02/08/css-counter-style/</loc>
     <lastmod>2015-02-12T02:45:59.877Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/02/03/nodejs-source/</loc>
-    <lastmod>2015-02-07T04:58:51.549Z</lastmod>
   </url>
   
   <url>

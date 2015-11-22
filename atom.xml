@@ -64,7 +64,7 @@
     <link href="/2015/11/13/segment/"/>
     <id>/2015/11/13/segment/</id>
     <published>2015-11-13T04:50:45.000Z</published>
-    <updated>2015-11-22T01:56:39.986Z</updated>
+    <updated>2015-11-22T02:30:37.339Z</updated>
     <content type="html"><![CDATA[<p>今天来一起了解一个实现SVG路径描边绘制与动画的轻量级类库<a href="https://github.com/lmgonzalves/segment" target="_blank" rel="external">segment</a>，我们从轻松上手、使用详解、资源和案例、源码解读等几个方面进行介绍。<br><img src="http://img.blog.csdn.net/20151113082414010" alt="图片描述"></p>
 <h2 id="1-_轻松上手">1. 轻松上手</h2><p>html方面添加segment，定义path。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"/dist/segment.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">svg</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">path</span> <span class="attribute">id</span>=<span class="value">"my-path"</span> <span class="attribute">...</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">svg</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -109,7 +109,7 @@
     <![CDATA[<p>今天来一起了解一个实现SVG路径描边绘制与动画的轻量级类库<a href="https://github.com/lmgonzalves/segment" target="_blank" rel="external">segment</a>，我们从轻松上手、使用详解、资源和]]>
     </summary>
     
-      <category term="CSS3" scheme="/tags/CSS3/"/>
+      <category term="css3" scheme="/tags/css3/"/>
     
       <category term="javascript" scheme="/tags/javascript/"/>
     
@@ -124,7 +124,7 @@
     <link href="/2015/11/09/resize/"/>
     <id>/2015/11/09/resize/</id>
     <published>2015-11-09T00:25:45.000Z</published>
-    <updated>2015-11-22T02:01:40.122Z</updated>
+    <updated>2015-11-22T02:30:48.452Z</updated>
     <content type="html"><![CDATA[<h1 id="1-_引言"><strong>1. 引言</strong></h1><p>resize属性是<a href="http://www.w3.org/TR/css3-ui/" target="_blank" rel="external">CSS3 UI</a>中的一个属性，允许用户调整元素的尺寸。今天通过一个图像对比案例来简要学习下。<br>您可以到Codepen–<strong><a href="http://codepen.io/whqet/full/pjxyaX/" target="_blank" rel="external">预览案例</a></strong>–，–<strong><a href="http://codepen.io/whqet/pen/pjxyaX/" target="_blank" rel="external">玩弄代码</a></strong>–。<br>建议阅读时间6分钟。</p>
 <h1 id="2-_详览"><strong>2. 详览</strong></h1><p>resize是CSS3 UI的一部分，目前CSS3 UI处于CR（Candidate Recommendation，候选标准）阶段，<code>box-sizing</code>属性，<code>outline</code>属性，<code>text-overflow</code>属性和<code>cursor</code>属性都属于该CSS3 UI的定义范围。</p>
 <p>##2.1 兼容性<br>来自<a href="http://caniuse.com/#feat=css-resize" target="_blank" rel="external">caniuse</a>的兼容性表格如下，可以看出Firefox、Chrome、Safari、Opera等现代浏览器支持情况良好，遗憾的是IE和Edge不支持该属性。<br><img src="http://img.blog.csdn.net/20151109114858827" alt="resize属性兼容表"></p>
@@ -190,7 +190,7 @@
     <![CDATA[<h1 id="1-_引言"><strong>1. 引言</strong></h1><p>resize属性是<a href="http://www.w3.org/TR/css3-ui/" target="_blank" rel="external">CSS3 UI</a>中的一个]]>
     </summary>
     
-      <category term="CSS3" scheme="/tags/CSS3/"/>
+      <category term="css3" scheme="/tags/css3/"/>
     
       <category term="css3" scheme="/categories/css3/"/>
     
@@ -910,7 +910,7 @@
     <link href="/2015/02/03/nodejs-source/"/>
     <id>/2015/02/03/nodejs-source/</id>
     <published>2015-02-03T11:20:48.000Z</published>
-    <updated>2015-02-07T04:58:51.549Z</updated>
+    <updated>2015-11-22T02:30:48.231Z</updated>
     <content type="html"><![CDATA[<p>#node.js中文资料导航</p>
 <blockquote>
 <p>转自<a href="https://github.com/youyudehexie/node123" target="_blank" rel="external">https://github.com/youyudehexie/node123</a><br><a id="more"></a></p>
