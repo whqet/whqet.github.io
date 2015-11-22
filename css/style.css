@@ -2107,12 +2107,7 @@ pre .xml .cdata {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
 }
-.highlight.html:after,
-.highlight.javascript:after,
-.highlight.bash:after,
-.highlight.css:after,
-.highlight.scss:after,
-.highlight.diff:after {
+.highlight:after {
   position: absolute;
   top: 0;
   right: 0;
@@ -2129,7 +2124,7 @@ pre .xml .cdata {
   content: 'HTML';
 }
 .highlight.javascript:after {
-  content: 'JS';
+  content: 'Javascript';
 }
 .highlight.bash:after {
   content: 'Shell';
