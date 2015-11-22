@@ -1950,9 +1950,9 @@ footer {
   transition: all 0.5s;
 }
 .article-content .highlight:hover {
-  border: 2px solid #4d4d4c;
-  -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  border: 1px solid #4d4d4c;
+  -webkit-box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
 }
 .article-content .highlight pre {
   border: none;
