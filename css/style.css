@@ -1940,6 +1940,9 @@ footer {
   text-shadow: none;
   padding: 0;
 }
+.article-content .highlight {
+  position: relative;
+}
 .article-content .highlight pre {
   border: none;
   margin: 0;
@@ -2085,12 +2088,12 @@ pre .xml .cdata {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
 }
-.highlight.html .code:after,
-.highlight.js .code:after,
-.highlight.bash .code:after,
-.highlight.css .code:after,
-.highlight.scss .code:after,
-.highlight.diff .code:after {
+.highlight.html:after,
+.highlight.js:after,
+.highlight.bash:after,
+.highlight.css:after,
+.highlight.scss:after,
+.highlight.diff:after {
   position: absolute;
   top: 0;
   right: 0;
@@ -2102,22 +2105,22 @@ pre .xml .cdata {
   height: 15px;
   font-weight: 600;
 }
-.highlight.html .code:after {
+.highlight.html:after {
   content: 'HTML';
 }
-.highlight.js .code:after {
+.highlight.js:after {
   content: 'JS';
 }
-.highlight.bash .code:after {
+.highlight.bash:after {
   content: 'Shell';
 }
-.highlight.css .code:after {
+.highlight.css:after {
   content: 'CSS';
 }
-.highlight.scss .code:after {
+.highlight.scss:after {
   content: 'SCSS';
 }
-.highlight.diff .code:after {
+.highlight.diff:after {
   content: 'DIFF';
 }
 .ds-highlight {
