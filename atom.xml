@@ -120,6 +120,83 @@
   </entry>
   
   <entry>
+    <title><![CDATA[resize属性研究]]></title>
+    <link href="/2015/11/09/resize/"/>
+    <id>/2015/11/09/resize/</id>
+    <published>2015-11-09T00:25:45.000Z</published>
+    <updated>2015-11-22T02:01:40.122Z</updated>
+    <content type="html"><![CDATA[<h1 id="1-_引言"><strong>1. 引言</strong></h1><p>resize属性是<a href="http://www.w3.org/TR/css3-ui/" target="_blank" rel="external">CSS3 UI</a>中的一个属性，允许用户调整元素的尺寸。今天通过一个图像对比案例来简要学习下。<br>您可以到Codepen–<strong><a href="http://codepen.io/whqet/full/pjxyaX/" target="_blank" rel="external">预览案例</a></strong>–，–<strong><a href="http://codepen.io/whqet/pen/pjxyaX/" target="_blank" rel="external">玩弄代码</a></strong>–。<br>建议阅读时间6分钟。</p>
+<h1 id="2-_详览"><strong>2. 详览</strong></h1><p>resize是CSS3 UI的一部分，目前CSS3 UI处于CR（Candidate Recommendation，候选标准）阶段，<code>box-sizing</code>属性，<code>outline</code>属性，<code>text-overflow</code>属性和<code>cursor</code>属性都属于该CSS3 UI的定义范围。</p>
+<p>##2.1 兼容性<br>来自<a href="http://caniuse.com/#feat=css-resize" target="_blank" rel="external">caniuse</a>的兼容性表格如下，可以看出Firefox、Chrome、Safari、Opera等现代浏览器支持情况良好，遗憾的是IE和Edge不支持该属性。<br><img src="http://img.blog.csdn.net/20151109114858827" alt="resize属性兼容表"></p>
+<p>##2.2 语法<br>resize属性主要用来控制元素是否以及如何支持用户调整尺寸。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性名</th>
+<th style="text-align:left">属性值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">属性名Name</td>
+<td style="text-align:left">resize，允许用户控制元素大小</td>
+</tr>
+<tr>
+<td style="text-align:left">属性值Value</td>
+<td style="text-align:left">none 或 both 或 horizontal 或 vertical</td>
+</tr>
+<tr>
+<td style="text-align:left">默认值Initial</td>
+<td style="text-align:left">none</td>
+</tr>
+<tr>
+<td style="text-align:left">适用范围Applies to</td>
+<td style="text-align:left">设置过<code>overflow</code>属性且值不是<code>visible</code>的元素</td>
+</tr>
+<tr>
+<td style="text-align:left">继承性Inherited</td>
+<td style="text-align:left">no</td>
+</tr>
+<tr>
+<td style="text-align:left">百分比Percentages</td>
+<td style="text-align:left">N/A</td>
+</tr>
+<tr>
+<td style="text-align:left">媒体类型Media</td>
+<td style="text-align:left">visual</td>
+</tr>
+<tr>
+<td style="text-align:left">计算值Computed value</td>
+<td style="text-align:left">指定值specified value</td>
+</tr>
+<tr>
+<td style="text-align:left">动画性Animatable</td>
+<td style="text-align:left">不支持</td>
+</tr>
+</tbody>
+</table>
+<p>在可以接受的值中，不同的属性值有不同的含义<br>| 属性值| 属性值含义|<br>|:——–|:——–|<br>|none|不允许用户控制元素大小|<br>|both|允许用户控制元素的宽和高 |<br>|horizontal| 允许用户控制元素的宽 |<br>|vertical| 允许用户控制元素的高 |</p>
+<p>注意：目前resize属性不适用于生成元素(伪对象生成元素)。</p>
+<p>##2.3 表现<br>在不同的浏览下，设置过resize属性的元素的表现稍有不同。在firefox下表现如左图所示，在chrome、opera、safari下表现如右图所示。<br>firefox <img src="http://img.blog.csdn.net/20151109125357233" alt="这里写图片描述"> 其他浏览器<img src="http://img.blog.csdn.net/20151109125412697" alt="这里写图片描述"></p>
+<h1 id="3-_案例"><strong>3. 案例</strong></h1><p>接下来通过一个图片对比的案例来演示resize属性的使用，案例效果如下。<br><img src="http://img.blog.csdn.net/20151109125723706" alt="这里写图片描述"></p>
+<p>在本案例中，我们用figure和div#divisor分别设置背景图像，显示两幅图像，然后通过调整div#divisor元素的宽度实现图像对比效果。</p>
+<p>html代码如下，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"comparison"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">figure</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"divisor"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">figure</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>css代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">div</span><span class="id">#comparison</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">60vw</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">60vw</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">600px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">max-height</span>:<span class="value"> <span class="number">600px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">div</span><span class="id">#comparison</span> <span class="tag">figure</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(https://s3-us-west-<span class="number">2</span>.amazonaws.com/s.cdpn.io/<span class="number">4273</span>/photoshop-face-before.jpg)</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background-size</span>:<span class="value"> cover</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">div</span><span class="id">#comparison</span> <span class="tag">figure</span> <span class="id">#divisor</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(https://s3-us-west-<span class="number">2</span>.amazonaws.com/s.cdpn.io/<span class="number">4273</span>/photoshop-face-after.jpg)</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background-size</span>:<span class="value"> cover</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">min-width</span>:<span class="value"> <span class="number">10%</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">max-width</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">box-shadow</span>:<span class="value"> <span class="number">0</span> <span class="number">5px</span> <span class="number">10px</span> -<span class="number">2px</span> <span class="function">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>)</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100%</span></span></span>;</span><br><span class="line">  <span class="comment">/*设置resize属性，使之可以横向改变大小*/</span></span><br><span class="line">  <span class="rule"><span class="attribute">resize</span>:<span class="value"> horizontal</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="comment">/*覆盖resize元素的默认样式*/</span></span><br><span class="line"><span class="tag">div</span><span class="id">#comparison</span> <span class="tag">figure</span> <span class="id">#divisor</span><span class="pseudo">::after</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">""</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">20px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">30px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">right</span>:<span class="value"> <span class="number">1px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">bottom</span>:<span class="value"> <span class="number">1px</span></span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">background</span>:<span class="value"> <span class="function">linear-gradient</span>(-<span class="number">60deg</span>, white <span class="number">50%</span>, transparent <span class="number">0</span>)</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">cursor</span>:<span class="value"> ew-resize</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-filter</span>:<span class="value"> <span class="function">drop-shadow</span>(<span class="number">0</span> <span class="number">0</span> <span class="number">2px</span> black)</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">filter</span>:<span class="value"> <span class="function">drop-shadow</span>(<span class="number">0</span> <span class="number">0</span> <span class="number">2px</span> black)</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="4-_声明"><strong>4. 声明</strong></h1><p>爱前端乐分享的FedFun，csdn专家博客，王海庆希望能对您有所帮助，限于作者水平有限，出错难免，欢迎拍砖！<br>欢迎任何形式的转载，烦请注明装载，保留本段文字。<br>本文原文链接<a href="http://blog.csdn.net/whqet/article/details/49736187" target="_blank" rel="external">http://blog.csdn.net/whqet/article/details/49736187</a><br>独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a><br>新浪微博<a href="http://weibo.com/FedFun" target="_blank" rel="external">http://weibo.com/FedFun</a><br>极客头条<a href="http://geek.csdn.net/user/publishlist/whqet" target="_blank" rel="external">http://geek.csdn.net/user/publishlist/whqet</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="1-_引言"><strong>1. 引言</strong></h1><p>resize属性是<a href="http://www.w3.org/TR/css3-ui/" target="_blank" rel="external">CSS3 UI</a>中的一个]]>
+    </summary>
+    
+      <category term="CSS3" scheme="/tags/CSS3/"/>
+    
+      <category term="css3" scheme="/categories/css3/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[02引言-AngularJS基础教程]]></title>
     <link href="/2015/03/28/02%E5%BC%95%E8%A8%80-AngularJS%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"/>
     <id>/2015/03/28/02引言-AngularJS基础教程/</id>
