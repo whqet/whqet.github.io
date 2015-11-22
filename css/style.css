@@ -1988,7 +1988,7 @@ footer {
   float: right;
 }
 .article-content .highlight .line {
-  border-bottom: 1px dashed rgba(0,0,0,0.2);
+  border-bottom: 1px dashed rgba(255,0,0,0.3);
 }
 .article-content .highlight .gutter pre {
   text-align: right;
