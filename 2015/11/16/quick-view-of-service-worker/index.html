@@ -1,17 +1,32 @@
-extends partial/layout
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Service Workers“早”知道？ · FedFun官方网站</title><meta name="description" content="最近关于Service Workers的研究与讨论日益增多，今天就给我大家来梳理一些资源，让大家一睹为快！！
+1.啥是Service workers？我们知道原生App拥有的富离线体验，如定时静默更新，消息通知推送等功能，曾经是是web应用“羡慕嫉妒恨”的功能。有了Service Worker，Web APP也可以拥有这些功能。
+简单来说，Service Workers赋予Web APP以非常好的离线体验，赋予开发者离线数据的管理能力。
+欲知详情请大家移步下列资源获取更多信息：
 
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.content.slice(0, 600).replace(/<[^>]+>/g,"")
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
+html5rocks的service workers introduction
+&lt;a href=&quot;http://www.w3ctech.com/&quot; target=&quot;_blank&quot; re"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h2 class="post-title"><a href="/2015/11/16/quick-view-of-service-worker/" class="post-title-link">Service Workers“早”知道？</a></h2><div class="post-meta"><div class="post-time">2015年11月16日</div></div><div class="post-content"><p>最近关于Service Workers的研究与讨论日益增多，今天就给我大家来梳理一些资源，让大家一睹为快！！</p>
+<h2 id="1-啥是Service_workers？">1.啥是Service workers？</h2><p>我们知道原生App拥有的富离线体验，如定时静默更新，消息通知推送等功能，曾经是是web应用“羡慕嫉妒恨”的功能。有了Service Worker，Web APP也可以拥有这些功能。</p>
+<p>简单来说，Service Workers赋予Web APP以非常好的离线体验，赋予开发者离线数据的管理能力。</p>
+<p>欲知详情请大家移步下列资源获取更多信息：</p>
+<ol>
+<li><a href="http://www.html5rocks.com/" target="_blank" rel="external">html5rocks</a>的<a href="http://www.html5rocks.com/en/tutorials/service-worker/introduction/" target="_blank" rel="external">service workers introduction</a></li>
+<li><a href="http://www.w3ctech.com/" target="_blank" rel="external">w3ctech</a>对html5rocks introduction的翻译 <a href="http://www.w3ctech.com/topic/866" target="_blank" rel="external">Service Worker 入门</a></li>
+<li>W3C吴小倩的报告<a href="http://www.w3.org/2014/Talks/0825-xiaoqian-offline/#/" target="_blank" rel="external">游戏规则改变者 Service Worker</a></li>
+<li><a href="http://www.infoq.com/cn/news/2014/12/service-workers-make-web-native" target="_blank" rel="external">Service Workers让Web应用感觉更像是原生应用</a></li>
+</ol>
+<h2 id="2-Service_Workers准备好了吗？">2.Service Workers准备好了吗？</h2><p>###2.1 兼容性<br>对于任何一个新的功能，兼容性都是不容忽视的，对吧，各位前端er。<br>来看下<a href="http://caniuse.com/#feat=serviceworkers" target="_blank" rel="external">Caniuse</a>的数据（截止2015/11/16）。<br><img src="http://img.blog.csdn.net/20151116085657569" alt="图片描述"></p>
+<p>###2.2 特性支持与polyfill<br>下面是来自于<a href="https://jakearchibald.github.io/isserviceworkerready/index.html" target="_blank" rel="external">isServiceWorkerReady?</a>的数据。<br><img src="http://img.blog.csdn.net/20151116091310033" alt="图片描述"></p>
+<h2 id="3-_如何使用Service_Workers？">3. 如何使用Service Workers？</h2><p>来具体了解Service Wokers的使用方式，API文档、使用案例、样例APP。</p>
+<ol>
+<li><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/" target="_blank" rel="external">官方文档</a></li>
+<li>MDN的<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank" rel="external">Service Worker API</a></li>
+<li>MDN的<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers" target="_blank" rel="external">Using Service Workers</a></li>
+<li><a href="https://ponyfoo.com/articles/serviceworker-revolution" target="_blank" rel="external">ServiceWorker: Revolution of the Web Platform</a></li>
+<li><a href="https://adactio.com/journal/9775" target="_blank" rel="external">My first Service Worker</a></li>
+<li>CSS-tricks的<a href="https://css-tricks.com/serviceworker-for-offline/" target="_blank" rel="external">Making a Simple Site Work Offline with ServiceWorker</a></li>
+<li>ponyfoo.com的<a href="https://ponyfoo.com/articles/progressive-app-serviceworker" target="_blank" rel="external">Making a Progressive App with ServiceWorker</a></li>
+<li>一些案例<a href="https://github.com/w3c-webmob/ServiceWorkersDemos" target="_blank" rel="external">ServiceWorkersDemos</a></li>
+<li><a href="https://brandonrozek.com/2015/11/service-workers/" target="_blank" rel="external">An Offline Experience with Service Workers</a></li>
+</ol>
+<h2 id="4-声明">4.声明</h2><p>爱前端，乐分享。FedFun希望与您共同进步。<br>欢迎任何形式的转载，烦请注明装载，保留本段文字。<br>独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a><br>新浪微博<a href="http://weibo.com/FedFun" target="_blank" rel="external">http://weibo.com/FedFun</a><br>极客头条<a href="http://geek.csdn.net/user/publishlist/whqet" target="_blank" rel="external">http://geek.csdn.net/user/publishlist/whqet</a></p>
+</div></article></div></section><footer><div class="paginator"><a class="prev"> </a><a href="/2015/11/13/segment/" class="next">下一篇</a></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

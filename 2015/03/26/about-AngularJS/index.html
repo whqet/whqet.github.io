@@ -1,17 +1,36 @@
-extends partial/layout
-
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.content.slice(0, 600).replace(/<[^>]+>/g,"")
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 01序-AngularJS 基础教程 · FedFun官方网站</title><meta name="description" content="1. 前言AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上的不足。
+AngularJS的初衷是为了简化web APP开发，精髓是简单。但是国内外有很多AngularJS的教程，都着重讲AngularJS的强大之处，从而增加了AngularJS学习的难度，本教程试图用通俗的语言讲解最为基础、最为实用的内容，简化学习进程、降低学习难度是本教程的初衷。
+欢迎大家批评指正。
+2. AngularJS？AngularJS主要用于构建单页面Web应用，同其他历史悠久的Web技术（HTML、CSS和JavaScript）配合使用，使构建交互式的现代Web应用变得更加简单。
+AngularJS提供了开发者在现代Web应用中经常要用到的一系列高级功能，例"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h2 class="post-title"><a href="/2015/03/26/about-AngularJS/" class="post-title-link">01序-AngularJS 基础教程</a></h2><div class="post-meta"><div class="post-time">2015年3月26日</div></div><div class="post-content"><h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上的不足。</p>
+<p>AngularJS的初衷是为了<strong>简化web APP开发</strong>，精髓是<strong>简单</strong>。但是国内外有很多AngularJS的教程，都着重讲AngularJS的强大之处，从而增加了AngularJS学习的难度，本教程试图用通俗的语言讲解<strong>最为基础</strong>、<strong>最为实用</strong>的内容，<strong><em>简化学习进程、降低学习难度</em></strong>是本教程的初衷。</p>
+<p>欢迎大家<strong>批评指正</strong>。</p>
+<h1 id="2-_AngularJS？">2. AngularJS？</h1><p>AngularJS主要用于构建单页面Web应用，同其他历史悠久的Web技术（HTML、CSS和JavaScript）配合使用，使构建交互式的现代Web应用变得更加简单。</p>
+<p>AngularJS提供了开发者在现代Web应用中经常要用到的一系列高级功能，例如解耦应用逻辑、数据模型和视图，Ajax服务，双向绑定、依赖注入、测试等功能，通过原生的Model-View-Controller（MVC，模型视图控制器）功能增强了HTML，从而降低构建复杂应用的难度。</p>
+<h1 id="3-_系列教程目录">3. 系列教程目录</h1><ol>
+<li>序</li>
+<li>引言-Introduction</li>
+<li>基础-Basics</li>
+<li>控制器-Controllers</li>
+<li>作用域-Scopes</li>
+<li>集合-Collections</li>
+<li>模块-Modules</li>
+<li>依赖注入-Dependency Injection</li>
+<li>服务-Services</li>
+<li>过滤器-Filters</li>
+<li>指令-Directives</li>
+<li>指令作用域-Directive Scopes</li>
+<li>路由-Routing</li>
+<li>通信-HTTP</li>
+<li>结论</li>
+</ol>
+<h1 id="4-_学习资源">4. 学习资源</h1><ol>
+<li><a href="http://www.angularjsbook.com/" target="_blank" rel="external">ANGULAR BASICS</a></li>
+<li><a href="http://angularjs.org/" target="_blank" rel="external">官方网站</a>–墙外，大家懂的，可以访问官方<a href="https://github.com/angular/angular.js" target="_blank" rel="external">github</a>。</li>
+<li><a href="http://www.angularjs.cn/" target="_blank" rel="external">angularjs中文社区</a></li>
+<li><a href="http://www.ngnice.com/" target="_blank" rel="external">AngularJS Nice Things</a>–爱好者聚集地</li>
+<li><a href="http://www.apjs.net/" target="_blank" rel="external">AngularJS中文网</a></li>
+<li><a href="http://docs.ngnice.com/api" target="_blank" rel="external">AngularJS手册</a>，<a href="http://code.csdn.net/translations/56" title="在译，欢迎参与" target="_blank" rel="external">中文手册</a></li>
+<li><a href="http://developer.51cto.com/art/201311/416334.htm" target="_blank" rel="external">七步从Angular.JS菜鸟到专家</a><h1 id="5-声明">5.声明</h1>前端开发whqet，关注前端开发，分享相关资源。csdn专家博客，王海庆希望能对您有所帮助，限于作者水平有限，出错难免，欢迎拍砖！<br>欢迎任何形式的转载，烦请注明装载，保留本段文字。<br>本文原文链接，<a href="http://blog.csdn.net/whqet/article/details/44586849" target="_blank" rel="external">http://blog.csdn.net/whqet/article/details/44586849</a><br>欢迎大家访问独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a></li>
+</ol>
+</div></article></div></section><footer><div class="paginator"><a href="/2015/03/28/intro-to-AngularJS/" class="prev">上一篇</a><a href="/2015/03/21/pagevisibility/" class="next">下一篇</a></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

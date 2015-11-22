@@ -1,17 +1,222 @@
-extends partial/layout
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> node.js中文资料导航 · FedFun官方网站</title><meta name="description" content="#node.js中文资料导航
 
-block site_title
-    != page.title + " · " + config.title
+转自https://github.com/youyudehexie/node123
 
-block description
-    - var desc = page.content.slice(0, 600).replace(/<[^>]+>/g,"")
-    meta(name="description", content=desc)
+##Node.js 
 
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
+HomePage
+Infoq深入浅出Node.js系列（进阶必读）
+Node.js中文文档
+&lt;a href=&quot;http://www.ibm.com/developerworks/cn/web/1201_wan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h2 class="post-title"><a href="/2015/02/03/nodejs-source/" class="post-title-link">node.js中文资料导航</a></h2><div class="post-meta"><div class="post-time">2015年2月3日</div></div><div class="post-content"><p>#node.js中文资料导航</p>
+<blockquote>
+<p>转自<a href="https://github.com/youyudehexie/node123" target="_blank" rel="external">https://github.com/youyudehexie/node123</a><br><a id="more"></a></p>
+</blockquote>
+<p>##Node.js </p>
+<ul>
+<li><a href="http://www.nodejs.org/" target="_blank" rel="external">HomePage</a></li>
+<li><a href="http://www.infoq.com/cn/articles/what-is-nodejs" target="_blank" rel="external">Infoq深入浅出Node.js系列（进阶必读）</a></li>
+<li><a href="http://nodeapi.ucdok.com/#/api/" target="_blank" rel="external">Node.js中文文档</a></li>
+<li><a href="http://www.ibm.com/developerworks/cn/web/1201_wangqf_nodejs/" target="_blank" rel="external">被误解的 Node.js</a></li>
+<li><a href="http://deadhorse.me/nodejs/2012/10/08/c_addon_in_nodejs_node_gyp.html" target="_blank" rel="external">Node.js C++ addon编写实战系列</a></li>
+<li><a href="https://nodejsmodules.org/" target="_blank" rel="external">热门node.js模块排行榜，方便找出你想要的模块</a></li>
+<li><a href="http://cnodejs.org/topic/518b679763e9f8a5424406e9" target="_blank" rel="external">nodejs多线程，真正的非阻塞</a></li>
+<li><a href="http://cnodejs.org/topic/5189ff4f63e9f8a54207f60c" target="_blank" rel="external">浅析nodejs的buffer类</a></li>
+<li><a href="http://cnodejs.org/topic/519ceb5263e9f8a542c19764" target="_blank" rel="external">利用libuv编写异步多线程的addon实例</a></li>
+<li><a href="http://weizhifeng.net/node-js-exports-vs-module-exports.html" target="_blank" rel="external">Node.js中exports与module.exports的区别</a></li>
+<li><a href="http://cnodejs.org/topic/5293550ca6957a08096508fb" target="_blank" rel="external">Node.js http 管道拒绝服务漏洞</a></li>
+<li><a href="http://yaohuiji.com/2013/01/08/pro-node-article-list/" target="_blank" rel="external">Node.js高级编程</a></li>
+<li><a href="https://github.com/dead-horse/node-style-guide" target="_blank" rel="external">Node.js代码风格指南</a></li>
+<li><a href="http://nqdeng.github.io/7-days-nodejs" target="_blank" rel="external">七天学会NodeJS</a></li>
+</ul>
+<p>##业界新闻</p>
+<ul>
+<li><a href="http://www.csdn.net/article/2013-12-17/2817827-10-surprising-Node.js-projects" target="_blank" rel="external">NodeJS无所不能：细数10个令人惊讶的NodeJS开源项目</a></li>
+<li><a href="http://www.csdn.net/article/2013-05-20/2815364-how-ebays-first-node-js-application-were-built" target="_blank" rel="external">看eBay如何评价他们的Node.js首次尝鲜</a></li>
+<li><a href="http://www.csdn.net/article/2012-05-03/2805296" target="_blank" rel="external">程序员如何说服老板采用Node.js？</a></li>
+<li><a href="http://www.csdn.net/article/2012-08-21/2808861" target="_blank" rel="external">百万级并发 Node.js也能行</a></li>
+<li><a href="http://www.rockdai.com/?p=596" target="_blank" rel="external">高性能Node.js：来自LinkedIn Mobile的10条优化建议</a></li>
+<li><a href="http://www.csdn.net/article/2013-11-25/2817617-PayPal-Kraken-Nodejs-Framework" target="_blank" rel="external">Kraken：改变PayPal开发文化的Node.js框架</a></li>
+<li><a href="http://www.iteye.com/news/28358" target="_blank" rel="external">Groupon抛弃Rails，转向Node.js</a> </li>
+</ul>
+<p>##经验分享</p>
+<ul>
+<li><a href="http://www.csdn.net/article/2012-07-30/2807863" target="_blank" rel="external">SDCC讲师专访：淘宝朴灵谈Node.js</a></li>
+<li><a href="http://www.programmer.com.cn/13844/" target="_blank" rel="external">Node.js的核心与红利</a></li>
+<li><a href="http://www.linuxeden.com/html/news/20130109/134241.html" target="_blank" rel="external">QCon北京2013 Node.js专题出品人朴灵专访</a></li>
+<li><a href="http://ittechnical.sinaapp.com/category/node-js/" target="_blank" rel="external">一个周末掌握IT前沿技术之node.js篇</a></li>
+<li><a href="http://cnodejs.org/topic/515b009a6d38277306192e4e" target="_blank" rel="external">用node+express搭建多人博客教程系列</a></li>
+<li><a href="http://www.infoq.com/cn/news/2011/11/tyq-nodejs-static-file-server" target="_blank" rel="external">Node.js静态文件服务器实战</a></li>
+<li><a href="http://cnodejs.org/topic/51ce18bb73c638f3706ca7bb#51ce818c73c638f3707422e6" target="_blank" rel="external">人人和微博登录模块的实现</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_6801fe420101qaz2.html" target="_blank" rel="external">《京JS》会议 &amp; V8上的JS优化</a></li>
+<li><a href="http://cnodejs.org/topic/505acc95fd37ea6b2f1813de" target="_blank" rel="external">沪 JS 国内讲师的 PPT 收集</a></li>
+<li><a href="http://cnodejs.org/topic/525216a3f29c7bbd3c877cbf" target="_blank" rel="external">给Node.js新手的7条小建议</a></li>
+</ul>
+<p>##模块导航</p>
+<p>###web服务器框架</p>
+<p>####最流行的web框架Express</p>
+<ul>
+<li><a href="http://expressjs.com/" target="_blank" rel="external">HomePage</a></li>
+<li><a href="http://cnodejs.org/topic/51c3ef9f73c638f37058e6bc" target="_blank" rel="external">加装涡轮，提速expressjs</a></li>
+<li><a href="http://cnodejs.org/topic/4fce14e0e5e72c25180b51d1" target="_blank" rel="external">给 connect 的 static 模块加上url路径前缀</a></li>
+<li><a href="http://cnodejs.org/topic/515535485dff253b374288da" target="_blank" rel="external">研究nodeclub 登陆验证逻辑的一些心得</a></li>
+<li><a href="http://www.csser.com/board/4f77e6f996ca600f78000936" target="_blank" rel="external">Express.js 中文入门指引手册</a></li>
+<li><a href="http://cnodejs.org/topic/51a2f562776b2e7f035f2850" target="_blank" rel="external">Connect架构初探 for 新手</a></li>
+<li><a href="http://cnodejs.org/topic/51d51cd8d44cbfa3047926ba" target="_blank" rel="external">使用 Express + Socket.IO 搭建多人聊天室</a></li>
+</ul>
+<p>####国人开源web框架rrestjs</p>
+<ul>
+<li><a href="http://rrest.cnodejs.net/" target="_blank" rel="external">HomePage</a></li>
+</ul>
+<p>####实时应用web框架meteor</p>
+<ul>
+<li><a href="http://meteor.com/" target="_blank" rel="external">HomePage</a></li>
+<li><a href="http://cnodejs.org/topic/51b030d9555d34c678e5fb2e" target="_blank" rel="external">Meteor-DDP翻译</a></li>
+<li><a href="http://cnodejs.org/topic/519b655a63e9f8a5429cb70e" target="_blank" rel="external">Meteor 非官方中文文档（不包含API部分）</a></li>
+<li><a href="http://cnodejs.org/topic/50d0466b637ffa4155aed34f" target="_blank" rel="external">基于meteor开发的开源项目列表</a></li>
+</ul>
+<p>####基于Express的实时MVC框架Sails</p>
+<ul>
+<li><a href="https://github.com/balderdashy/sails" target="_blank" rel="external">HomePage</a></li>
+</ul>
+<p>####Koa，下一代 Node.js web 框架</p>
+<ul>
+<li><a href="http://koajs.com" target="_blank" rel="external">HomePage</a></li>
+<li><a href="https://github.com/turingou/koa-guide" target="_blank" rel="external">koa-guide</a></li>
+<li><a href="https://github.com/dead-horse/koa-middlewares" target="_blank" rel="external">koa-middlewares</a> koa常用中间件集合</li>
+</ul>
+<p>###Mysql 老牌关系型数据库</p>
+<ul>
+<li><a href="https://github.com/felixge/node-mysql" target="_blank" rel="external">HomePage</a></li>
+<li><a href="http://cnodejs.org/topic/51a8c64d555d34c67835037d" target="_blank" rel="external">mysql处理BIGINT里面的一个坑</a></li>
+<li><a href="http://cnodejs.org/topic/51676ac26d38277306fe7c85" target="_blank" rel="external">使用node-mysql中的连接池</a></li>
+<li><a href="http://cnodejs.org/topic/516b77e86d382773064266df" target="_blank" rel="external">mysql自动断开解决办法</a></li>
+</ul>
+<p>###Mongodb </p>
+<ul>
+<li><a href="https://github.com/mongodb/node-mongodb-native" target="_blank" rel="external">node-mongodb-native</a></li>
+<li><a href="https://github.com/LearnBoost/mongoose" target="_blank" rel="external">mongoose</a></li>
+<li><a href="http://cnodejs.org/topic/51508570604b3d512113f1b3" target="_blank" rel="external">如何使用mongoose对一个100万+的mongodb的表进行遍历操作</a></li>
+<li><a href="http://cnodejs.org/topic/5190d61263e9f8a542acd83b" target="_blank" rel="external">[技术讨论]mongodb驱动的正确使用方法</a></li>
+</ul>
+<p>###异步流程处理</p>
+<p>####async</p>
+<ul>
+<li><a href="https://github.com/caolan/async" target="_blank" rel="external">HomePage</a></li>
+<li><a href="http://freewind.me/blog/20120518/932.html" target="_blank" rel="external">Async中文详解</a></li>
+</ul>
+<p>####eventproxy</p>
+<ul>
+<li><a href="https://github.com/JacksonTian/eventproxy" target="_blank" rel="external">HomePage</a></li>
+</ul>
+<p>####Q Promise 异步模式 </p>
+<ul>
+<li><a href="https://github.com/kriskowal/q" target="_blank" rel="external">HomePage</a></li>
+<li><a href="http://www.ituring.com.cn/article/54547" target="_blank" rel="external">在Node.js 中用 Q 实现Promise – Callbacks之外的另一种选择</a></li>
+</ul>
+<p>####co</p>
+<ul>
+<li><a href="https://github.com/visionmedia/co" target="_blank" rel="external">HomePage</a></li>
+<li><a href="http://www.html-js.com/article/column/77" target="_blank" rel="external">深入理解 Yield</a></li>
+<li><a href="https://github.com/visionmedia/co/wiki" target="_blank" rel="external">co wiki</a></li>
+</ul>
+<p>####<a href="https://github.com/dead-horse/callback_hell" target="_blank" rel="external">异步解决方案示例</a></p>
+<p>###Redis 内存键值数据库</p>
+<ul>
+<li><a href="https://github.com/mranney/node_redis" target="_blank" rel="external">node_redis</a></li>
+</ul>
+<p>###Pomelo 网易出品的网页游戏框架</p>
+<ul>
+<li><a href="https://github.com/NetEase/pomelo" target="_blank" rel="external">pomelo</a></li>
+<li><a href="http://www.infoq.com/cn/articles/game-server-development-1" target="_blank" rel="external">Infoq深入浅出node.js游戏服务器开发</a></li>
+<li><a href="https://github.com/NetEase/pomelo/wiki/Home-in-Chinese" target="_blank" rel="external">官网wiki</a></li>
+<li><a href="http://nodejs.netease.com/" target="_blank" rel="external">响应非常迅速的官方论坛</a></li>
+</ul>
+<p>###字符格式</p>
+<ul>
+<li><a href="http://cnodejs.org/topic/516a96d16d38277306349507" target="_blank" rel="external">開源的簡繁轉換庫OpenCC支持Node.js了</a></li>
+<li><a href="http://cnodejs.org/topic/51923a2f63e9f8a542c71123" target="_blank" rel="external">iconv-lite扩展：增加big5/shift-jis支持</a></li>
+</ul>
+<p>###网页模板引擎</p>
+<ul>
+<li><a href="http://cnodejs.org/topic/50e70edfa7e6c6171a1d70fa" target="_blank" rel="external">WEB模板jade、ejs、handlebars 万行代码解释效率比较，jade完败</a></li>
+<li><a href="http://cnodejs.org/topic/4f16442ccae1f4aa27001109" target="_blank" rel="external">Javascript模板引擎性能对比及几点优化</a></li>
+<li><a href="http://cnodejs.org/topic/51c2c2e373c638f3703f4929" target="_blank" rel="external">让 ejs 更加快 | Let ejs faster with options._with = false</a></li>
+<li><a href="http://www.csser.com/board/4fddc4f0b28ed7d857001674" target="_blank" rel="external">EJS快速入门教程</a></li>
+</ul>
+<p>###图片处理</p>
+<ul>
+<li><a href="http://cnodejs.org/topic/512b9fecdf9e9fcc580eb248" target="_blank" rel="external">Nodejs跨平台轻量级图片编解码库【增加Jpeg质量调整】</a></li>
+<li><a href="http://cnodejs.org/topic/50f90d8edf9e9fcc58a5ee0b" target="_blank" rel="external">node-ccap模块生成captcha验证码</a></li>
+<li><a href="http://cnodejs.org/topic/4f939c84407edba2143c12f7" target="_blank" rel="external">使用nodejs将html5 canvas base64编码图片保存为文件</a></li>
+<li><a href="https://github.com/dead-horse/web-camera" target="_blank" rel="external">web-camera，node + phantomjs 网页截图</a></li>
+</ul>
+<p>###运维</p>
+<ul>
+<li><a href="http://deadhorse.me/nodejs/2013/04/13/exception_and_domain.html" target="_blank" rel="external">Node.js 异步异常的处理与domain模块解析</a></li>
+<li><a href="http://cnodejs.org/topic/50463565329c5139760c34a1" target="_blank" rel="external">关于XSS（跨站脚本攻击）和CSRF（跨站请求伪造）</a></li>
+<li><a href="http://cnodejs.org/topic/51cc49e973c638f37042f7b4" target="_blank" rel="external">forever 替代工具 pm2 的介绍</a></li>
+<li><a href="http://cnodejs.org/topic/51c562d673c638f3707bb8cc" target="_blank" rel="external">upstart封装mongodb应用为系统服务</a></li>
+<li><a href="http://se77en.cc/2013/06/27/goodbye-node-forever-hello-pm2-translation/" target="_blank" rel="external">告别node-forever,拥抱PM2</a></li>
+<li><a href="http://cnodejs.org/topic/5059ce39fd37ea6b2f07e1a3" target="_blank" rel="external">阿里云主机Nginx下配置NodeJS、Express和Forever</a></li>
+</ul>
+<p>##性能测试</p>
+<ul>
+<li><a href="http://www.tbdata.org/archives/1285" target="_blank" rel="external">阿里出品的node.js调研与服务性能测试</a></li>
+<li><a href="http://snoopyxdy.blog.163.com/blog/static/6011744020117315192204/" target="_blank" rel="external">多核单服务器各种配置和业务压力下的node.js性能测试</a></li>
+<li><a href="http://snoopyxdy.blog.163.com/blog/static/60117440201183101319257/" target="_blank" rel="external">巅峰对决：node.js和php性能测试</a></li>
+</ul>
+<p>##活跃开发者（排名不分先后）</p>
+<ul>
+<li><a href="https://github.com/JacksonTian" target="_blank" rel="external">朴灵</a></li>
+<li><a href="http://deadhorse.me/" target="_blank" rel="external">dead_horse/死马</a></li>
+<li><a href="http://snoopyxdy.blog.163.com/" target="_blank" rel="external">snoopyxdy</a></li>
+<li><a href="http://fengmk2.github.io/" target="_blank" rel="external">Python发烧友</a></li>
+<li><a href="http://ucdok.com/" target="_blank" rel="external">老雷</a></li>
+<li><a href="http://cnodejs.org/user/shiedman" target="_blank" rel="external">shiedman</a></li>
+<li><a href="http://tiye.me" target="_blank" rel="external">jiyinyiyong</a></li>
+</ul>
+<p>##开源案例 收集Cnode的开源项目</p>
+<p>###社交类</p>
+<ul>
+<li><a href="https://github.com/cnodejs/nodeclub/" target="_blank" rel="external">Cnodejs 最活跃的Node.js社区</a></li>
+<li><a href="http://cnodejs.org/topic/50f8bbfedf9e9fcc58a015ab" target="_blank" rel="external">晓知 个人博客</a></li>
+<li><a href="https://github.com/willerce/canku" target="_blank" rel="external">使用Nodejs编写多人订餐系统</a></li>
+<li><a href="http://cnodejs.org/topic/517b4be16d38277306984a81" target="_blank" rel="external">NodeJS写的WebQQ</a></li>
+<li><a href="http://cnodejs.org/topic/51be6c2960af11cd33604776" target="_blank" rel="external">Yblog 博客程序</a></li>
+<li><a href="http://cnodejs.org/topic/5023eeb9f767cc9a51032f68" target="_blank" rel="external">noderce博客程序</a></li>
+</ul>
+<p>###工具类</p>
+<ul>
+<li><a href="https://github.com/cnpm/cnpmjs.org" target="_blank" rel="external">cnpmjs.org 企业级 npm 解决方案</a></li>
+<li><a href="https://github.com/node-webot/wechat" target="_blank" rel="external">wechat微信中间件</a></li>
+<li><a href="http://cnodejs.org/topic/51cb771973c638f3701acecd" target="_blank" rel="external">深度遍历目录/列出目录下所有文件</a></li>
+<li><a href="https://github.com/sumory/lincell" target="_blank" rel="external">lincell发布0.1.1版本，一行命令创建IDE</a></li>
+<li><a href="http://cnodejs.org/topic/5058962f8ea56b5e7806b2a3" target="_blank" rel="external">HTML标签XSS过滤模块</a></li>
+<li><a href="https://github.com/leizongmin/node-segment" target="_blank" rel="external">基于Node.js的中文分词模块</a></li>
+<li><a href="http://cnodejs.org/topic/51c044ee57628b975f088c7a" target="_blank" rel="external">纯真IP库lib-qqwry</a></li>
+<li><a href="http://cnodejs.org/topic/51ae41d7555d34c678ab4cce" target="_blank" rel="external">豆瓣SDK</a></li>
+<li><a href="http://cnodejs.org/topic/51e7b69af4963ade0e2332a5" target="_blank" rel="external">数字与字符串转换模块baseN，支持2~62间任意进制转换</a></li>
+</ul>
+<p>##商业应用</p>
+<ul>
+<li><a href="http://mofang.taobao.com/" target="_blank" rel="external">淘宝数据魔方</a></li>
+<li><a href="http://shu.taobao.com/" target="_blank" rel="external">淘宝指数</a></li>
+<li><a href="http://me.taobao.com" target="_blank" rel="external">淘宝时光机</a></li>
+<li><a href="http://www.diandian.com/" target="_blank" rel="external">点点网</a></li>
+<li><a href="http://huaban.com/" target="_blank" rel="external">花瓣网</a></li>
+<li><a href="http://xueqiu.com/" target="_blank" rel="external">雪球网</a></li>
+<li>小米手机抢购</li>
+<li>网易pomelo消息推送系统</li>
+<li>PayPal</li>
+<li>Groupon</li>
+<li>百度推送平台</li>
+<li>新浪微博DB proxy</li>
+<li>腾讯朋友网推送</li>
+</ul>
+<p>##node.js中文书</p>
+<p>###<a href="http://book.douban.com/subject/25767596/" target="_blank" rel="external">了不起的Node.js</a><br><img src="http://img3.douban.com/mpic/s27132823.jpg" alt=""></p>
+<p>###<a href="http://book.douban.com/subject/25768396/" target="_blank" rel="external">九浅一深Node.js</a> piao大作品<br><img src="http://img5.douban.com/mpic/s27134708.jpg" alt=""></p>
+<p>###<a href="http://book.douban.com/subject/23780706/" target="_blank" rel="external">node.js入门经典</a><br><img src="http://img5.douban.com/mpic/s26588828.jpg" alt=""></p>
+<p>###<a href="http://book.douban.com/subject/10789820/" target="_blank" rel="external">node.js开发指南</a><br><img src="http://img5.douban.com/mpic/s10307479.jpg" alt=""></p>
+<p>欢迎各位node.js爱好者，提交分享手上的资源。</p>
+</div></article></div></section><footer><div class="paginator"><a href="/2015/02/05/form-va/" class="prev">上一篇</a><a href="/2015/02/03/ainamation-of-form/" class="next">下一篇</a></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

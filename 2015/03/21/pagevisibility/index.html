@@ -1,17 +1,24 @@
-extends partial/layout
-
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.content.slice(0, 600).replace(/<[^>]+>/g,"")
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> Page Visibility实现焦点丢失提醒 · FedFun官方网站</title><meta name="description" content="0.前言HTML5 Page Visibility API是一个非常有用的特性，当页面对用户不可见时，暂停播放页面中的视频、动画、声音、以及其他耗费内存的操作，等用户回来时，再继续这些操作。当然，最好提醒下用户可以继续回到本页面上来，本文研究利用改变页面tab（title）实现提醒。
+[toc]
+效果预览代码解析实现过程实现过程非常简单，侦听visibilitychange事件，然后改变页面标题。
+1234&lt;span c"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h2 class="post-title"><a href="/2015/03/21/pagevisibility/" class="post-title-link">Page Visibility实现焦点丢失提醒</a></h2><div class="post-meta"><div class="post-time">2015年3月21日</div></div><div class="post-content"><h1 id="0-前言">0.前言</h1><p>HTML5 Page Visibility API是一个非常有用的特性，当页面对用户不可见时，暂停播放页面中的视频、动画、声音、以及其他耗费内存的操作，等用户回来时，再继续这些操作。当然，最好提醒下用户可以继续回到本页面上来，本文研究利用改变页面tab（title）实现提醒。</p>
+<p>[toc]</p>
+<h1 id="效果预览"><a href="http://whqet.github.io/demo/html5/pageVisibility.html" target="_blank" rel="external">效果预览</a></h1><h1 id="代码解析">代码解析</h1><h2 id="实现过程">实现过程</h2><p>实现过程非常简单，侦听visibilitychange事件，然后改变页面标题。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> title = <span class="built_in">document</span>.title,</span><br><span class="line">newTitle = <span class="string">"记得回来哟 "</span> + title;</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">"visibilitychange"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="built_in">document</span>.title = ((<span class="built_in">document</span>.hidden) ? newTitle : title);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="兼容性分析">兼容性分析</h2><p>来自<a href="http://caniuse.com/#feat=pagevisibility" target="_blank" rel="external">caniuse</a>的数据，Page Visibility在现代浏览器中兼容性不错，如下图所示。<br><img src="http://img.blog.csdn.net/20150321061724306" alt="page visibility兼容表"></p>
+<h1 id="学习资源">学习资源</h1><ol>
+<li><a href="http://www.w3.org/TR/page-visibility/" target="_blank" rel="external">Page Visibility参考手册</a></li>
+<li><a href="http://caniuse.com/#feat=pagevisibility" target="_blank" rel="external">Page Visibility兼容性表格</a></li>
+<li><a href="http://www.smashingmagazine.com/2015/01/20/creating-sites-with-the-page-visibility-api/" target="_blank" rel="external">Creating Well-Behaved Sites With The Page Visibility API</a></li>
+<li><a href="http://www.zhangxinxu.com/wordpress/2012/11/page-visibility-api-introduction-extend/" target="_blank" rel="external">Page Visibility(页面可见性) API介绍、微拓展</a></li>
+<li><a href="http://davidwalsh.name/page-visibility" target="_blank" rel="external">Page Visibility API</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/User_experience/Using_the_Page_Visibility_API" target="_blank" rel="external">Using the Page Visibility API</a></li>
+</ol>
+<p>#声明<br><strong>前端开发whqet，关注前端开发，分享相关资源。csdn专家博客，王海庆希望能对您有所帮助，限于作者水平有限，出错难免，欢迎拍砖！</strong><br><strong>欢迎任何形式的转载，烦请注明装载，保留本段文字。</strong><br><em>本文原文链接，<a href="http://blog.csdn.net/whqet/article/details/44511735" target="_blank" rel="external">http://blog.csdn.net/whqet/article/details/44511735</a></em><br><em>欢迎大家访问独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a></em></p>
+<script>
+    var title = document.title,
+    newTitle = "记得回来哟 " + title;
+    document.addEventListener("visibilitychange", function() {
+        document.title = ((document.hidden) ? newTitle : title);
+    });
+</script></div></article></div></section><footer><div class="paginator"><a href="/2015/03/26/about-AngularJS/" class="prev">上一篇</a><a href="/2015/02/21/javascript-tips-and-tricks/" class="next">下一篇</a></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>

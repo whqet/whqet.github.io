@@ -1,17 +1,79 @@
-extends partial/layout
-
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.content.slice(0, 600).replace(/<[^>]+>/g,"")
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> CSS Counter Style试玩儿 · FedFun官方网站</title><meta name="description" content="2015年2月3日，CSS Counter Style level3成为了W3C的候选标准，是时候来一探究竟，看看强大魔力的@counter-style如何自定义list-style和counter。进来一坐，且听庆哥分解。
+##强大魔力使用CSS Counter Style可以做什么，来看看庆哥做的简单案例。当然，如果要发挥最大魔力，需要您的美好创意，这不是哥的特长，就不献丑了，欢迎各位通过留言提交您的创意。&lt;img src=&quot;http://img.blog.csdn.net/201502072058428"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h2 class="post-title"><a href="/2015/02/08/css-counter-style/" class="post-title-link">CSS Counter Style试玩儿</a></h2><div class="post-meta"><div class="post-time">2015年2月8日</div></div><div class="post-content"><p>2015年2月3日，CSS Counter Style level3成为了W3C的候选标准，是时候来一探究竟，看看强大魔力的@counter-style如何自定义list-style和counter。进来一坐，且听庆哥分解。</p>
+<p>##强大魔力<br>使用CSS Counter Style可以做什么，来看看庆哥做的简单案例。当然，如果要发挥最大魔力，需要您的美好创意，这不是哥的特长，就不献丑了，欢迎各位通过留言提交您的创意。<br><img src="http://img.blog.csdn.net/20150207210604032" alt=""><br><img src="http://img.blog.csdn.net/20150207210720313" alt=""><br><img src="http://img.blog.csdn.net/20150207205800041" alt=""><br><img src="http://img.blog.csdn.net/20150207205811210" alt=""><br><img src="http://img.blog.csdn.net/20150207205830427" alt=""><br><img src="http://img.blog.csdn.net/20150207205842891" alt=""><br>需要<strong>注意</strong>的是，目前仅有firefox浏览较好的支持@counter-style。我依然把代码放到了codepen，请大家自由选择-<a href="http://codepen.io/whqet/pen/myqpde?editors=010" target="_blank" rel="external">在线研究</a>-or-<a href="http://codepen.io/whqet/share/zip/myqpde/" target="_blank" rel="external">下载收藏</a>-。<br>使用@counter-style命令，我们可以<strong>自定义列表样式</strong>，可以用在<em>list-style</em>、<em>counter</em>、<em>counters</em>等上。</p>
+<p>##结构解析<br>定义一个counter-style的典型格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@counter-style counter&#21517;&#23383;&#123;&#10;&#9; system  : &#31639;&#27861;;&#10;&#9; range   : &#20351;&#29992;&#33539;&#22260;;&#10;&#9; symbols : &#31526;&#21495;; or additive-symbols: &#31526;&#21495;&#10;&#9; prefix  : &#21069;&#32512;;&#10;&#9; suffix  : &#21518;&#32512;;&#10;&#9; pad     : &#34917;&#38646;(eg. 01,02,03);&#10;&#9; negative: &#36127;&#25968;&#31574;&#30053;;&#10;&#9; fallback: &#20986;&#38169;&#21518;&#30340;&#40664;&#35748;&#20540;;&#10;&#9; speakas : &#35821;&#38899;&#31574;&#30053;;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面详细列出了@counter-style的所有命令，大部分情况下，我们只需要使用其中几个命令即可，例如实现“天干编号”的命令如下。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="at_rule">@<span class="keyword">counter-style</span> cjk-heavenly-stem </span>&#123;</span><br><span class="line">  <span class="tag">system</span>: <span class="tag">alphabetic</span>;</span><br><span class="line">  <span class="tag">symbols</span>: "\7532" "\4<span class="tag">E59</span>" "\4<span class="tag">E19</span>" "\4<span class="tag">E01</span>" "\620<span class="tag">A</span>" "\5<span class="tag">DF1</span>" "\5<span class="tag">E9A</span>" "\8<span class="tag">F9B</span>" "\58<span class="tag">EC</span>" "\7678";</span><br><span class="line">  <span class="comment">/* 甲 乙 丙 丁 戊 己 庚 辛 壬 癸 */</span></span><br><span class="line">  <span class="tag">suffix</span>: "、";</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接下来我们来简要看看各个命令的用法。</p>
+<p>###算法-system<br>| 命令 | 意义 | 可接受值   | 默认值 |<br>| :——– |:——————| :—————–|:——-|<br>| system | 符号生成算法 | cyclic 、 numeric 、 alphabetic 、 symbolic 、 additive 、 [fixed <integer>?] 、 [ extends <counter-style-name> ] | symbolic |<br>算法详细解释如下表所说。</counter-style-name></integer></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>意义</th>
+<th>示例代码</th>
+<th>表现方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cyclic</td>
+<td>循环使用符号</td>
+<td>system: cyclic; symbols:’a’ ‘b’ ‘c’;</td>
+<td>a,b,c,a,b,c,a</td>
+</tr>
+<tr>
+<td>fixed</td>
+<td>只用一遍符号，数字表示开始使用的位置</td>
+<td>system: fixed 3; symbols:’a’ ‘b’ ‘c’ ‘d’;</td>
+<td>1,2,a,b,c,d,7</td>
+</tr>
+<tr>
+<td>symbolic</td>
+<td>循环使用符号，第二遍双倍重复</td>
+<td>system:symbolic; symbols:’a’ ‘b’ ‘c’;</td>
+<td>a,b,c,aa,bb,cc,aaa</td>
+</tr>
+<tr>
+<td>alphabetic</td>
+<td>类似于小写字母循环</td>
+<td>system:alphabetic; symbols:’a’ ‘b’ ‘c’;</td>
+<td>a,b,c,aa,ab,ac,ba</td>
+</tr>
+<tr>
+<td>numeric</td>
+<td>类似于数字进制</td>
+<td>system:alphabetic; symbols:’a’ ‘b’ ‘c’;</td>
+<td>b,c,c,ba,bb,bc,ca,cb</td>
+</tr>
+<tr>
+<td>additive</td>
+<td>类似于罗马数字的编号系统</td>
+<td>system:additive; additive-symbols: c 3, b 2, a 1;</td>
+<td>a,b,c,ca,cb,cc,cca</td>
+</tr>
+<tr>
+<td>extends</td>
+<td>继承其他编号系统</td>
+<td>system: extends decimal; suffix: ‘) ‘;</td>
+<td>1),2),3),4),5),6),7)</td>
+</tr>
+</tbody>
+</table>
+<p>###使用范围-range<br>指定自定义符号系统的使用范围，超出范围外的将采用fallback指定的默认编号。<br>可以使用[ [ <integer> | infinite ]{2} ]或 auto两种形式指定range范围，auto为默认值。<br>auto在不同system下的含义如下列表所示：</integer></p>
+<ul>
+<li>在cyclic、numeric、fixed算法下，auto表示从负无穷到正无穷</li>
+<li>在alphabetic、symbolic算法下，auto表示从1到正无穷</li>
+<li>additive算法下，auto表示从0到正无穷</li>
+<li><p>extend算法下，auto取继承的父系统的取值范围，如果为预定义的复杂系统，取预定义的取值</p>
+<p>下面的示例都是正确的范围指定。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*指定范围为auto，默认值*/</span></span><br><span class="line"><span class="tag">range</span>: <span class="tag">auto</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*指定范围为两个数字：前面表示下限，后面表示上限，两个数字都包含在内,列表之间用逗号隔开*/</span></span><br><span class="line"><span class="tag">range</span>: 1 6;</span><br><span class="line"><span class="tag">range</span>: 1 2,4 6;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*指定范围为关键字*/</span></span><br><span class="line"><span class="tag">range</span>: <span class="tag">infinite</span>;   <span class="comment">/*从负无穷到正无穷*/</span></span><br><span class="line"><span class="tag">range</span>: <span class="tag">infinite</span> 4; <span class="comment">/*从负无穷到4*/</span></span><br><span class="line"><span class="tag">range</span>: <span class="tag">-6</span> <span class="tag">infinite</span>;<span class="comment">/*从-6到正无穷*/</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###使用符号-symbols和additive-symbols<br>这是自定义counter-style中非常重要的属性，在 cyclic、numeric、alphabetic、symbolic、fixed等算法中必须指定symbols属性，在additive算法中必须指定additive-symbols。</p>
+<p>###使用前后缀-prefix和suffix<br>prefix的默认自为“ ”，suffix的默认值为”\2E\20”，一个点加一个空格。</p>
+<p> ###使用补零策略-pad<br> pad可以让开发者指定固定宽度的符号系统，例如三位的数字系统，001, 002，……，100, 101等。<br> pad指定的格式为 pad <integer> &amp;&amp; <symbol>，例如 pad 3 “0”等。</symbol></integer></p>
+<h2 id="匿名counter-style-symbols()函数">匿名counter-style-symbols()函数</h2><p>symblos函数将创建一个没有名字，prefix为””，suffix为” “，range为auto，fallback为decimal，negative为”\2d”（-）， pad为0 “”，speak-as为auto的匿名style。也即我们只需要在匿名counter-style中指定system和symbols即可。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">ol</span> <span class="rules">&#123; <span class="rule"><span class="attribute">list-style</span>:<span class="value"> <span class="function">symbols</span>(cyclic <span class="string">"a"</span> <span class="string">"b"</span> <span class="string">"c"</span> <span class="string">"d"</span>)</span></span>; &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>##预定义style<br>CSS Counter Styles Level 3预定了很多不错的符号系统，例如针对中国用户的天干、地支、中文数字、中文大写等符号系统。这些预定义的系统，使我们学习counter-style的不错资源，下面我们就来看几个。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">/*两位数字编号-01,02,03……10,11*/</span><br><span class="line">@counter-style decimal-leading-zero &#123;</span><br><span class="line">  system: extends decimal;</span><br><span class="line">  pad: 2 '0';</span><br><span class="line">&#125;</span><br><span class="line">/*中文数字编号*/</span><br><span class="line">@counter-style cjk-decimal &#123;</span><br><span class="line">  system: numeric;</span><br><span class="line">  range: 0 infinite;</span><br><span class="line">  symbols: \3007  \4E00  \4E8C  \4E09  \56DB  \4E94  \516D  \4E03  \516B  \4E5D;</span><br><span class="line">  /* 〇 一 二 三 四 五 六 七 八 九 */</span><br><span class="line">  suffix: "\3001";</span><br><span class="line">  /* "、" */</span><br><span class="line">&#125;</span><br><span class="line">/*天干编号*/</span><br><span class="line">@counter-style cjk-heavenly-stem &#123;</span><br><span class="line">  system: alphabetic;</span><br><span class="line">  symbols: "\7532" "\4E59" "\4E19" "\4E01" "\620A" "\5DF1" "\5E9A" "\8F9B" "\58EC" "\7678";</span><br><span class="line">  /* 甲 乙 丙 丁 戊 己 庚 辛 壬 癸 */</span><br><span class="line">  suffix: "、";</span><br><span class="line">&#125;</span><br><span class="line">/*地支编号*/</span><br><span class="line">@counter-style cjk-earthly-branch &#123;</span><br><span class="line">  system: alphabetic;</span><br><span class="line">  symbols: "\5B50" "\4E11" "\5BC5" "\536F" "\8FB0" "\5DF3" "\5348" "\672A" "\7533" "\9149" "\620C" "\4EA5";</span><br><span class="line">  /* 子 丑 寅 卯 辰 巳 午 未 申 酉 戌 亥 */</span><br><span class="line">  suffix: "、";</span><br><span class="line">&#125;</span><br><span class="line">/*中文大写编号-壹仟壹佰壹拾壹*/</span><br><span class="line">@counter-style simp-chinese-formal &#123;</span><br><span class="line">/* this is a predefined complex style in the CSS3 Counter Styles specification */</span><br><span class="line">system: additive;</span><br><span class="line">range: -9999 9999;</span><br><span class="line">additive-symbols: 9000 \7396\4EDF, 8000 \634c\4EDF, 7000 \67d2\4EDF, 6000 \9646\4EDF, 5000 \4f0d\4EDF, 4000 \8086\4EDF, 3000 \53C1\4EDF, 2000 \8CB3\4EDF, 1000 \58F9\4EDF, 900 \7396\4F70, 800 \634C\4F70, 700 \67D2\4F70, 600 \9646\4F70, 500 \4f0d\4F70, 400 \56DB\4F70, 300 \53C1\4F70, 200 \8CB3\4F70, 100 \58F9\4F70, 90 \7396\62FE, 80 \634C\62FE, 70 \67D2\62FE, 60 \9646\62FE, 50 \4f0d\62FE, 40 \8086\62FE, 30 \53C1\62FE, 20 \8CB3\62FE, 10 \58F9\62FE, 9 \7396, 8 \634C, 7 \67D2, 6 \9646, 5 \4f0d, 4 \8086, 3 \53C1, 2 \8CB3, 1 \58F9, 0 \96F6;</span><br><span class="line">suffix:'、 ';</span><br><span class="line">negative: "\8D1F";</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##相关阅读<br><a href="http://www.w3.org/TR/2015/CR-css-counter-styles-3-20150203/" target="_blank" rel="external">w3c 候选标准</a><br><a href="http://www.w3.org/TR/predefined-counter-styles/" target="_blank" rel="external">Predefined Counter Styles</a></p>
+<p>##致谢<br><em>前端开发whqet，关注前端开发，分享相关资源。csdn专家博客，王海庆希望能对您有所帮助。</em><br><em>本文原文链接，<a href="http://blog.csdn.net/whqet/article/details/43605725" target="_blank" rel="external">http://blog.csdn.net/whqet/article/details/43605725</a></em><br><em>欢迎大家访问独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a></em></p>
+</div></article></div></section><footer><div class="paginator"><a href="/2015/02/12/css-variables/" class="prev">上一篇</a><a href="/2015/02/07/color-pagraph-with-css/" class="next">下一篇</a></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?a36e15d9e2adec9a21fcdd9f686b1ed2";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
