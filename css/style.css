@@ -1917,7 +1917,7 @@ footer {
 }
 .article-content pre,
 .article-content .highlight {
-  background: #fff;
+  background: rgba(255,255,255,0.8);
   margin: 0.5em 0;
   padding: 1em 2%;
   overflow: auto;
@@ -1942,6 +1942,17 @@ footer {
 }
 .article-content .highlight {
   position: relative;
+  border: 2px solid rgba(255,255,255,0.8);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.article-content .highlight:hover {
+  border: 2px solid #4d4d4c;
+  -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 .article-content .highlight pre {
   border: none;
@@ -1982,7 +1993,7 @@ footer {
 }
 .article-content .gist {
   margin: 0.5em 0;
-  background: #fff;
+  background: rgba(255,255,255,0.8);
   padding: 1em 2%;
 }
 .article-content .gist .gist-file {
@@ -2008,7 +2019,7 @@ footer {
   border: none;
 }
 .article-content .gist .gist-file .gist-meta {
-  background: #fff;
+  background: rgba(255,255,255,0.8);
   color: #8e908c;
   font: 0.85em "Georgia", serif;
   padding: 0;
