@@ -1943,7 +1943,7 @@ footer {
 .article-content .highlight {
   position: relative;
   left: 0px;
-  border: 1px solid rgba(255,255,255,0.8);
+  border: 1px solid rgba(0,0,0,0.1);
   -webkit-box-shadow: -4px 0px 4px rgba(0,0,0,0);
   box-shadow: -4px 0px 4px rgba(0,0,0,0);
   -webkit-transition: all 0.2s;
@@ -1953,9 +1953,9 @@ footer {
   transition: all 0.2s;
 }
 .article-content .highlight:hover {
-  border: 1px solid #4d4d4c;
-  -webkit-box-shadow: -4px 0px 4px rgba(0,0,0,0.2);
-  box-shadow: -4px 0px 4px rgba(0,0,0,0.2);
+  border: 1px solid rgba(0,0,0,0.1);
+  -webkit-box-shadow: -4px 0px 4px rgba(0,0,0,0.1);
+  box-shadow: -4px 0px 4px rgba(0,0,0,0.1);
   left: 10px;
 }
 .article-content .highlight pre {
