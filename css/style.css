@@ -1944,8 +1944,6 @@ footer {
   position: relative;
   left: 0px;
   border: 1px dashed rgba(0,0,0,0.1);
-  -webkit-box-shadow: -4px 0px 2px rgba(0,0,0,0);
-  box-shadow: -4px 0px 2px rgba(0,0,0,0);
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   -o-transition: all 0.2s;
@@ -1954,9 +1952,7 @@ footer {
 }
 .article-content .highlight:hover {
   border: 1px solid rgba(0,0,0,0.2);
-  -webkit-box-shadow: -4px 0px 2px rgba(0,0,0,0.2);
-  box-shadow: -4px 0px 2px rgba(0,0,0,0.2);
-  left: 10px;
+  left: 20px;
 }
 .article-content .highlight pre {
   border: none;
