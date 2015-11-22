@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2015/02/15/detail-of-sass-map/</loc>
+    <lastmod>2015-11-22T02:28:01.478Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2015/02/05/form-va/</loc>
+    <lastmod>2015-11-22T02:27:15.801Z</lastmod>
+  </url>
+  
+  <url>
     <loc>/2015/10/28/how-positioning-css-properties-interact/</loc>
     <lastmod>2015-11-22T02:11:47.074Z</lastmod>
   </url>
@@ -44,11 +54,6 @@
   <url>
     <loc>/2015/02/21/javascript-tips-and-tricks/</loc>
     <lastmod>2015-02-21T09:11:26.697Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/02/15/detail-of-sass-map/</loc>
-    <lastmod>2015-02-15T05:29:36.997Z</lastmod>
   </url>
   
   <url>
