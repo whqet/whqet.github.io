@@ -197,6 +197,47 @@
   </entry>
   
   <entry>
+    <title><![CDATA[CSS定位属性之间的相互作用]]></title>
+    <link href="/2015/10/28/how-positioning-css-properties-interact/"/>
+    <id>/2015/10/28/how-positioning-css-properties-interact/</id>
+    <published>2015-10-28T00:25:45.000Z</published>
+    <updated>2015-11-22T02:11:47.074Z</updated>
+    <content type="html"><![CDATA[<h1 id="1-_引言"><strong>1. 引言</strong></h1><p>原文：<a href="http://bitsofco.de/" target="_blank" rel="external">bitsofcode</a>的<a href="http://bitsofco.de/2015/how-positioning-css-properties-interact/" target="_blank" rel="external">HOW POSITIONING CSS PROPERTIES INTERACT</a><br>译者：爱前端，乐分享的FedFun，前端痴王海庆的博客。<br>译言：来看下CSS标布局情况下，定位相关属性之间的相互作用，意译为主，不当之处敬请指正。<br>阅读建议5分钟。</p>
+<h1 id="2-_正文"><strong>2. 正文</strong></h1><p>在定位元素时，我们经常用到四个属性<code>display</code>、<code>position</code>、<code>float</code>和偏移属性<code>top right bottom left</code>等。但不是在每个元素上都可以同时应用这四个属性，一些特殊的值组合会覆盖其他属性的应用，这些组合有：</p>
+<ul>
+<li><code>display: none</code></li>
+<li><code>position: absolute</code>或<code>position: fixed</code></li>
+<li><code>float: left</code>或<code>float: right</code></li>
+<li><code>position: static</code></li>
+</ul>
+<p>接下来，我们就一起来研究这些组合之间如何相互作用。</p>
+<h2 id="2-1_DISPLAY:_NONE">2.1 DISPLAY: NONE</h2><p>当<code>display</code>设置成none时，其它定位属性统统失效，因为没有产生盒模型（<a href="http://bitsofco.de/2015/controlling-the-box-model/" target="_blank" rel="external">the box model</a>）。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.foo</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* None of these apply，以下这些将不会应用 */</span></span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">10px</span></span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-2_POSITION:_ABSOLUTE_(OR_FIXED)">2.2 POSITION: ABSOLUTE (OR FIXED)</h2><p>如果将<code>position</code>属性设置为<code>absolute</code>或<code>fixed</code>时，将会产生以下作用：</p>
+<h3 id="Float">Float</h3><p>对<code>float</code>属性设置的任何值都会被覆盖，<code>float</code>属性的计算值(the computed value)自动设置为<code>none</code>。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.foo</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> absolute</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>; <span class="comment">/* 被忽略, 计算值为none */</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="DISPLAY">DISPLAY</h3><p>随着<code>display</code>属性值的不同，计算值可能会被覆盖，如下表所示。<br>| 指定值 | 计算值 |<br>| ————- |:————-:|<br>| inline, inline-block, table-row-group, table-column, table-column-group, table-header-group, table-footer-group, table-row, table-cell, table-caption | block |<br>| inline-table | table |<br>| 其他值 | 跟指定值相同 |</p>
+<p>下面的代码中，<code>.foo</code>和<code>.bar</code>表现上没有区别。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.foo</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> fixed</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>; <span class="comment">/* ignored, computed value is block */</span></span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.bar</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> fixed</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-3_FLOAT:_LEFT_(OR_RIGHT)">2.3 FLOAT: LEFT (OR RIGHT)</h2><p>除了上面两种情况，当我们把<code>float</code>属性设置为<code>left</code>或<code>right</code>时，相互作用如下：</p>
+<h3 id="DISPLAY-1">DISPLAY</h3><p>跟上面绝对定位、固定定位类似，元素浮动后<code>display</code>属性变换如上表所示。<br>下面代码中，<code>.foo</code>和<code>.bar</code>的表现效果也一样。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.foo</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-block</span></span>; <span class="comment">/* ignored, computed value is block */</span></span><br><span class="line">&#125;</span></span><br><span class="line"><span class="class">.bar</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> block</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-4_POSITION:_STATIC">2.4 POSITION: STATIC</h2><p>除了上面的变化，当<code>position</code>属性值为<code>static</code>时，相互作用如下：</p>
+<h3 id="偏移值">偏移值</h3><p>当元素静态定位时，偏移属性将失效，如下代码所示。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.foo</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> static</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">50px</span></span></span>; <span class="comment">/* does not apply */</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="3-_声明"><strong>3. 声明</strong></h1><p>爱前端乐分享的FedFun，csdn专家博客，王海庆希望能对您有所帮助，限于作者水平有限，出错难免，欢迎拍砖！<br>欢迎任何形式的转载，烦请注明装载，保留本段文字。<br>本文原文链接<a href="http://blog.csdn.net/whqet/article/details/49464099" target="_blank" rel="external">http://blog.csdn.net/whqet/article/details/49464099</a><br>独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a><br>新浪微博<a href="http://weibo.com/FedFun" target="_blank" rel="external">http://weibo.com/FedFun</a><br>极客头条<a href="http://geek.csdn.net/user/publishlist/whqet" target="_blank" rel="external">http://geek.csdn.net/user/publishlist/whqet</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="1-_引言"><strong>1. 引言</strong></h1><p>原文：<a href="http://bitsofco.de/" target="_blank" rel="external">bitsofcode</a>的<a href="http://]]>
+    </summary>
+    
+      <category term="css3" scheme="/tags/css3/"/>
+    
+      <category term="css3" scheme="/categories/css3/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[02引言-AngularJS基础教程]]></title>
     <link href="/2015/03/28/02%E5%BC%95%E8%A8%80-AngularJS%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"/>
     <id>/2015/03/28/02引言-AngularJS基础教程/</id>
