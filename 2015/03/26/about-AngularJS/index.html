@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Service Workers“早”知道？ | FedFun官方网站官方主页-爱前端，乐分享！</title>
+    <title>01序-AngularJS 基础教程 | FedFun官方网站官方主页-爱前端，乐分享！</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="FedFun">
     
-    <meta name="description" content="最近关于Service Workers的研究与讨论日益增多，今天就给我大家来梳理一些资源，让大家一睹为快！！
-1.啥是Service workers？我们知道原生App拥有的富离线体验，如定时静默更新，消息通知推送等功能，曾经是是web应用“羡慕嫉妒恨”的功能。有了Service Worker，We">
+    <meta name="description" content="1. 前言AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上的不足。
+AngularJS的初衷是为了简化web APP开发，精">
     
     
     
@@ -66,15 +66,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/16/Service Workers“早”知道？/" title="Service Workers“早”知道？" itemprop="url">Service Workers“早”知道？</a>
+      <a href="/2015/03/26/about-AngularJS/" title="01序-AngularJS 基础教程" itemprop="url">01序-AngularJS 基础教程</a>
   </h1>
   <p class="article-author">By
     
       <a href="" title="FedFun">FedFun</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-11-16T07:50:45.000Z" itemprop="datePublished">2015年11月16日</time>
-    更新日期:<time datetime="2015-11-21T08:50:59.704Z" itemprop="dateModified">2015年11月21日</time>
+    <time datetime="2015-03-26T04:50:45.000Z" itemprop="datePublished">2015年03月26日</time>
+    更新日期:<time datetime="2015-11-21T10:14:57.433Z" itemprop="dateModified">2015年11月21日</time>
     
   </p>
 </header>
@@ -82,7 +82,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/JS/">JS</a><a href="/tags/html5/">html5</a>
+  <span></span> <a href="/tags/AngularJS/">AngularJS</a><a href="/tags/javascript/">javascript</a>
   </div>
 
 
@@ -123,45 +123,59 @@
 			
 			<div id="toc" class="toc-article">
 				<strong class="toc-title">文章目录</strong>
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-啥是Service_workers？"><span class="toc-number">1.</span> <span class="toc-text">1.啥是Service workers？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Service_Workers准备好了吗？"><span class="toc-number">2.</span> <span class="toc-text">2.Service Workers准备好了吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_如何使用Service_Workers？"><span class="toc-number">3.</span> <span class="toc-text">3. 如何使用Service Workers？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-声明"><span class="toc-number">4.</span> <span class="toc-text">4.声明</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-_前言"><span class="toc-number">1.</span> <span class="toc-text">1. 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-_AngularJS？"><span class="toc-number">2.</span> <span class="toc-text">2. AngularJS？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-_系列教程目录"><span class="toc-number">3.</span> <span class="toc-text">3. 系列教程目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-_学习资源"><span class="toc-number">4.</span> <span class="toc-text">4. 学习资源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-声明"><span class="toc-number">5.</span> <span class="toc-text">5.声明</span></a></li></ol>
 			</div>
 			
-			<p>最近关于Service Workers的研究与讨论日益增多，今天就给我大家来梳理一些资源，让大家一睹为快！！</p>
-<h2 id="1-啥是Service_workers？">1.啥是Service workers？</h2><p>我们知道原生App拥有的富离线体验，如定时静默更新，消息通知推送等功能，曾经是是web应用“羡慕嫉妒恨”的功能。有了Service Worker，Web APP也可以拥有这些功能。</p>
-<p>简单来说，Service Workers赋予Web APP以非常好的离线体验，赋予开发者离线数据的管理能力。</p>
-<p>欲知详情请大家移步下列资源获取更多信息：</p>
-<ol>
-<li><a href="http://www.html5rocks.com/" target="_blank" rel="external">html5rocks</a>的<a href="http://www.html5rocks.com/en/tutorials/service-worker/introduction/" target="_blank" rel="external">service workers introduction</a></li>
-<li><a href="http://www.w3ctech.com/" target="_blank" rel="external">w3ctech</a>对html5rocks introduction的翻译 <a href="http://www.w3ctech.com/topic/866" target="_blank" rel="external">Service Worker 入门</a></li>
-<li>W3C吴小倩的报告<a href="http://www.w3.org/2014/Talks/0825-xiaoqian-offline/#/" target="_blank" rel="external">游戏规则改变者 Service Worker</a></li>
-<li><a href="http://www.infoq.com/cn/news/2014/12/service-workers-make-web-native" target="_blank" rel="external">Service Workers让Web应用感觉更像是原生应用</a></li>
+			<h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上的不足。</p>
+<p>AngularJS的初衷是为了<strong>简化web APP开发</strong>，精髓是<strong>简单</strong>。但是国内外有很多AngularJS的教程，都着重讲AngularJS的强大之处，从而增加了AngularJS学习的难度，本教程试图用通俗的语言讲解<strong>最为基础</strong>、<strong>最为实用</strong>的内容，<strong><em>简化学习进程、降低学习难度</em></strong>是本教程的初衷。</p>
+<p>欢迎大家<strong>批评指正</strong>。</p>
+<h1 id="2-_AngularJS？">2. AngularJS？</h1><p>AngularJS主要用于构建单页面Web应用，同其他历史悠久的Web技术（HTML、CSS和JavaScript）配合使用，使构建交互式的现代Web应用变得更加简单。</p>
+<p>AngularJS提供了开发者在现代Web应用中经常要用到的一系列高级功能，例如解耦应用逻辑、数据模型和视图，Ajax服务，双向绑定、依赖注入、测试等功能，通过原生的Model-View-Controller（MVC，模型视图控制器）功能增强了HTML，从而降低构建复杂应用的难度。</p>
+<h1 id="3-_系列教程目录">3. 系列教程目录</h1><ol>
+<li>序</li>
+<li>引言-Introduction</li>
+<li>基础-Basics</li>
+<li>控制器-Controllers</li>
+<li>作用域-Scopes</li>
+<li>集合-Collections</li>
+<li>模块-Modules</li>
+<li>依赖注入-Dependency Injection</li>
+<li>服务-Services</li>
+<li>过滤器-Filters</li>
+<li>指令-Directives</li>
+<li>指令作用域-Directive Scopes</li>
+<li>路由-Routing</li>
+<li>通信-HTTP</li>
+<li>结论</li>
 </ol>
-<h2 id="2-Service_Workers准备好了吗？">2.Service Workers准备好了吗？</h2><p>###2.1 兼容性<br>对于任何一个新的功能，兼容性都是不容忽视的，对吧，各位前端er。<br>来看下<a href="http://caniuse.com/#feat=serviceworkers" target="_blank" rel="external">Caniuse</a>的数据（截止2015/11/16）。<br><img src="http://img.blog.csdn.net/20151116085657569" alt="图片描述"></p>
-<p>###2.2 特性支持与polyfill<br>下面是来自于<a href="https://jakearchibald.github.io/isserviceworkerready/index.html" target="_blank" rel="external">isServiceWorkerReady?</a>的数据。<br><img src="http://img.blog.csdn.net/20151116091310033" alt="图片描述"></p>
-<h2 id="3-_如何使用Service_Workers？">3. 如何使用Service Workers？</h2><p>来具体了解Service Wokers的使用方式，API文档、使用案例、样例APP。</p>
-<ol>
-<li><a href="https://slightlyoff.github.io/ServiceWorker/spec/service_worker/" target="_blank" rel="external">官方文档</a></li>
-<li>MDN的<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" target="_blank" rel="external">Service Worker API</a></li>
-<li>MDN的<a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers" target="_blank" rel="external">Using Service Workers</a></li>
-<li><a href="https://ponyfoo.com/articles/serviceworker-revolution" target="_blank" rel="external">ServiceWorker: Revolution of the Web Platform</a></li>
-<li><a href="https://adactio.com/journal/9775" target="_blank" rel="external">My first Service Worker</a></li>
-<li>CSS-tricks的<a href="https://css-tricks.com/serviceworker-for-offline/" target="_blank" rel="external">Making a Simple Site Work Offline with ServiceWorker</a></li>
-<li>ponyfoo.com的<a href="https://ponyfoo.com/articles/progressive-app-serviceworker" target="_blank" rel="external">Making a Progressive App with ServiceWorker</a></li>
-<li>一些案例<a href="https://github.com/w3c-webmob/ServiceWorkersDemos" target="_blank" rel="external">ServiceWorkersDemos</a></li>
-<li><a href="https://brandonrozek.com/2015/11/service-workers/" target="_blank" rel="external">An Offline Experience with Service Workers</a></li>
+<h1 id="4-_学习资源">4. 学习资源</h1><ol>
+<li><a href="http://www.angularjsbook.com/" target="_blank" rel="external">ANGULAR BASICS</a></li>
+<li><a href="http://angularjs.org/" target="_blank" rel="external">官方网站</a>–墙外，大家懂的，可以访问官方<a href="https://github.com/angular/angular.js" target="_blank" rel="external">github</a>。</li>
+<li><a href="http://www.angularjs.cn/" target="_blank" rel="external">angularjs中文社区</a></li>
+<li><a href="http://www.ngnice.com/" target="_blank" rel="external">AngularJS Nice Things</a>–爱好者聚集地</li>
+<li><a href="http://www.apjs.net/" target="_blank" rel="external">AngularJS中文网</a></li>
+<li><a href="http://docs.ngnice.com/api" target="_blank" rel="external">AngularJS手册</a>，<a href="http://code.csdn.net/translations/56" title="在译，欢迎参与" target="_blank" rel="external">中文手册</a></li>
+<li><a href="http://developer.51cto.com/art/201311/416334.htm" target="_blank" rel="external">七步从Angular.JS菜鸟到专家</a><h1 id="5-声明">5.声明</h1>前端开发whqet，关注前端开发，分享相关资源。csdn专家博客，王海庆希望能对您有所帮助，限于作者水平有限，出错难免，欢迎拍砖！<br>欢迎任何形式的转载，烦请注明装载，保留本段文字。<br>本文原文链接，<a href="http://blog.csdn.net/whqet/article/details/44586849" target="_blank" rel="external">http://blog.csdn.net/whqet/article/details/44586849</a><br>欢迎大家访问独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a></li>
 </ol>
-<h2 id="4-声明">4.声明</h2><p>爱前端，乐分享。FedFun希望与您共同进步。<br>欢迎任何形式的转载，烦请注明装载，保留本段文字。<br>独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a><br>新浪微博<a href="http://weibo.com/FedFun" target="_blank" rel="external">http://weibo.com/FedFun</a><br>极客头条<a href="http://geek.csdn.net/user/publishlist/whqet" target="_blank" rel="external">http://geek.csdn.net/user/publishlist/whqet</a></p>
   
 		</div>       
 	</article>
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2015/03/28/intro-to-AngularJS/" title="02引言-AngularJS基础教程">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  02引言-AngularJS基础教程</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2015/11/13/segment/"  title="实现SVG路径描边绘制与动画的轻量库">
+<a href="/2015/03/21/pagevisibility/"  title="Page Visibility实现焦点丢失提醒">
  <strong>NEXT:</strong><br/> 
- <span>实现SVG路径描边绘制与动画的轻量库
+ <span>Page Visibility实现焦点丢失提醒
 </span>
 </a>
 </div>
@@ -172,10 +186,10 @@
 
 <section class="comment">
 	<!-- 多说评论框 start 
-	<div class="ds-thread" data-thread-key="2015/11/16/Service Workers“早”知道？/" data-title="Service Workers“早”知道？" data-url="http://whqet.github.io/2015/11/16/Service Workers“早”知道？/"></div>-->
+	<div class="ds-thread" data-thread-key="2015/03/26/about-AngularJS/" data-title="01序-AngularJS 基础教程" data-url="http://whqet.github.io/2015/03/26/about-AngularJS/"></div>-->
 
 <!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/11/16/Service Workers“早”知道？/" data-title="Service Workers“早”知道？" data-url="http://whqet.github.io/2015/11/16/Service Workers“早”知道？/"></div>
+	<div class="ds-thread" data-thread-key="2015/03/26/about-AngularJS/" data-title="01序-AngularJS 基础教程" data-url="http://whqet.github.io/2015/03/26/about-AngularJS/"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
@@ -198,7 +212,7 @@ var duoshuoQuery = {short_name:"whqet"};
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-啥是Service_workers？"><span class="toc-number">1.</span> <span class="toc-text">1.啥是Service workers？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Service_Workers准备好了吗？"><span class="toc-number">2.</span> <span class="toc-text">2.Service Workers准备好了吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_如何使用Service_Workers？"><span class="toc-number">3.</span> <span class="toc-text">3. 如何使用Service Workers？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-声明"><span class="toc-number">4.</span> <span class="toc-text">4.声明</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-_前言"><span class="toc-number">1.</span> <span class="toc-text">1. 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-_AngularJS？"><span class="toc-number">2.</span> <span class="toc-text">2. AngularJS？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-_系列教程目录"><span class="toc-number">3.</span> <span class="toc-text">3. 系列教程目录</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-_学习资源"><span class="toc-number">4.</span> <span class="toc-text">4. 学习资源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-声明"><span class="toc-number">5.</span> <span class="toc-text">5.声明</span></a></li></ol>
   </div>
 
 <div id="asidepart">

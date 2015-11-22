@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Service Workers“早”知道？]]></title>
-    <link href="/2015/11/16/Service%20Workers%E2%80%9C%E6%97%A9%E2%80%9D%E7%9F%A5%E9%81%93%EF%BC%9F/"/>
-    <id>/2015/11/16/Service Workers“早”知道？/</id>
+    <link href="/2015/11/16/quick-view-of-service-worker/"/>
+    <id>/2015/11/16/quick-view-of-service-worker/</id>
     <published>2015-11-16T07:50:45.000Z</published>
     <updated>2015-11-21T08:50:59.704Z</updated>
     <content type="html"><![CDATA[<p>最近关于Service Workers的研究与讨论日益增多，今天就给我大家来梳理一些资源，让大家一睹为快！！</p>
@@ -239,8 +239,8 @@
   
   <entry>
     <title><![CDATA[02引言-AngularJS基础教程]]></title>
-    <link href="/2015/03/28/02%E5%BC%95%E8%A8%80-AngularJS%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"/>
-    <id>/2015/03/28/02引言-AngularJS基础教程/</id>
+    <link href="/2015/03/28/intro-to-AngularJS/"/>
+    <id>/2015/03/28/intro-to-AngularJS/</id>
     <published>2015-03-28T04:50:45.000Z</published>
     <updated>2015-11-21T10:14:58.758Z</updated>
     <content type="html"><![CDATA[<h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上的不足。</p>
@@ -315,8 +315,8 @@
   
   <entry>
     <title><![CDATA[01序-AngularJS 基础教程]]></title>
-    <link href="/2015/03/26/01%E5%BA%8F-AngularJS%20%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/"/>
-    <id>/2015/03/26/01序-AngularJS 基础教程/</id>
+    <link href="/2015/03/26/about-AngularJS/"/>
+    <id>/2015/03/26/about-AngularJS/</id>
     <published>2015-03-26T04:50:45.000Z</published>
     <updated>2015-11-21T10:14:57.433Z</updated>
     <content type="html"><![CDATA[<h1 id="1-_前言">1. 前言</h1><p>AngularJS是为了克服HTML在构建应用上的不足而设计的。HTML是一门很好的为静态文本展示设计的声明式语言，但要构建WEB应用的话它就显得乏力了，所以AngularJS做了一些工作来来解决静态网页技术在构建动态应用上的不足。</p>
@@ -365,8 +365,8 @@
   
   <entry>
     <title><![CDATA[Page Visibility实现焦点丢失提醒]]></title>
-    <link href="/2015/03/21/Page%20Visibility%E5%AE%9E%E7%8E%B0%E7%84%A6%E7%82%B9%E4%B8%A2%E5%A4%B1%E6%8F%90%E9%86%92/"/>
-    <id>/2015/03/21/Page Visibility实现焦点丢失提醒/</id>
+    <link href="/2015/03/21/pagevisibility/"/>
+    <id>/2015/03/21/pagevisibility/</id>
     <published>2015-03-20T21:30:25.000Z</published>
     <updated>2015-03-20T22:39:04.267Z</updated>
     <content type="html"><![CDATA[<h1 id="0-前言">0.前言</h1><p>HTML5 Page Visibility API是一个非常有用的特性，当页面对用户不可见时，暂停播放页面中的视频、动画、声音、以及其他耗费内存的操作，等用户回来时，再继续这些操作。当然，最好提醒下用户可以继续回到本页面上来，本文研究利用改变页面tab（title）实现提醒。</p>
@@ -404,8 +404,8 @@
   
   <entry>
     <title><![CDATA[Javascrit Tips & Tricks]]></title>
-    <link href="/2015/02/21/Javascript%20Tips%20&%20Tricks/"/>
-    <id>/2015/02/21/Javascript Tips & Tricks/</id>
+    <link href="/2015/02/21/javascript-tips-and-tricks/"/>
+    <id>/2015/02/21/javascript-tips-and-tricks/</id>
     <published>2015-02-20T21:30:25.000Z</published>
     <updated>2015-02-21T09:11:26.697Z</updated>
     <content type="html"><![CDATA[<p>前端开发规范系列文章之Javascript Tips and Tricks，本意是写成常用代码收集、常用技巧整理的文章，感觉“常用代码大全”太土、“实用代码整理”有失偏颇，“提示与技巧”不够稳重，所以使用常用的英语说法，相信广大程序员都懂得。</p>
@@ -472,8 +472,8 @@
   
   <entry>
     <title><![CDATA[Sass map详解]]></title>
-    <link href="/2015/02/15/Sass%20map%E8%AF%A6%E8%A7%A3/"/>
-    <id>/2015/02/15/Sass map详解/</id>
+    <link href="/2015/02/15/detail-of-sass-map/"/>
+    <id>/2015/02/15/detail-of-sass-map/</id>
     <published>2015-02-15T05:24:30.000Z</published>
     <updated>2015-02-15T05:29:36.997Z</updated>
     <content type="html"><![CDATA[<p>作为一个CSS预处理器，<a href="http://sass-lang.com/" target="_blank" rel="external">Sass</a>正受到越来越多的青睐，诸如Github、Codepen、CSS-Tricks、SitePoint、w3cplus等网站采用Sass组织、管理CSS文件，Sass正在逐渐成为事实上的CSS预处理器<strong>行业标准</strong>。接下来几篇文章，我们来研读下Sass中的关键功能，今天来看map，大家不妨一坐，精彩内容马上呈现。<br><img src="http://img.blog.csdn.net/20150215130015635" alt="这里写图片描述"></p>
@@ -570,8 +570,8 @@
   
   <entry>
     <title><![CDATA[CSS currentColor研究]]></title>
-    <link href="/2015/02/12/CSS%20currentColor%E7%A0%94%E7%A9%B6/"/>
-    <id>/2015/02/12/CSS currentColor研究/</id>
+    <link href="/2015/02/12/css-currentColor/"/>
+    <id>/2015/02/12/css-currentColor/</id>
     <published>2015-02-12T09:11:58.000Z</published>
     <updated>2015-02-12T14:03:26.980Z</updated>
     <content type="html"><![CDATA[<p>刚刚写了篇《<a href="http://blog.csdn.net/whqet/article/details/43758285" target="_blank" rel="external">CSS变量试玩儿</a>》，我们了解到可以使用原生的CSS来定义使用变量，简化CSS书写、优化代码的组织与维护，但可怕的兼容性问题，又让我们望而却步、一笑了之。<br>但是有这么一个CSS变量currentColor，兼容良好、功能强大，接下来我们来一探究竟。</p>
@@ -609,8 +609,8 @@
   
   <entry>
     <title><![CDATA[CSS变量试玩儿]]></title>
-    <link href="/2015/02/12/CSS%E5%8F%98%E9%87%8F%E8%AF%95%E7%8E%A9%E5%84%BF/"/>
-    <id>/2015/02/12/CSS变量试玩儿/</id>
+    <link href="/2015/02/12/css-variables/"/>
+    <id>/2015/02/12/css-variables/</id>
     <published>2015-02-12T02:30:58.000Z</published>
     <updated>2015-02-12T09:20:32.932Z</updated>
     <content type="html"><![CDATA[<p>CSS很美妙，能够为您的页面穿上衣裳，各种各样五彩斑斓的衣裳，但是对于开发者来说，他又不够灵动，于是乎有了各种各样的预处理器Sass、LESS、Stylus（笔者建议Sass的SCSS语法），这些预处理器可以很大程度的提高CSS的灵活性，增强CSS的代码组织与维护。但是毕竟不是亲生的，然后负责CSS开发的那些大牛们坐不住了，开始给CSS赋予一些新的特性，本文就来探讨下CSS变量的进展与应用。<br>W3C的关于CSS变量的最新探索体现在CSS Custom Properties for Cascading Variables Module Level 1中，最新更新在2014年5月6日，目前为工作草案，所以本文章只为研究探索只用，所涉知识点存在修改的风险，W3C修改之后本文会同步更新。</p>
@@ -650,8 +650,8 @@
   
   <entry>
     <title><![CDATA[CSS Counter Style试玩儿]]></title>
-    <link href="/2015/02/08/CSS%20Counter%20Style%E8%AF%95%E7%8E%A9%E5%84%BF/"/>
-    <id>/2015/02/08/CSS Counter Style试玩儿/</id>
+    <link href="/2015/02/08/css-counter-style/"/>
+    <id>/2015/02/08/css-counter-style/</id>
     <published>2015-02-08T11:40:58.000Z</published>
     <updated>2015-02-12T02:45:59.877Z</updated>
     <content type="html"><![CDATA[<p>2015年2月3日，CSS Counter Style level3成为了W3C的候选标准，是时候来一探究竟，看看强大魔力的@counter-style如何自定义list-style和counter。进来一坐，且听庆哥分解。</p>
@@ -749,8 +749,8 @@
   
   <entry>
     <title><![CDATA[段落文字彩条效果]]></title>
-    <link href="/2015/02/07/%E6%AE%B5%E8%90%BD%E6%96%87%E5%AD%97%E5%BD%A9%E6%9D%A1%E6%95%88%E6%9E%9C/"/>
-    <id>/2015/02/07/段落文字彩条效果/</id>
+    <link href="/2015/02/07/color-pagraph-with-css/"/>
+    <id>/2015/02/07/color-pagraph-with-css/</id>
     <published>2015-02-07T04:50:45.000Z</published>
     <updated>2015-02-15T05:27:37.673Z</updated>
     <content type="html"><![CDATA[<p>程序媛and程序猿，兄弟姐妹们，大家周末好，我们今天来研读一下利用纯css实现段落文字的彩条效果。有朋友就说了，不就是css3的渐变吗，最多加上webkit内核的-webkit-background-clip，嗯，远不止哟，进来一坐了解详情……</p>
@@ -799,8 +799,8 @@
   
   <entry>
     <title><![CDATA[纯css实现表单验证]]></title>
-    <link href="/2015/02/05/%E7%BA%AFcss%E5%AE%9E%E7%8E%B0%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
-    <id>/2015/02/05/纯css实现表单验证/</id>
+    <link href="/2015/02/05/form-validation-with-pure-css/"/>
+    <id>/2015/02/05/form-validation-with-pure-css/</id>
     <published>2015-02-05T14:23:26.000Z</published>
     <updated>2015-02-05T14:25:07.080Z</updated>
     <content type="html"><![CDATA[<p>ladies and 乡亲们，表单验证你在做吗？客户端or服务器端，javascript or jquery，动手写 or 使用插件，今天我们来探索下使用纯css实现表单验证，借以学习css selectors level 4中的表单相关的伪类选择器。</p>
@@ -853,8 +853,8 @@
   
   <entry>
     <title><![CDATA[node.js中文资料导航]]></title>
-    <link href="/2015/02/03/node-js%E4%B8%AD%E6%96%87%E8%B5%84%E6%96%99%E5%AF%BC%E8%88%AA/"/>
-    <id>/2015/02/03/node-js中文资料导航/</id>
+    <link href="/2015/02/03/nodejs-source/"/>
+    <id>/2015/02/03/nodejs-source/</id>
     <published>2015-02-03T11:20:48.000Z</published>
     <updated>2015-02-07T04:58:51.549Z</updated>
     <content type="html"><![CDATA[<p>#node.js中文资料导航</p>
@@ -1089,8 +1089,8 @@
   
   <entry>
     <title><![CDATA[表单标签动画畅想]]></title>
-    <link href="/2015/02/03/%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE%E5%8A%A8%E7%94%BB%E7%95%85%E6%83%B3/"/>
-    <id>/2015/02/03/表单标签动画畅想/</id>
+    <link href="/2015/02/03/ainamation-of-form/"/>
+    <id>/2015/02/03/ainamation-of-form/</id>
     <published>2015-02-03T06:39:55.000Z</published>
     <updated>2015-02-15T05:27:37.585Z</updated>
     <content type="html"><![CDATA[<p>###引言<br>今天来看一组<strong>表单标签动画效果</strong>，希望可以对大家有所帮助，灵感来自于<a href="http://tympanus.net/codrops/2015/01/08/inspiration-text-input-effects/" target="_blank" rel="external">Inspiration for Text Input</a>和<a href="http://codepen.io/MichaelArestad/pen/ohLIa" target="_blank" rel="external">Text Input Love</a>，一并致谢。<br><img src="http://img.blog.csdn.net/20150201144948310" alt="表单标签动画畅想"><br>效果照例放在<strong>Codepen</strong>，虽少效果较慢，但值得期待。<a href="http://codepen.io/whqet/pen/razEXR" target="_blank" rel="external">在线编辑</a>，<a href="http://codepen.io/whqet/share/zip/razEXR/" target="_blank" rel="external">下载收藏</a>。</p>
