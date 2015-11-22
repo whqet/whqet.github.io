@@ -1987,10 +1987,10 @@ footer {
 .article-content .highlight figcaption a {
   float: right;
 }
-.article-content .highlight .line {
+.article-content .highlight .line .rule {
   border-bottom: 1px dashed rgba(0,0,0,0.5);
 }
-.article-content .highlight .line:hover {
+.article-content .highlight .line .rule:hover {
   border-bottom: 1px solid rgba(255,0,0,0.3);
   cursor: pointer;
 }
