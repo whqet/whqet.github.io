@@ -1952,7 +1952,7 @@ footer {
 }
 .article-content .highlight:hover {
   border: 1px solid rgba(0,0,0,0.2);
-  left: 10px;
+  left: 2px;
 }
 .article-content .highlight pre {
   border: none;
@@ -1988,7 +1988,7 @@ footer {
   float: right;
 }
 .article-content .highlight .line {
-  border-bottom: 1px dashed rgba(0,0,0,0.5);
+  border-bottom: 1px dashed rgba(0,0,0,0.3);
   line-height: 1.8;
 }
 .article-content .highlight .line:hover {
@@ -2108,7 +2108,7 @@ pre .xml .cdata {
   filter: alpha(opacity=50);
 }
 .highlight.html:after,
-.highlight.js:after,
+.highlight.javascript:after,
 .highlight.bash:after,
 .highlight.css:after,
 .highlight.scss:after,
@@ -2128,7 +2128,7 @@ pre .xml .cdata {
 .highlight.html:after {
   content: 'HTML';
 }
-.highlight.js:after {
+.highlight.javascript:after {
   content: 'JS';
 }
 .highlight.bash:after {
