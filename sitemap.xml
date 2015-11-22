@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>/2015/11/16/quick-view-of-service-worker/</loc>
+    <lastmod>2015-11-22T02:32:40.539Z</lastmod>
+  </url>
+  
+  <url>
     <loc>/2015/11/09/resize/</loc>
     <lastmod>2015-11-22T02:30:48.452Z</lastmod>
   </url>
@@ -44,11 +49,6 @@
   <url>
     <loc>/2015/03/26/about-AngularJS/</loc>
     <lastmod>2015-11-21T10:14:57.433Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/11/16/quick-view-of-service-worker/</loc>
-    <lastmod>2015-11-21T08:50:59.704Z</lastmod>
   </url>
   
   <url>

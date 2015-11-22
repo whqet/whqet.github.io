@@ -4,7 +4,7 @@
   <subtitle><![CDATA[爱前端，乐分享！]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2015-11-21T08:50:59.704Z</updated>
+  <updated>2015-11-22T02:32:40.539Z</updated>
   <id>/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="/2015/11/16/quick-view-of-service-worker/"/>
     <id>/2015/11/16/quick-view-of-service-worker/</id>
     <published>2015-11-16T07:50:45.000Z</published>
-    <updated>2015-11-21T08:50:59.704Z</updated>
+    <updated>2015-11-22T02:32:40.539Z</updated>
     <content type="html"><![CDATA[<p>最近关于Service Workers的研究与讨论日益增多，今天就给我大家来梳理一些资源，让大家一睹为快！！</p>
 <h2 id="1-啥是Service_workers？">1.啥是Service workers？</h2><p>我们知道原生App拥有的富离线体验，如定时静默更新，消息通知推送等功能，曾经是是web应用“羡慕嫉妒恨”的功能。有了Service Worker，Web APP也可以拥有这些功能。</p>
 <p>简单来说，Service Workers赋予Web APP以非常好的离线体验，赋予开发者离线数据的管理能力。</p>
@@ -51,9 +51,9 @@
 <h2 id="1-啥是Service_workers？">1.啥是Service workers？</h2><p>我们知道原生App拥有的富离线体验，如定]]>
     </summary>
     
-      <category term="JS" scheme="/tags/JS/"/>
-    
       <category term="html5" scheme="/tags/html5/"/>
+    
+      <category term="javascript" scheme="/tags/javascript/"/>
     
       <category term="javascript" scheme="/categories/javascript/"/>
     
