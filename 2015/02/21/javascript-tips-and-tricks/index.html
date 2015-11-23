@@ -1,251 +1,133 @@
-<!doctype html>
-<html class="theme-next   use-motion ">
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
-
-
-
-
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-
-
-
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="javascript,tips,tricks,技巧整理," />
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="FedFun官方网站" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
-
-
-
-
-
-
-<meta name="description" content="前端开发规范系列文章之Javascript Tips and Tricks，本意是写成常用代码收集、常用技巧整理的文章，感觉“常用代码大全”太土、“实用代码整理”有失偏颇，“提示与技巧”不够稳重，所以使用常用的英语说法，相信广大程序员都懂得。
-##妙味Javascript美妙之处，需要我们静静体会，慢慢吸收，然后让代码在您指下曼舞。整理的这些代码我们称之为妙味，请大家细品。博主会不断更新本文，方便">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Javascrit Tips & Tricks">
-<meta property="og:url" content="/2015/02/21/javascript-tips-and-tricks/index.html">
-<meta property="og:site_name" content="FedFun官方网站">
-<meta property="og:description" content="前端开发规范系列文章之Javascript Tips and Tricks，本意是写成常用代码收集、常用技巧整理的文章，感觉“常用代码大全”太土、“实用代码整理”有失偏颇，“提示与技巧”不够稳重，所以使用常用的英语说法，相信广大程序员都懂得。
-##妙味Javascript美妙之处，需要我们静静体会，慢慢吸收，然后让代码在您指下曼舞。整理的这些代码我们称之为妙味，请大家细品。博主会不断更新本文，方便">
-<meta property="og:updated_time" content="2015-02-21T09:11:26.697Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascrit Tips & Tricks">
-<meta name="twitter:description" content="前端开发规范系列文章之Javascript Tips and Tricks，本意是写成常用代码收集、常用技巧整理的文章，感觉“常用代码大全”太土、“实用代码整理”有失偏颇，“提示与技巧”不够稳重，所以使用常用的英语说法，相信广大程序员都懂得。
-##妙味Javascript美妙之处，需要我们静静体会，慢慢吸收，然后让代码在您指下曼舞。整理的这些代码我们称之为妙味，请大家细品。博主会不断更新本文，方便">
-
-
-
-<script type="text/javascript" id="hexo.configuration">
-  var CONFIG = {
-    scheme: '',
-    sidebar: 'post',
-    motion: true
-  };
-</script>
-
-  <title> Javascrit Tips & Tricks | FedFun官方网站 </title>
+  <meta charset="UTF-8">
+  
+    <title>Javascrit Tips &amp; Tricks | FedFun官方网站官方主页-爱前端，乐分享！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="FedFun">
+    
+    <meta name="description" content="前端开发规范系列文章之Javascript Tips and Tricks，本意是写成常用代码收集、常用技巧整理的文章，感觉“常用代码大全”太土、“实用代码整理”有失偏颇，“提示与技巧”不够稳重，所以使用常用的英语说法，相信广大程序员都懂得。
+##妙味Javascript美妙之处，需要我们静静体会，">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="FedFun官方网站" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/logo.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
-  
-
-
-
-
-
-
-  <div class="container one-column page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
-
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">FedFun官方网站</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle">爱前端，乐分享！</p>
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="FedFun官方网站">FedFun官方网站</a></h1>
+				<h2 class="blog-motto">爱前端，乐分享！</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
 </div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu ">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
-            
-            首頁
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
-            歸檔
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
-            
-            標籤
-          </a>
-        </li>
-      
-
-      
-      
-    </ul>
-  
-
-  
-</nav>
-
- </div>
     </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div id="content" class="content">
-          
-
-  <div id="posts" class="posts-expand">
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
+      <a href="/2015/02/21/javascript-tips-and-tricks/" title="Javascrit Tips &amp; Tricks" itemprop="url">Javascrit Tips &amp; Tricks</a>
+  </h1>
+  <p class="article-author">By
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                Javascrit Tips & Tricks
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-02-21T05:30:25+08:00" content="2015年02月21日">
-              2015年02月21日
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
+      <a href="" title="FedFun">FedFun</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-02-20T21:30:25.000Z" itemprop="datePublished">2015年02月21日</time>
+    更新日期:<time datetime="2015-02-21T09:11:26.697Z" itemprop="dateModified">2015年02月21日</time>
     
+  </p>
+</header>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/javascript/">javascript</a><a href="/tags/tips/">tips</a><a href="/tags/tricks/">tricks</a><a href="/tags/技巧整理/">技巧整理</a>
+  </div>
 
 
-    <div class="post-body">
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/javascript/">javascript</a>
+</div>
 
-      
-      
 
-      
-        <span itemprop="articleBody"><p>前端开发规范系列文章之Javascript Tips and Tricks，本意是写成常用代码收集、常用技巧整理的文章，感觉“常用代码大全”太土、“实用代码整理”有失偏颇，“提示与技巧”不够稳重，所以使用常用的英语说法，相信广大程序员都懂得。</p>
+
+
+<div class="article-share" id="share">
+
+  
+<div class="jiathis_style">
+    <span class="jiathis_txt">分享到：</span>
+    <a class="jiathis_button_tsina">微博</a>
+    <a class="jiathis_button_weixin">微信</a>
+    <a class="jiathis_button_twitter">Twitter</a>
+    <a class="jiathis_button_evernote">EverNote</a>
+    <a href="http://www.jiathis.com/share?uid=1501277" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+</div>
+<script type="text/javascript" >
+    var jiathis_config={
+    data_track_clickback:true,
+    sm:"copy,renren,cqq",
+    pic:"",
+    summary:"",
+    
+  </script> 
+<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
+" charset="utf-8"></script>      
+
+
+</div>
+</footer>
+		<div class="article-content">
+			
+			
+			<div id="toc" class="toc-article">
+				<strong class="toc-title">文章目录</strong>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#事件处理"><span class="toc-number">1.</span> <span class="toc-text">事件处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#置乱数组"><span class="toc-number">2.</span> <span class="toc-text">置乱数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除字符串中的空格(Trim_String)"><span class="toc-number">3.</span> <span class="toc-text">删除字符串中的空格(Trim String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检测html标签属性"><span class="toc-number">4.</span> <span class="toc-text">检测html标签属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尽量使用“===”"><span class="toc-number">5.</span> <span class="toc-text">尽量使用“===”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#悬挂(Hoisting)"><span class="toc-number">6.</span> <span class="toc-text">悬挂(Hoisting)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#立即调用函数表达式(IIFE)"><span class="toc-number">7.</span> <span class="toc-text">立即调用函数表达式(IIFE)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑运算符妙用"><span class="toc-number">8.</span> <span class="toc-text">逻辑运算符妙用</span></a></li></ol>
+			</div>
+			
+			<p>前端开发规范系列文章之Javascript Tips and Tricks，本意是写成常用代码收集、常用技巧整理的文章，感觉“常用代码大全”太土、“实用代码整理”有失偏颇，“提示与技巧”不够稳重，所以使用常用的英语说法，相信广大程序员都懂得。</p>
 <p>##妙味<br>Javascript美妙之处，需要我们静静体会，慢慢吸收，然后让代码在您指下曼舞。整理的这些代码我们称之为妙味，请大家细品。<br>博主会不断更新本文，方便大家阅读起见，我们采用<strong>倒序更新</strong>的方式，把<strong>最新更新的放最上方</strong>。</p>
 <h3 id="事件处理">事件处理</h3><p>我们知道IE和标准浏览器在事件处理方面有很大不同，所以我们在使用的时候需要首先进行统一化处理，统一处理时有两种方式，shim和polyfill。<br>shim将新的api引入新的环境中，例如下面的代码使用addEvent和removeEvent来添加删除事件。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// Shim for DOM Events for IE7-&#10;// http://www.quirksmode.org/blog/archives/2005/10/_and_the_winner_1.html&#10;// Use addEvent(object, event, handler) instead of object.addEventListener(event, handler)&#10;window.addEvent = function(obj, type, fn) &#123;&#10;&#9;if (obj.addEventListener) &#123;&#10;&#9;&#9;obj.addEventListener(type, fn, false);&#10;&#9;&#125; else if (obj.attachEvent) &#123;&#10;&#9;&#9;obj[&#34;e&#34; + type + fn] = fn;&#10;&#9;&#9;obj[type + fn] = function() &#123;&#10;&#9;&#9;&#9;var e = window.event;&#10;&#9;&#9;&#9;e.currentTarget = obj;&#10;&#9;&#9;&#9;e.preventDefault = function() &#123;&#10;&#9;&#9;&#9;&#9;e.returnValue = false;&#10;&#9;&#9;&#9;&#125;;&#10;&#9;&#9;&#9;e.stopPropagation = function() &#123;&#10;&#9;&#9;&#9;&#9;e.cancelBubble = true;&#10;&#9;&#9;&#9;&#125;;&#10;&#9;&#9;&#9;e.target = e.srcElement;&#10;&#9;&#9;&#9;e.timeStamp = Date.now();&#10;&#9;&#9;&#9;obj[&#34;e&#34; + type + fn].call(this, e);&#10;&#9;&#9;&#125;;&#10;&#9;&#9;obj.attachEvent(&#34;on&#34; + type, obj[type + fn]);&#10;&#9;&#125;&#10;&#125;;&#10;&#10;window.removeEvent = function(obj, type, fn) &#123;&#10;&#9;if (obj.removeEventListener) &#123;&#10;&#9;&#9;obj.removeEventListener(type, fn, false);&#10;&#9;&#125; else if (obj.detachEvent) &#123;&#10;&#9;&#9;obj.detachEvent(&#34;on&#34; + type, obj[type + fn]);&#10;&#9;&#9;obj[type + fn] = null;&#10;&#9;&#9;obj[&#34;e&#34; + type + fn] = null;&#10;&#9;&#125;&#10;&#125;;</span><br></pre></td></tr></table></figure>
@@ -289,406 +171,305 @@
 <li><a href="http://www.htmlxprs.com/post/14/superpower-your-javascript-with-10-quick-tips" target="_blank" rel="external">Superpower your JavaScript with 10 quick tips - For Beginners</a></li>
 </ul>
 <p>##声明<br><strong>前端开发whqet，关注前端开发，分享相关资源。csdn专家博客，王海庆希望能对您有所帮助，限于作者水平有限，出错难免，欢迎拍砖！</strong><br><strong>欢迎任何形式的转载，烦请注明装载，保留本段文字。</strong><br><em>本文原文链接，<a href="http://blog.csdn.net/whqet/article/details/43865127" target="_blank" rel="external">http://blog.csdn.net/whqet/article/details/43865127</a></em><br><em>欢迎大家访问独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a></em></p>
+  
+		</div>       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/03/21/pagevisibility/" title="Page Visibility实现焦点丢失提醒">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  Page Visibility实现焦点丢失提醒</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/02/15/detail-of-sass-map/"  title="Sass map详解">
+ <strong>NEXT:</strong><br/> 
+ <span>Sass map详解
 </span>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
-          
-            <a href="/tags/tips/" rel="tag">#tips</a>
-          
-            <a href="/tags/tricks/" rel="tag">#tricks</a>
-          
-            <a href="/tags/技巧整理/" rel="tag">#技巧整理</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2015/02/15/detail-of-sass-map/" rel="next" title="Sass map详解">
-                <i class="fa fa-chevron-left"></i> Sass map详解
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/03/21/pagevisibility/" rel="prev" title="Page Visibility实现焦点丢失提醒">
-                Page Visibility实现焦点丢失提醒 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-        </div>
-
-        
-
-
-        
-  <div class="comments" id="comments">
-    
-  </div>
-
-
-      </div>
-
-      
-        
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目錄
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            本站概覽
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="FedFun" itemprop="image"/>
-          <p class="site-author-name" itemprop="name">FedFun</p>
-        </div>
-        <p class="site-description motion-element" itemprop="description">whqet’s blog | html5 | css3 | javascript | jquery | node</p>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">17</span>
-              <span class="site-state-item-name">文章</span>
-            </a>
-          </div>
-
-          <div class="site-state-item site-state-categories">
-            
-              <span class="site-state-item-count">2</span>
-              <span class="site-state-item-name">分類</span>
-              
-          </div>
-
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">25</span>
-              <span class="site-state-item-name">標籤</span>
-              </a>
-          </div>
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-      </section>
-
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator">
-            <i class="fa fa-angle-double-up"></i>
-          </div>
-          <div class="post-toc">
-            
-              
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#事件处理"><span class="nav-number">1.</span> <span class="nav-text">事件处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#置乱数组"><span class="nav-number">2.</span> <span class="nav-text">置乱数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除字符串中的空格(Trim_String)"><span class="nav-number">3.</span> <span class="nav-text">删除字符串中的空格(Trim String)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测html标签属性"><span class="nav-number">4.</span> <span class="nav-text">检测html标签属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#尽量使用“===”"><span class="nav-number">5.</span> <span class="nav-text">尽量使用“===”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#悬挂(Hoisting)"><span class="nav-number">6.</span> <span class="nav-text">悬挂(Hoisting)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#立即调用函数表达式(IIFE)"><span class="nav-number">7.</span> <span class="nav-text">立即调用函数表达式(IIFE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符妙用"><span class="nav-number">8.</span> <span class="nav-text">逻辑运算符妙用</span></a></li></ol></div>
-            
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator">
-            <i class="fa fa-angle-double-down"></i>
-          </div>
-        </section>
-      
-
-    </div>
-  </aside>
-
-
-      
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2015</span>
-  <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">FedFun</span>
+</a>
 </div>
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
-</div>
+</nav>
 
-<div class="theme-info">
-  主題 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT
-  </a>
+	
+
+<section class="comment">
+	<!-- 多说评论框 start 
+	<div class="ds-thread" data-thread-key="2015/02/21/javascript-tips-and-tricks/" data-title="Javascrit Tips &amp; Tricks" data-url="http://whqet.github.io/2015/02/21/javascript-tips-and-tricks/"></div>-->
+
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015/02/21/javascript-tips-and-tricks/" data-title="Javascrit Tips &amp; Tricks" data-url="http://whqet.github.io/2015/02/21/javascript-tips-and-tricks/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"whqet"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#事件处理"><span class="toc-number">1.</span> <span class="toc-text">事件处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#置乱数组"><span class="toc-number">2.</span> <span class="toc-text">置乱数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除字符串中的空格(Trim_String)"><span class="toc-number">3.</span> <span class="toc-text">删除字符串中的空格(Trim String)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#检测html标签属性"><span class="toc-number">4.</span> <span class="toc-text">检测html标签属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尽量使用“===”"><span class="toc-number">5.</span> <span class="toc-text">尽量使用“===”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#悬挂(Hoisting)"><span class="toc-number">6.</span> <span class="toc-text">悬挂(Hoisting)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#立即调用函数表达式(IIFE)"><span class="toc-number">7.</span> <span class="toc-text">立即调用函数表达式(IIFE)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑运算符妙用"><span class="toc-number">8.</span> <span class="toc-text">逻辑运算符妙用</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/css3/" title="css3">css3<sup>10</sup></a></li>
+		
+			<li><a href="/categories/javascript/" title="javascript">javascript<sup>7</sup></a></li>
+		
+		</ul>
 </div>
 
 
-
-      </div>
-    </footer>
-
-    <div class="back-to-top"></div>
-  </div>
-
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
   
-  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/AngularJS/" title="AngularJS">AngularJS<sup>2</sup></a></li>
+		
+			<li><a href="/tags/Sass/" title="Sass">Sass<sup>3</sup></a></li>
+		
+			<li><a href="/tags/Sass-map/" title="Sass map">Sass map<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-counter/" title="css counter">css counter<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-counter-style/" title="css counter style">css counter style<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-currentColor/" title="css currentColor">css currentColor<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css-variables/" title="css variables">css variables<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css3/" title="css3">css3<sup>10</sup></a></li>
+		
+			<li><a href="/tags/css3渐变/" title="css3渐变">css3渐变<sup>1</sup></a></li>
+		
+			<li><a href="/tags/css4-selector/" title="css4 selector">css4 selector<sup>2</sup></a></li>
+		
+			<li><a href="/tags/css变量/" title="css变量">css变量<sup>2</sup></a></li>
+		
+			<li><a href="/tags/html5/" title="html5">html5<sup>1</sup></a></li>
+		
+			<li><a href="/tags/javascript/" title="javascript">javascript<sup>7</sup></a></li>
+		
+			<li><a href="/tags/node/" title="node">node<sup>1</sup></a></li>
+		
+			<li><a href="/tags/page-visibility/" title="page visibility">page visibility<sup>1</sup></a></li>
+		
+			<li><a href="/tags/tips/" title="tips">tips<sup>1</sup></a></li>
+		
+			<li><a href="/tags/tricks/" title="tricks">tricks<sup>1</sup></a></li>
+		
+			<li><a href="/tags/伪类选择器/" title="伪类选择器">伪类选择器<sup>2</sup></a></li>
+		
+			<li><a href="/tags/动画/" title="动画">动画<sup>1</sup></a></li>
+		
+			<li><a href="/tags/动画畅想/" title="动画畅想">动画畅想<sup>1</sup></a></li>
+		
+		</ul>
+</div>
 
-  
-    
-    
 
-  
-
-
-  
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="//blog.csdn.net/whqet" target="_blank" title="YangJian">我的博客</a></li>
+      <li><a href="http://itmyhome.com/" target="_blank" title="Hexo">麦田技术博客</a></li>
+    </ul>
+</div>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
 
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
-
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 1 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello, 我是王海庆，青椒一枚。 <br/>
+			关注前端开发，分享相关资源，希望能对您有所帮助！</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		<a href="http://weibo.com/FedFun" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/whqet" target="_blank" title="github"></a>
+		
+		
+		
+        
+        <a href="https://blog.csdn.net/whqet" target="_blank" title="csdn"></a>
+        
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
+		
+		<a href="" target="_blank" title="FedFun">FedFun</a>
+		
+		<script type="text/javascript" src="http://js.tongji.linezing.com/3571948/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/3571948/tongji.gif" style="width:12px;height:12px"/></a></noscript>
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
   });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    motionMiddleWares.sidebar = function () {
-      var $tocContent = $('.post-toc-content');
-      if (CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
-        }
-      }
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
     };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
   });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
 </script>
 
 
 
-  <script type="text/javascript" src="/js/bootstrap.js"></script>
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
-  
-  
 
-  
-  
 
-</body>
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+<script>
+var title = document.title,
+newTitle = "等您回来-" + title;
+document.addEventListener("visibilitychange", function() {
+  document.title = ((document.hidden) ? newTitle : title);
+});
+</script>
+  </body>
 </html>
