@@ -1,133 +1,251 @@
-
- <!DOCTYPE HTML>
-<html lang="zh-CN">
+<!doctype html>
+<html class="theme-next   use-motion ">
 <head>
-  <meta charset="UTF-8">
-  
-    <title>CSS定位属性之间的相互作用 | FedFun官方网站官方主页-爱前端，乐分享！</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
-    <meta name="author" content="FedFun">
-    
-    <meta name="description" content="1. 引言原文：bitsofcode的HOW POSITIONING CSS PROPERTIES INTERACT译者：爱前端，乐分享的FedFun，前端痴王海庆的博客。译言：来看下CSS标布局情况下，定位相关属性之间的相互作用，意译为主，不当之处敬请指正。阅读建议5分钟。
-2. 正文在定位元素时">
-    
-    
-    
-    
-    <link rel="alternate" href="atom.xml" title="FedFun官方网站" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/logo.png">
-    <link rel="apple-touch-icon-precomposed" href="/img/logo.png">
-    
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="css3," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="FedFun官方网站" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="1. 引言原文：bitsofcode的HOW POSITIONING CSS PROPERTIES INTERACT译者：爱前端，乐分享的FedFun，前端痴王海庆的博客。译言：来看下CSS标布局情况下，定位相关属性之间的相互作用，意译为主，不当之处敬请指正。阅读建议5分钟。
+2. 正文在定位元素时，我们经常用到四个属性display、position、float和偏移属性top right bo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS定位属性之间的相互作用">
+<meta property="og:url" content="/2015/10/28/how-positioning-css-properties-interact/index.html">
+<meta property="og:site_name" content="FedFun官方网站">
+<meta property="og:description" content="1. 引言原文：bitsofcode的HOW POSITIONING CSS PROPERTIES INTERACT译者：爱前端，乐分享的FedFun，前端痴王海庆的博客。译言：来看下CSS标布局情况下，定位相关属性之间的相互作用，意译为主，不当之处敬请指正。阅读建议5分钟。
+2. 正文在定位元素时，我们经常用到四个属性display、position、float和偏移属性top right bo">
+<meta property="og:updated_time" content="2015-11-22T02:11:47.074Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS定位属性之间的相互作用">
+<meta name="twitter:description" content="1. 引言原文：bitsofcode的HOW POSITIONING CSS PROPERTIES INTERACT译者：爱前端，乐分享的FedFun，前端痴王海庆的博客。译言：来看下CSS标布局情况下，定位相关属性之间的相互作用，意译为主，不当之处敬请指正。阅读建议5分钟。
+2. 正文在定位元素时，我们经常用到四个属性display、position、float和偏移属性top right bo">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> CSS定位属性之间的相互作用 | FedFun官方网站 </title>
 </head>
 
-  <body>
-    <header>
-      <div>
-		
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="FedFun官方网站">FedFun官方网站</a></h1>
-				<h2 class="blog-motto">爱前端，乐分享！</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-					
-						<li><a href="/">首页</a></li>
-					
-						<li><a href="/archives">归档</a></li>
-					
-						<li><a href="/about">关于</a></li>
-					
-					<li>
-					
-					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:">
-					</form>
-					
-					</li>
-				</ul>
-			</nav>			
-</div>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-    </header>
-    <div id="container">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/10/28/how-positioning-css-properties-interact/" title="CSS定位属性之间的相互作用" itemprop="url">CSS定位属性之间的相互作用</a>
-  </h1>
-  <p class="article-author">By
-    
-      <a href="" title="FedFun">FedFun</a>
-    </p>
-  <p class="article-time">
-    <time datetime="2015-10-28T00:25:45.000Z" itemprop="datePublished">2015年10月28日</time>
-    更新日期:<time datetime="2015-11-22T02:11:47.074Z" itemprop="dateModified">2015年11月22日</time>
-    
-  </p>
-</header>
-		<footer class="article-footer clearfix">
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/css3/">css3</a>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
   </div>
+<![endif]-->
+  
 
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/css3/">css3</a>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">FedFun官方网站</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">爱前端，乐分享！</p>
 </div>
 
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
 
-
-
-<div class="article-share" id="share">
+<nav class="site-nav">
+  
 
   
-<div class="jiathis_style">
-    <span class="jiathis_txt">分享到：</span>
-    <a class="jiathis_button_tsina">微博</a>
-    <a class="jiathis_button_weixin">微信</a>
-    <a class="jiathis_button_twitter">Twitter</a>
-    <a class="jiathis_button_evernote">EverNote</a>
-    <a href="http://www.jiathis.com/share?uid=1501277" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
-</div>
-<script type="text/javascript" >
-    var jiathis_config={
-    data_track_clickback:true,
-    sm:"copy,renren,cqq",
-    pic:"",
-    summary:"",
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
     
-  </script> 
-<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=
-" charset="utf-8"></script>      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS定位属性之间的相互作用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2015-10-28T08:25:45+08:00" content="2015年10月28日">
+              2015年10月28日
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/css3/" itemprop="url" rel="index">
+                    <span itemprop="name">css3</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
 
 
-</div>
-</footer>
-		<div class="article-content">
-			
-			
-			<div id="toc" class="toc-article">
-				<strong class="toc-title">文章目录</strong>
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-_引言"><span class="toc-number">1.</span> <span class="toc-text">1. 引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-_正文"><span class="toc-number">2.</span> <span class="toc-text">2. 正文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1_DISPLAY:_NONE"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 DISPLAY: NONE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2_POSITION:_ABSOLUTE_(OR_FIXED)"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 POSITION: ABSOLUTE (OR FIXED)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Float"><span class="toc-number">2.2.1.</span> <span class="toc-text">Float</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DISPLAY"><span class="toc-number">2.2.2.</span> <span class="toc-text">DISPLAY</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3_FLOAT:_LEFT_(OR_RIGHT)"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 FLOAT: LEFT (OR RIGHT)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DISPLAY-1"><span class="toc-number">2.3.1.</span> <span class="toc-text">DISPLAY</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4_POSITION:_STATIC"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 POSITION: STATIC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#偏移值"><span class="toc-number">2.4.1.</span> <span class="toc-text">偏移值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-_声明"><span class="toc-number">3.</span> <span class="toc-text">3. 声明</span></a></li></ol>
-			</div>
-			
-			<h1 id="1-_引言"><strong>1. 引言</strong></h1><p>原文：<a href="http://bitsofco.de/" target="_blank" rel="external">bitsofcode</a>的<a href="http://bitsofco.de/2015/how-positioning-css-properties-interact/" target="_blank" rel="external">HOW POSITIONING CSS PROPERTIES INTERACT</a><br>译者：爱前端，乐分享的FedFun，前端痴王海庆的博客。<br>译言：来看下CSS标布局情况下，定位相关属性之间的相互作用，意译为主，不当之处敬请指正。<br>阅读建议5分钟。</p>
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="1-_引言"><strong>1. 引言</strong></h1><p>原文：<a href="http://bitsofco.de/" target="_blank" rel="external">bitsofcode</a>的<a href="http://bitsofco.de/2015/how-positioning-css-properties-interact/" target="_blank" rel="external">HOW POSITIONING CSS PROPERTIES INTERACT</a><br>译者：爱前端，乐分享的FedFun，前端痴王海庆的博客。<br>译言：来看下CSS标布局情况下，定位相关属性之间的相互作用，意译为主，不当之处敬请指正。<br>阅读建议5分钟。</p>
 <h1 id="2-_正文"><strong>2. 正文</strong></h1><p>在定位元素时，我们经常用到四个属性<code>display</code>、<code>position</code>、<code>float</code>和偏移属性<code>top right bottom left</code>等。但不是在每个元素上都可以同时应用这四个属性，一些特殊的值组合会覆盖其他属性的应用，这些组合有：</p>
 <ul>
 <li><code>display: none</code></li>
@@ -151,305 +269,400 @@
 <h3 id="偏移值">偏移值</h3><p>当元素静态定位时，偏移属性将失效，如下代码所示。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.foo</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">position</span>:<span class="value"> static</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">top</span>:<span class="value"> <span class="number">50px</span></span></span>; <span class="comment">/* does not apply */</span></span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
 <h1 id="3-_声明"><strong>3. 声明</strong></h1><p>爱前端乐分享的FedFun，csdn专家博客，王海庆希望能对您有所帮助，限于作者水平有限，出错难免，欢迎拍砖！<br>欢迎任何形式的转载，烦请注明装载，保留本段文字。<br>本文原文链接<a href="http://blog.csdn.net/whqet/article/details/49464099" target="_blank" rel="external">http://blog.csdn.net/whqet/article/details/49464099</a><br>独立博客<a href="http://whqet.github.io" target="_blank" rel="external">http://whqet.github.io</a><br>新浪微博<a href="http://weibo.com/FedFun" target="_blank" rel="external">http://weibo.com/FedFun</a><br>极客头条<a href="http://geek.csdn.net/user/publishlist/whqet" target="_blank" rel="external">http://geek.csdn.net/user/publishlist/whqet</a></p>
-  
-		</div>       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2015/11/09/resize/" title="resize属性研究">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  resize属性研究</span>
-</a>
-</div>
-
-
-<div class="next">
-<a href="/2015/03/28/intro-to-AngularJS/"  title="02引言-AngularJS基础教程">
- <strong>NEXT:</strong><br/> 
- <span>02引言-AngularJS基础教程
 </span>
-</a>
-</div>
+      
+    </div>
 
-</nav>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css3/" rel="tag">#css3</a>
+          
+        </div>
+      
 
-	
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/03/28/intro-to-AngularJS/" rel="next" title="02引言-AngularJS基础教程">
+                <i class="fa fa-chevron-left"></i> 02引言-AngularJS基础教程
+              </a>
+            
+          </div>
 
-<section class="comment">
-	<!-- 多说评论框 start 
-	<div class="ds-thread" data-thread-key="2015/10/28/how-positioning-css-properties-interact/" data-title="CSS定位属性之间的相互作用" data-url="http://whqet.github.io/2015/10/28/how-positioning-css-properties-interact/"></div>-->
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/09/resize/" rel="prev" title="resize属性研究">
+                resize属性研究 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
 
-<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2015/10/28/how-positioning-css-properties-interact/" data-title="CSS定位属性之间的相互作用" data-url="http://whqet.github.io/2015/10/28/how-positioning-css-properties-interact/"></div>
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"whqet"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-</section>
+      
+      
+    </footer>
+  </article>
 
 
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-_引言"><span class="toc-number">1.</span> <span class="toc-text">1. 引言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-_正文"><span class="toc-number">2.</span> <span class="toc-text">2. 正文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1_DISPLAY:_NONE"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 DISPLAY: NONE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2_POSITION:_ABSOLUTE_(OR_FIXED)"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 POSITION: ABSOLUTE (OR FIXED)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Float"><span class="toc-number">2.2.1.</span> <span class="toc-text">Float</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DISPLAY"><span class="toc-number">2.2.2.</span> <span class="toc-text">DISPLAY</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3_FLOAT:_LEFT_(OR_RIGHT)"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 FLOAT: LEFT (OR RIGHT)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#DISPLAY-1"><span class="toc-number">2.3.1.</span> <span class="toc-text">DISPLAY</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4_POSITION:_STATIC"><span class="toc-number">2.4.</span> <span class="toc-text">2.4 POSITION: STATIC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#偏移值"><span class="toc-number">2.4.1.</span> <span class="toc-text">偏移值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-_声明"><span class="toc-number">3.</span> <span class="toc-text">3. 声明</span></a></li></ol>
+    <div class="post-spread">
+      
+    </div>
   </div>
 
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
 
-  
-<div class="categorieslist">
-	<p class="asidetitle">分类</p>
-		<ul>
-		
-			<li><a href="/categories/css3/" title="css3">css3<sup>10</sup></a></li>
-		
-			<li><a href="/categories/javascript/" title="javascript">javascript<sup>7</sup></a></li>
-		
-		</ul>
-</div>
+        </div>
 
-
-  
-<div class="tagslist">
-	<p class="asidetitle">标签</p>
-		<ul class="clearfix">
-		
-			<li><a href="/tags/AngularJS/" title="AngularJS">AngularJS<sup>2</sup></a></li>
-		
-			<li><a href="/tags/Sass/" title="Sass">Sass<sup>3</sup></a></li>
-		
-			<li><a href="/tags/Sass-map/" title="Sass map">Sass map<sup>1</sup></a></li>
-		
-			<li><a href="/tags/css-counter/" title="css counter">css counter<sup>1</sup></a></li>
-		
-			<li><a href="/tags/css-counter-style/" title="css counter style">css counter style<sup>1</sup></a></li>
-		
-			<li><a href="/tags/css-currentColor/" title="css currentColor">css currentColor<sup>1</sup></a></li>
-		
-			<li><a href="/tags/css-variables/" title="css variables">css variables<sup>1</sup></a></li>
-		
-			<li><a href="/tags/css3/" title="css3">css3<sup>10</sup></a></li>
-		
-			<li><a href="/tags/css3渐变/" title="css3渐变">css3渐变<sup>1</sup></a></li>
-		
-			<li><a href="/tags/css4-selector/" title="css4 selector">css4 selector<sup>2</sup></a></li>
-		
-			<li><a href="/tags/css变量/" title="css变量">css变量<sup>2</sup></a></li>
-		
-			<li><a href="/tags/html5/" title="html5">html5<sup>1</sup></a></li>
-		
-			<li><a href="/tags/javascript/" title="javascript">javascript<sup>7</sup></a></li>
-		
-			<li><a href="/tags/node/" title="node">node<sup>1</sup></a></li>
-		
-			<li><a href="/tags/page-visibility/" title="page visibility">page visibility<sup>1</sup></a></li>
-		
-			<li><a href="/tags/tips/" title="tips">tips<sup>1</sup></a></li>
-		
-			<li><a href="/tags/tricks/" title="tricks">tricks<sup>1</sup></a></li>
-		
-			<li><a href="/tags/伪类选择器/" title="伪类选择器">伪类选择器<sup>2</sup></a></li>
-		
-			<li><a href="/tags/动画/" title="动画">动画<sup>1</sup></a></li>
-		
-			<li><a href="/tags/动画畅想/" title="动画畅想">动画畅想<sup>1</sup></a></li>
-		
-		</ul>
-</div>
-
-
-  <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
-    <ul>
-      <li><a href="//blog.csdn.net/whqet" target="_blank" title="YangJian">我的博客</a></li>
-      <li><a href="http://itmyhome.com/" target="_blank" title="Hexo">麦田技术博客</a></li>
-    </ul>
-</div>
-
-
-  <div class="rsspart">
-	<a href="atom.xml" target="_blank" title="rss">RSS 订阅</a>
-</div>
-
-</aside>
-</div>
-    </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hello, 我是王海庆，青椒一枚。 <br/>
-			关注前端开发，分享相关资源，希望能对您有所帮助！</p>
-	</section>
-	 
-	<div class="social-font clearfix">
-		
-		<a href="http://weibo.com/FedFun" target="_blank" title="weibo"></a>
-		
-		
-		
-		<a href="https://github.com/whqet" target="_blank" title="github"></a>
-		
-		
-		
         
-        <a href="https://blog.csdn.net/whqet" target="_blank" title="csdn"></a>
+
+
         
-	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2015 
-		
-		<a href="" target="_blank" title="FedFun">FedFun</a>
-		
-		<script type="text/javascript" src="http://js.tongji.linezing.com/3571948/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/3571948/tongji.gif" style="width:12px;height:12px"/></a></noscript>
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </div>
+
       
-      $('#toc.toc-aside').css('display', 'none');
         
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="FedFun" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">FedFun</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">whqet’s blog | html5 | css3 | javascript | jquery | node</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-_引言"><span class="nav-number">1.</span> <span class="nav-text">1. 引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-_正文"><span class="nav-number">2.</span> <span class="nav-text">2. 正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1_DISPLAY:_NONE"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 DISPLAY: NONE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2_POSITION:_ABSOLUTE_(OR_FIXED)"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 POSITION: ABSOLUTE (OR FIXED)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Float"><span class="nav-number">2.2.1.</span> <span class="nav-text">Float</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DISPLAY"><span class="nav-number">2.2.2.</span> <span class="nav-text">DISPLAY</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3_FLOAT:_LEFT_(OR_RIGHT)"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 FLOAT: LEFT (OR RIGHT)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DISPLAY-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">DISPLAY</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4_POSITION:_STATIC"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 POSITION: STATIC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#偏移值"><span class="nav-number">2.4.1.</span> <span class="nav-text">偏移值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-_声明"><span class="nav-number">3.</span> <span class="nav-text">3. 声明</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">FedFun</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+    
+
+  
+
+
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
     }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
   });
-  c.click(function(){
-    a.addClass('fadeOut').css('display', 'none');
-    o.css('display', 'block').addClass('fadeIn');
-    m.addClass('moveMain');
-  });
-  o.click(function(){
-    o.css('display', 'none').removeClass('beforeFadeIn');
-    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
-    m.removeClass('moveMain');
-  });
-  $(window).scroll(function(){
-    o.css("top",Math.max(80,260-$(this).scrollTop()));
-  });
-});
 </script>
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-    c.click(function(){
-      ta.css('display', 'block').addClass('fadeIn');
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
     });
-    o.click(function(){
-      ta.css('display', 'none');
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
     });
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,320-$(this).scrollTop()));
-    });
-  };
-});
-</script>
 
-
-
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"null"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = '//static.duoshuo.com/embed.js';
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-</script> 
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
   });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
 </script>
 
 
-<script>
-var title = document.title,
-newTitle = "等您回来-" + title;
-document.addEventListener("visibilitychange", function() {
-  document.title = ((document.hidden) ? newTitle : title);
-});
-</script>
-  </body>
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
 </html>
